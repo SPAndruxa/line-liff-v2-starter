@@ -186,16 +186,26 @@ function registerButtonHandlers() {
     // get profile call
     document.getElementById('getProfileButton').addEventListener('click', function() {
         liff.getProfile().then(function(profile) {
-            document.getElementById('userIdProfileField').textContent = profile.userId;
-            document.getElementById('displayNameField').textContent = profile.displayName;
+            //document.getElementById('userIdProfileField').textContent = profile.userId;
+            //document.getElementById('displayNameField').textContent = profile.displayName;
             //document.getElementById('form').style.display = "none";
             //document.getElementById('wait').style.display = "block";
+            var operator = document.getElementById('operator').value;
+            var tel = document.getElementById('tel').value;
+            var persId = document.getElementById('persId').value;
+            var date = document.getElementById('date').value;
             fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14'/*'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928'*/, {
                 method: 'POST',
-                body: JSON.stringify({displayName : profile.displayName}) 
+                body: JSON.stringify({
+                    userId : profile.userId,
+                    operator: operator,
+                    tel: tel,
+                    persId: persId,
+                    date: date
+                }) 
             })    
             
-            const profilePictureDiv = document.getElementById('profilePictureDiv');
+            /*const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
                 profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
             }
@@ -205,7 +215,7 @@ function registerButtonHandlers() {
             profilePictureDiv.appendChild(img);
 
             document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            toggleProfileData();
+            toggleProfileData();*/
             /*setTimeout(() => {
               if (!liff.isInClient()) {
                   sendAlertIfNotInClient();

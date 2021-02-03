@@ -86,14 +86,6 @@ function displayLiffData() {
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
     document.getElementById('deviceOS').textContent = liff.getOS();
-    request(getOptions({
-            Language: liff.getLanguage(),
-            Version: liff.getVersion(),
-            LineVersion:  liff.getLineVersion(),
-            OS : liff.getOS()
-        }), function (error, response) {
-        console.log(error, response);
-    });
 }
 
 /**

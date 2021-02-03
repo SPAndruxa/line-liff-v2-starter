@@ -1,4 +1,3 @@
-let request = require('request');
 
 window.onload = function() {
     const useNodeJS = true;   // if you are not using a node server, set this value to false

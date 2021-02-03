@@ -128,6 +128,8 @@ function registerButtonHandlers() {
             method: 'POST',
             body: JSON.stringify({displayName : "some text"}) 
         });
+        document.getElementById('form').style.display = "none";
+            document.getElementById('wait').style.display = "block";
         setTimeout(() => {
           if (!liff.isInClient()) {
               sendAlertIfNotInClient();

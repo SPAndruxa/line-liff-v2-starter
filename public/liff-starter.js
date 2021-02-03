@@ -173,14 +173,6 @@ function registerButtonHandlers() {
             toggleAccessToken();
         }
     });
-
-    // sendConv
-    document.getElementById('sendConv').addEventListener('click', function() {
-        fetch('https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928', {
-                method: 'POST',
-                body: JSON.stringify({test : "test"}) 
-            })
-    }
     
     
     // get profile call

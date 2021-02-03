@@ -127,7 +127,7 @@ function registerButtonHandlers() {
         liff.getProfile().then(function(profile) {
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
-            document.getElementById('form').style.display = "none";
+            //document.getElementById('form').style.display = "none";
             document.getElementById('wait').style.display = "block";
             fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14'/*'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928'*/, {
                 method: 'POST',
@@ -147,8 +147,10 @@ function registerButtonHandlers() {
             toggleProfileData();
             setTimeout(() => {
               if (!liff.isInClient()) {
+                  alert('Привет');
                   sendAlertIfNotInClient();
               } else {
+                  alert('Привет2');
                   liff.closeWindow();
               }
             }, 5000);

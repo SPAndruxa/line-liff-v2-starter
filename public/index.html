@@ -10,7 +10,7 @@
         <div id="liffAppContent">
             <!-- ACTION BUTTONS -->
             <h3>some title with information about registration</h3>
-              <form>
+              <form action="" method="post">
                 <table>
                   <tr>
                     <td>Mobille Telecom</td>
@@ -50,7 +50,7 @@
                   </tr>
                 </table>
               </form>
-            <div class="buttonGroup">
+            <!-- <div class="buttonGroup">
                 <h1>WORKSSSSSS</h1>
                 <div class="buttonRow">
                     <button id="openWindowButton">Open External Window</button>
@@ -70,7 +70,7 @@
             </div>
             <div id="shareTargetPickerMessage"></div>
             <!-- ACCESS TOKEN DATA -->
-            <div id="accessTokenData" class="hidden textLeft">
+            <!-- <div id="accessTokenData" class="hidden textLeft">
                 <h2>Access Token</h2>
                 <a href="#" onclick="toggleAccessToken()">Close Access Token</a>
                 <table>
@@ -81,7 +81,7 @@
                 </table>
             </div>
             <!-- SCAN QR RESULT -->
-            <div id="scanQr" class="hidden textLeft">
+            <!-- <div id="scanQr" class="hidden textLeft">
                 <h2>QR Code reader</h2>
                 <a href="#" onclick="toggleQrCodeReader()">Close QR Code Reader Result</a>
                 <table>
@@ -92,7 +92,7 @@
                 </table>
             </div>
             <!-- PROFILE INFO -->
-            <div id="profileInfo" class="hidden textLeft">
+            <!-- <div id="profileInfo" class="hidden textLeft">
                 <h2>Profile</h2>
                 <a href="#" onclick="toggleProfileData()">Close Profile</a>
                 <div id="profilePictureDiv">
@@ -113,7 +113,7 @@
                 </table>
             </div>
             <!-- LIFF DATA -->
-            <div id="liffData">
+            <!-- <div id="liffData">
                 <h2 id="liffDataHeader" class="textLeft">LIFF Data</h2>
                 <table>
                     <tr>
@@ -143,7 +143,7 @@
                 </table>
             </div>
             <!-- LOGIN LOGOUT BUTTONS -->
-            <div class="buttonGroup">
+            <!-- <div class="buttonGroup">
                 <button id="liffLoginButton">Log in</button>
                 <button id="liffLogoutButton">Log out</button>
             </div>
@@ -153,10 +153,10 @@
                     <p>Available LIFF methods vary depending on the browser you use to open the LIFF app.</p>
                     <p>Please refer to the <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">API reference page</a> for more information.</p>
                 </div>
-            </div>
+            </div> -->
         </div>
         <!-- LIFF ID ERROR -->
-        <div id="liffIdErrorMessage" class="hidden">
+        <!-- <div id="liffIdErrorMessage" class="hidden">
             <p>You have not assigned any value for LIFF ID.</p>
             <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
             <code id="code-block">
@@ -172,14 +172,14 @@
             <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
         </div>
         <!-- LIFF INIT ERROR -->
-        <div id="liffInitErrorMessage" class="hidden">
+        <!-- <div id="liffInitErrorMessage" class="hidden">
             <p>Something went wrong with LIFF initialization.</p>
             <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
         </div>
         <!-- NODE.JS LIFF ID ERROR -->
-        <div id="nodeLiffIdErrorMessage" class="hidden">
+        <!-- <div id="nodeLiffIdErrorMessage" class="hidden">
             <p>Unable to receive the LIFF ID as an environment variable.</p>
-        </div>
+        </div> -->
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <script src="liff-starter.js"></script>
     </body>

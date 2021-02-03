@@ -207,9 +207,9 @@ function registerButtonHandlers() {
                 body: JSON.stringify({
                     userId : profile.userId,
                     operator: document.getElementById('operator').value,
-                    /*tel: tel,
-                    persId: persId,
-                    date: date*/
+                    tel: document.getElementById('tel').value,
+                    persId: document.getElementById('persId').value,
+                    date: document.getElementById('date').value
                 }) 
             })   
             

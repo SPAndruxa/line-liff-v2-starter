@@ -186,8 +186,8 @@ function registerButtonHandlers() {
     // get profile call
     document.getElementById('getProfileButton').addEventListener('click', function() {
         liff.getProfile().then(function(profile) {
-            //document.getElementById('userIdProfileField').textContent = profile.userId;
-            //document.getElementById('displayNameField').textContent = profile.displayName;
+            document.getElementById('userIdProfileField').textContent = profile.userId;
+            document.getElementById('displayNameField').textContent = profile.displayName;
             //document.getElementById('form').style.display = "none";
             //document.getElementById('wait').style.display = "block";
             var operator = document.getElementById('operator').value;
@@ -205,7 +205,7 @@ function registerButtonHandlers() {
                 }) 
             })    
             
-            /*const profilePictureDiv = document.getElementById('profilePictureDiv');
+            const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
                 profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
             }
@@ -215,7 +215,7 @@ function registerButtonHandlers() {
             profilePictureDiv.appendChild(img);
 
             document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            toggleProfileData();*/
+            toggleProfileData();
             /*setTimeout(() => {
               if (!liff.isInClient()) {
                   sendAlertIfNotInClient();

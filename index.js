@@ -18,8 +18,9 @@ app.get('/send-id', function(req, res) {
             };
     request(options, function (error, response) {
                 if (error) throw new Error(error);
+                res.json({id: myLiffId});
             });
-        res.json({id: myLiffId});
+        
 });
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));

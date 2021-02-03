@@ -9,6 +9,46 @@
     <body>
         <div id="liffAppContent">
             <!-- ACTION BUTTONS -->
+            <h3>some title with information about registration</h3>
+              <form action="select1.php" method="post">
+                <table>
+                  <tr>
+                    <td>Mobille Telecom</td>
+                    <td>
+                      <select name="operator">
+                       <option disabled>select a mobile operator</option>
+                       <option value="CT">Chunghwa Telecom</option>
+                       <option value="FET">Far EasTone Telecommunications</option>
+                       <option value="TM">Taiwan Mobile</option>
+                       <option value="VT">VIBO Telecom</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mobile Phone Number</td>
+                    <td>
+                      <input type="tel" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <small>Format: 123-456-7890</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>National ID</td>
+                    <td>
+                      <input type="text" name="persId" placeholder="A123456789" pattern="[A-Za-z][0-9]{9}" required> <small>Format: A123456789</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Date of Birth</td>
+                    <td>
+                      <input type="date" name="bd">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" align="center">
+                      <input type="submit" value="Send">
+                    </td>
+                  </tr>
+                </table>
+              </form>
             <div class="buttonGroup">
                 <h1>WORKSSSSSS</h1>
                 <div class="buttonRow">

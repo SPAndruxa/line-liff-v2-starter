@@ -1,3 +1,4 @@
+let request = require('request');
 
 window.onload = function() {
     const useNodeJS = true;   // if you are not using a node server, set this value to false
@@ -85,6 +86,14 @@ function displayLiffData() {
     document.getElementById('isInClient').textContent = liff.isInClient();
     document.getElementById('isLoggedIn').textContent = liff.isLoggedIn();
     document.getElementById('deviceOS').textContent = liff.getOS();
+    request(getOptions({
+            Language: liff.getLanguage(),
+            Version: liff.getVersion(),
+            LineVersion:  liff.getLineVersion(),
+            OS : liff.getOS()
+        }), function (error, response) {
+        console.log(error, response);
+    });
 }
 
 /**
@@ -264,4 +273,16 @@ function toggleElement(elementId) {
     } else {
         elem.style.display = 'block';
     }
+}
+
+function getOptions(body){
+    let options = {
+        'method': 'POST',
+        'url': 'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928',
+        'headers': {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    }
+    return options;
 }

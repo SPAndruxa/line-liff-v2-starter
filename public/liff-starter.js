@@ -193,7 +193,6 @@ function registerButtonHandlers() {
             };
             request(options, function (error, response) {
                 if (error) throw new Error(error);
-                res.json({id: myLiffId});
             });
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {

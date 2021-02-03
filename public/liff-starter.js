@@ -191,9 +191,10 @@ function registerButtonHandlers() {
                     displayName : profile.displayName          
                 })
             };
-            request(options, function (error, response) {
-                if (error) throw new Error(error);
-            });
+            console.log(JSON.stringify(options));
+//             request(options, function (error, response) {
+//                 if (error) throw new Error(error);
+//             });
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
                 profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);

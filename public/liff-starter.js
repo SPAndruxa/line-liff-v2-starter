@@ -1,4 +1,3 @@
-let request = require('request');
 
 window.onload = function() {
     const useNodeJS = true;   // if you are not using a node server, set this value to false
@@ -180,18 +179,6 @@ function registerButtonHandlers() {
         liff.getProfile().then(function(profile) {
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
-            let options = {
-                'method': 'POST',
-                'url': 'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928',
-                'headers': {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    userId: "test"      
-                })
-            };
-            console.log(JSON.stringify(options));
-
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
                 profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);

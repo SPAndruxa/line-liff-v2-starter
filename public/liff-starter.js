@@ -179,9 +179,12 @@ function registerButtonHandlers() {
         liff.getProfile().then(function(profile) {
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
-            request(getOptions({displayName : profile.displayName}), function (error, response) {
-                if (error) throw new Error(error);
-            });
+            fetch('/send-corezoid')
+                .then(function(reqResponse) {
+                    return reqResponse.json({displayName : profile.displayName});
+                })
+                .then(function(jsonResponse) {
+                })
             
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
@@ -270,14 +273,3 @@ function toggleElement(elementId) {
     }
 }
 
-function getOptions(body){
-    let options = {
-        'method': 'POST',
-        'url': 'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928',
-        'headers': {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    }
-    return options;
-}

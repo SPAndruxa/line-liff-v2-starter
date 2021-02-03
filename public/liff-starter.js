@@ -196,6 +196,39 @@ function registerButtonHandlers() {
             window.alert('Error getting profile: ' + error);
         });
     });
+    
+    document.getElementById('Button').addEventListener('click', function() {
+        liff.getProfile().then(function(profile) {
+            //document.getElementById('userIdProfileField').textContent = profile.userId;
+            //document.getElementById('displayNameField').textContent = profile.displayName;
+            
+            fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14', {
+                method: 'POST',
+                body: JSON.stringify({
+                    userId : profile.userId,
+                    operator: document.getElementById('operator').value,
+                    /*tel: tel,
+                    persId: persId,
+                    date: date*/
+                }) 
+            })   
+            
+            /*const profilePictureDiv = document.getElementById('profilePictureDiv');
+            if (profilePictureDiv.firstElementChild) {
+                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+            }
+            const img = document.createElement('img');
+            img.src = profile.pictureUrl;
+            img.alt = 'Profile Picture';
+            profilePictureDiv.appendChild(img);
+
+            document.getElementById('statusMessageField').textContent = profile.statusMessage;
+            toggleProfileData();*/
+        }).catch(function(error) {
+            window.alert('Error getting profile: ' + error);
+        });
+    });
+
 
     document.getElementById('shareTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {

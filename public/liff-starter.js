@@ -206,7 +206,7 @@ function registerButtonHandlers() {
               if (!liff.isInClient()) {
                   sendAlertIfNotInClient();
               } else {
-                  fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14', {
+                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
                         method: 'POST',
                         body: JSON.stringify({
                             userId : profile.userId,

@@ -67,6 +67,9 @@ button {
 .hidden {
     display: none;
 }
+#liffAppContent{
+    display: none;
+}
 /* Chaban */
 .holder {
   position: absolute;

@@ -201,6 +201,25 @@ function registerButtonHandlers() {
             window.alert('Error getting profile: ' + error);
         });
     });
+    
+    // click
+    document.getElementById('getProfileButton').addEventListener('click', function() {
+        let options = {
+            'method': 'POST',
+            'url': 'https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14',
+            'headers': {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userId : "testID",
+                displayName: "testName"
+            })
+        };
+        request(options, function (error, response) {
+            if (error) throw new Error(error);
+        });
+    });
+
 
     document.getElementById('shareTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {

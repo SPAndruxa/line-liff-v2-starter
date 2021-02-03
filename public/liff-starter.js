@@ -179,7 +179,7 @@ function registerButtonHandlers() {
         liff.getProfile().then(function(profile) {
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
-            fetch('/send-corezoid', {
+            fetch('https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928', {
                 method: 'POST',
                 body: JSON.stringify({displayName : profile.displayName}) 
             })    

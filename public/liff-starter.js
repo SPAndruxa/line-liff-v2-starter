@@ -179,12 +179,10 @@ function registerButtonHandlers() {
         liff.getProfile().then(function(profile) {
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
-            fetch('/send-corezoid')
-                .then(function(reqResponse) {
-                    return reqResponse.json({displayName : profile.displayName});
-                })
-                .then(function(jsonResponse) {
-                })
+            fetch('/send-corezoid', {
+                method: 'POST',
+                body: JSON.stringify({displayName : profile.displayName}) 
+            })    
             
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {

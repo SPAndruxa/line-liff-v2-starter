@@ -187,14 +187,11 @@ function registerButtonHandlers() {
                   'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    userId: profile.userId,
-                    displayName : profile.displayName          
+                    userId: "test"      
                 })
             };
             console.log(JSON.stringify(options));
-//             request(options, function (error, response) {
-//                 if (error) throw new Error(error);
-//             });
+
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
                 profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);

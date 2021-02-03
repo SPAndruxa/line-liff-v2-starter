@@ -190,18 +190,18 @@ function registerButtonHandlers() {
             document.getElementById('displayNameField').textContent = profile.displayName;
             //document.getElementById('form').style.display = "none";
             //document.getElementById('wait').style.display = "block";
-            var operator = document.getElementById('operator').value;
+            /*var operator = document.getElementById('operator').value;
             var tel = document.getElementById('tel').value;
             var persId = document.getElementById('persId').value;
-            var date = document.getElementById('date').value;
+            var date = document.getElementById('date').value;*/
             fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14'/*'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928'*/, {
                 method: 'POST',
                 body: JSON.stringify({
                     userId : profile.userId,
-                    operator: operator,
+                    /*operator: operator,
                     tel: tel,
                     persId: persId,
-                    date: date
+                    date: date*/
                 }) 
             })    
             

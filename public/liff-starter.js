@@ -120,6 +120,15 @@ function registerButtonHandlers() {
             liff.closeWindow();
         }
     });
+    
+    // closeWindow call2
+    document.getElementById('closeWindowButton2').addEventListener('click', function() {
+        if (!liff.isInClient()) {
+            sendAlertIfNotInClient();
+        } else {
+            liff.closeWindow();
+        }
+    });
 
     // sendMessages call
     document.getElementById('sendMessageButton').addEventListener('click', function() {

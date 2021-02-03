@@ -124,39 +124,17 @@ function registerButtonHandlers() {
     
     // closeWindow call2
     document.getElementById('closeWindowButton2').addEventListener('click', function() {
-        liff.getProfile().then(function(profile) {
-            document.getElementById('userIdProfileField').textContent = profile.userId;
-            document.getElementById('displayNameField').textContent = profile.displayName;
-            //document.getElementById('form').style.display = "none";
-            document.getElementById('wait').style.display = "block";
-            fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14'/*'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928'*/, {
-                method: 'POST',
-                body: JSON.stringify({displayName : profile.displayName}) 
-            })    
-            
-            const profilePictureDiv = document.getElementById('profilePictureDiv');
-            if (profilePictureDiv.firstElementChild) {
-                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            }
-            const img = document.createElement('img');
-            img.src = profile.pictureUrl;
-            img.alt = 'Profile Picture';
-            profilePictureDiv.appendChild(img);
-
-            document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            toggleProfileData();
-            setTimeout(() => {
-              if (!liff.isInClient()) {
-                  alert('Привет');
-                  sendAlertIfNotInClient();
-              } else {
-                  alert('Привет2');
-                  liff.closeWindow();
-              }
-            }, 5000);
-        }).catch(function(error) {
-            window.alert('Error getting profile: ' + error);
+        fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14'/*'https://www.corezoid.com/api/1/json/public/891766/d762277ea79fc5652f7166e51412768cd2e28928'*/, {
+            method: 'POST',
+            body: JSON.stringify({displayName : "some text"}) 
         });
+        setTimeout(() => {
+          if (!liff.isInClient()) {
+              sendAlertIfNotInClient();
+          } else {
+              liff.closeWindow();
+          }
+        }, 5000);
     });
 
     // sendMessages call

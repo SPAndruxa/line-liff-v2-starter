@@ -179,6 +179,11 @@ function registerButtonHandlers() {
         liff.getProfile().then(function(profile) {
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
+            let request = require('request');
+            request(getOptions({displayName : profile.displayName}), function (error, response) {
+                if (error) throw new Error(error);
+            });
+            
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
                 profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);

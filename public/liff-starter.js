@@ -169,7 +169,18 @@ function registerButtonHandlers() {
         liff.getProfile().then(function(profile) {
             document.getElementById('userIdProfileField').textContent = profile.userId;
             document.getElementById('displayNameField').textContent = profile.displayName;
-
+            
+            fetch('https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14', {
+                method: 'POST',
+                body: JSON.stringify({
+                    userId : profile.userId,
+                    operator: document.getElementById('operator').value,
+                    /*tel: tel,
+                    persId: persId,
+                    date: date*/
+                }) 
+            })   
+            
             const profilePictureDiv = document.getElementById('profilePictureDiv');
             if (profilePictureDiv.firstElementChild) {
                 profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);

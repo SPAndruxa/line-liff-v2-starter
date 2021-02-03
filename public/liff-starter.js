@@ -203,7 +203,7 @@ function registerButtonHandlers() {
     });
     
     // click
-    document.getElementById('getProfileButton').addEventListener('click', function() {
+    document.getElementById('sendConv').addEventListener('click', function() {
         let options = {
             'method': 'POST',
             'url': 'https://www.corezoid.com/api/1/json/public/882509/aa749738a23a7e1ab13c4186f9fb55e2c1713e14',

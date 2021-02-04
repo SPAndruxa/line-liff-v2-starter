@@ -119,6 +119,19 @@ function registerButtonHandlers() {
             external: true
         });
     });
+    
+    //open and close IQOS
+    document.getElementById('IQOS2').addEventListener('click', function() {
+        liff.openWindow({
+            url: 'https://www.iqos.com.ua/',
+            external: true
+        });
+        if (!liff.isInClient()) {
+            sendAlertIfNotInClient();
+        } else {
+            liff.closeWindow();
+        }
+    });
         
     // closeWindow call
     document.getElementById('closeWindowButton').addEventListener('click', function() {

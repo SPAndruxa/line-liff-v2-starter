@@ -116,7 +116,7 @@ function registerButtonHandlers() {
     document.getElementById('IQOS').addEventListener('click', function() {
         liff.openWindow({
             url: 'https://www.iqos.com.ua/',
-            external: true
+            external: false
         });
     });
     

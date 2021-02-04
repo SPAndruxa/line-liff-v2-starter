@@ -111,7 +111,15 @@ function registerButtonHandlers() {
             external: true
         });
     });
-
+    
+    //open IQOS
+    document.getElementById('IQOS').addEventListener('click', function() {
+        liff.openWindow({
+            url: 'https://www.iqos.com.ua/',
+            external: true
+        });
+    });
+        
     // closeWindow call
     document.getElementById('closeWindowButton').addEventListener('click', function() {
         if (!liff.isInClient()) {

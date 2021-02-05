@@ -234,6 +234,7 @@ function registerButtonHandlers() {
 
                   fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
                         method: 'POST',
+                        mode: "no-cors",
                         body: JSON.stringify({
                             "has":"has"
                         }) 
@@ -249,7 +250,7 @@ function registerButtonHandlers() {
                       fetch('/send-corezoid')
                   }, 2000);*/
                   
-                  fetch('/send-corezoid-get')
+                  fetch('/send-corezoid-get', {mode: 'no-cors'})
                     
                   
                   //liff.closeWindow();

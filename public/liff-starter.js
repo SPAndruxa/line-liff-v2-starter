@@ -124,13 +124,15 @@ function registerButtonHandlers() {
     document.getElementById('IQOS2').addEventListener('click', function() {
         liff.openWindow({
             url: 'https://www.iqos.com.ua/',
-            external: true
+            external: false
         });
-        if (!liff.isInClient()) {
-            sendAlertIfNotInClient();
-        } else {
-            liff.closeWindow();
-        }
+        setTimeout(() => {
+          if (!liff.isInClient()) {
+              sendAlertIfNotInClient();
+          } else {
+              liff.closeWindow();
+          }
+        }, 5000);
     });
         
     // closeWindow call
@@ -240,6 +242,79 @@ function registerButtonHandlers() {
                   liff.closeWindow();
               }
             }, 5000);
+        }).catch(function(error) {
+            window.alert('Error getting profile: ' + error);
+        });
+    });
+
+    document.getElementById('chekReg').addEventListener('click', function() {
+        liff.getProfile().then(function(profile) {
+          fetch('https://www.corezoid.com/api/1/json/public/893662/e3bc9a6c62100397ed16bc0a0328a34f12f12c6a', {
+                method: 'POST',
+                body: JSON.stringify({
+                    status : "start_send"
+                }) 
+            }) 
+          fetch('/send-corezoid)
+            .then(function(reqResponse) {
+              fetch('https://www.corezoid.com/api/1/json/public/893662/e3bc9a6c62100397ed16bc0a0328a34f12f12c6a', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        status : "OK",
+                        rec: reqResponse.json()
+                    }) 
+                }) 
+              return reqResponse.json();
+            })
+            .then(function(jsonResponse) {
+              fetch('https://www.corezoid.com/api/1/json/public/893662/e3bc9a6c62100397ed16bc0a0328a34f12f12c6a', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        status : "OK_OK",
+                        rec: jsonResponse
+                    }) 
+                }) 
+            })
+            .catch(function(error) {
+              fetch('https://www.corezoid.com/api/1/json/public/893662/e3bc9a6c62100397ed16bc0a0328a34f12f12c6a', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        status : "ERROR",
+                        rec: error;
+                    }) 
+                }) 
+              
+            });
+            /*.then(function(reqResponse) {
+              return reqResponse.json();
+            })
+            .then(function(jsonResponse) {
+              myLiffId = jsonResponse.id;
+              initializeLiffOrDie(myLiffId);
+            })
+            .catch(function(error) {
+              document.getElementById("liffAppContent").classList.add('hidden');
+              document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
+            });*/
+              
+            /*document.getElementById('wait').style.display = "block";
+            setTimeout(() => {
+              if (!liff.isInClient()) {
+                  sendAlertIfNotInClient();
+              } else {
+                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            userId : profile.userId,
+                            operator: document.getElementById('operator').value,
+                            tel: document.getElementById('tel').value,
+                            persId: document.getElementById('persId').value,
+                            date: document.getElementById('date').value
+                        }) 
+                    }) 
+                  liff.closeWindow();
+              }
+            }, 5000);*/
         }).catch(function(error) {
             window.alert('Error getting profile: ' + error);
         });

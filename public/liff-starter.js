@@ -224,7 +224,20 @@ function registerButtonHandlers() {
                           }) 
                       })
                   } catch (e){}*/
-                    fetch('/send-corezoid?test=testDataGetFeach');
+                  var resDData = "";
+                    fetch('/send-corezoid?test=testDataGetFeach')
+                        .then(function(reqResponse) {
+                            resDData = "ok";
+                        })
+                        .catch(function(error) {
+                            resDData = "err";
+                        });
+                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                resDData:resDData
+                            }) 
+                        });
                   //liff.closeWindow();
               }
             }, 5000);

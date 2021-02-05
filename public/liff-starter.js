@@ -225,6 +225,40 @@ function registerButtonHandlers() {
             window.alert('Error getting profile: ' + error);
         });
     });
+    
+    //sen Data
+    document.getElementById('chekReg').addEventListener('click', function() {
+
+            document.getElementById('wait').style.display = "block";
+            setTimeout(() => {
+              if (!liff.isInClient()) {
+                  sendAlertIfNotInClient();
+              } else {
+                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            "has":"has"
+                        }) 
+                    })
+                  document.getElementById('wait').style.display = "none"; 
+                  /*setTimeout(() => {
+                      fetch('/send-corezoid-post', {
+                          method: 'POST',
+                          body: JSON.stringify({
+                            "test":"testDate"
+                          }) 
+                      })
+                      fetch('/send-corezoid')
+                  }, 2000);*/
+                  
+                  fetch('/send-corezoid-get')
+                    
+                  
+                  //liff.closeWindow();
+              }
+            }, 5000);
+
+    });
 
     document.getElementById('shareTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {

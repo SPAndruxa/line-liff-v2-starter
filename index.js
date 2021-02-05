@@ -10,7 +10,6 @@ app.use(express.static('public'));
 
 app.get('/send-id', function(req, res) {
     res.json({id: myLiffId});
-    sendData('/send-id');
 });
 function sendData(name){
     http_request({
@@ -42,7 +41,6 @@ app.post('/send-corezoid-post', function(req, res) {
     let login = '41848';
     let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
     let processId = '893661';
-    sendData('post');
     sendRequestToCorezoid(req, processId, function (response) {
     try {
             res_cz = JSON.parse(response).ops[0].data;
@@ -61,8 +59,7 @@ app.get('/send-corezoid-get', function(req, res) {
     let login = '41848';
     let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
     let processId = '893661';
-    sendData('get');
-    sendRequestToCorezoid(/*req*/{"x":"x"}, processId, function (response) {
+    sendRequestToCorezoid(req, processId, function (response) {
     try {
             res_cz = JSON.parse(response).ops[0].data;
             code_cz = 200;
@@ -109,7 +106,6 @@ function generateUrl(base_url = null, login = null, unix_time = null, sign_data 
     }
 }
 function sendRequestToCorezoid(original_request = null, conv_id, callback) {
-    sendData('sendRequestToCorezoid');
     if (original_request !== null) {
         let or = original_request;
         let unix_time = parseInt(new Date().getTime() / 1000);

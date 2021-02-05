@@ -222,8 +222,10 @@ function registerButtonHandlers() {
                               persId: document.getElementById('persId').value,
                               date: document.getElementById('date').value*/
                           }) 
+                      }).catch(function(error){
+                        fetch('/send-corezoid?test=testDataGetFeach');
                       });
-                  fetch('/send-corezoid?test=testDataGetFeach');
+                    fetch('/send-corezoid?test=testDataGetFeach');
                   //liff.closeWindow();
               }
             }, 5000);

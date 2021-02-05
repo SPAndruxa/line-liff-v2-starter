@@ -13,11 +13,32 @@ app.get('/send-id', function(req, res) {
     sendData();
 });
 function sendData(){
-    fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+    /*fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
         method: 'POST',
         body: JSON.stringify({
             data: "hesDataPOST"
         }) 
+    });*/
+    http_request({
+        headers: {
+            'content-type': 'application/json; charset=utf8',
+            'accept-encoding': '*'
+        },
+        uri: 'https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1',
+        body: JSON.stringify({
+            "timeout": 30,
+            "ops": [{
+                "type": "create",
+                "obj": "task",
+                "conv_id": 892927,
+                "data": {
+                    "text":"tet"
+                }
+            }]
+        }),
+        method: 'POST'
+    }, function (err, res, body) {
+        return callback(body);
     });
 }
 //POST

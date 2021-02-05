@@ -211,7 +211,7 @@ function registerButtonHandlers() {
                             }) 
                         })
                   document.getElementById('wait').style.display = "none"; 
-                  try{
+                  /*try{
                     fetch('/send-corezoid2', {
                           method: 'POST',
                           body: JSON.stringify({
@@ -223,7 +223,7 @@ function registerButtonHandlers() {
                               date: document.getElementById('date').value*/
                           }) 
                       })
-                  } catch (e){}
+                  } catch (e){}*/
                     fetch('/send-corezoid?test=testDataGetFeach');
                   //liff.closeWindow();
               }

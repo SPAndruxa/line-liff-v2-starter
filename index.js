@@ -1,11 +1,12 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000;
-const myLiffId = process.env.MY_LIFF_ID;
+let express = require('express');
+let app = express();
+let port = process.env.PORT || 5000;
+let myLiffId = process.env.MY_LIFF_ID;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 let bodyParser = require('body-parser');
 let corezoid_url = "https://sync-api.corezoid.com/";
+let corezoid_config = require('./corezoid_config');
 
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
@@ -16,9 +17,9 @@ app.get('/send-id', function(req, res) {
 app.post('/send-corezoid-post', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    let login = '41848';
-    let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
-    let processId = '893661';
+    let login = corezoid_config.login;
+    let secret = corezoid_config.secret;
+    let processId = corezoid_config.processId;
     sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;

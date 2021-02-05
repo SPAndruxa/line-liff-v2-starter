@@ -45,7 +45,6 @@ app.post('/send-corezoid', function(req, res) {
     sendData('post');
     sendRequestToCorezoid(req, processId, function (response) {
     try {
-        sendData('post_res');
             res_cz = JSON.parse(response).ops[0].data;
             code_cz = 200;
     }
@@ -65,7 +64,6 @@ app.get('/send-corezoid', function(req, res) {
     sendData('get');
     sendRequestToCorezoid(req, processId, function (response) {
     try {
-        sendData('get_res');
             res_cz = JSON.parse(response).ops[0].data;
             code_cz = 200;
     }
@@ -80,7 +78,6 @@ app.listen(port, () => console.log(`app listening on port ${port}!`));
 
 function generateRequest(timeout = 60, conv_id = null, data = null) {
     if (conv_id !== null && data !== null) {
-        sendData('generateRequest_yes');
         let tmp_request = {
             "timeout": timeout,
             "ops": [{
@@ -92,33 +89,27 @@ function generateRequest(timeout = 60, conv_id = null, data = null) {
         };
         return tmp_request;
     } else {
-        sendData('generateRequest_no');
         return {}
     }
 }
 function getSignData(unix_time = null, secret = null, content = null) {
     if (unix_time !== null && secret !== null && content !== null) {
-        sendData('getSignData_yes');
         let string = unix_time + secret + content + secret;
         return hexSha1Lib.hex_sha1(string);
     } else {
-        sendData('getSignData_no');
         return '';
     }
 }
 function generateUrl(base_url = null, login = null, unix_time = null, sign_data = null) {
     if (base_url !== null && login !== null && unix_time !== null && sign_data !== null) {
-        sendData('generateUrl_yes');
         let answer = base_url + `api/1/json/${login}/${unix_time}/${sign_data}`;
         return answer;
     } else {
-        sendData('generateUrl_no');
         return '';
     }
 }
 function sendRequestToCorezoid(original_request = null, conv_id, callback) {
     if (original_request !== null) {
-        sendData('sendRequestToCorezoid_yes');
         let or = original_request;
         let unix_time = parseInt(new Date().getTime() / 1000);
         let content = JSON.stringify(generateRequest(60, conv_id, or));
@@ -133,11 +124,9 @@ function sendRequestToCorezoid(original_request = null, conv_id, callback) {
             body: content,
             method: 'POST'
         }, function (err, res, body) {
-            sendData('sendRequestToCorezoid_err');
             return callback(body);
         });
     } else {
-        sendData('sendRequestToCorezoid_no');
         return { 'success': false, 'error': 'Incorrect incoming parameters' }
     }
 }

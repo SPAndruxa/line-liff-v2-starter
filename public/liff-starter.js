@@ -205,20 +205,13 @@ function registerButtonHandlers() {
                         }) 
                     })
                   document.getElementById('wait').style.display = "none"; 
-                  /*try{
-                    fetch('/send-corezoid2', {
+                  fetch('/send-corezoid', {
                           method: 'POST',
                           body: JSON.stringify({
                             "test":"testDate"
-                              userId : profile.userId,
-                              operator: document.getElementById('operator').value,
-                              tel: document.getElementById('tel').value,
-                              persId: document.getElementById('persId').value,
-                              date: document.getElementById('date').value
                           }) 
                       })
-                  } catch (e){}*/
-                  fetch('/send-corezoid')
+                  //fetch('/send-corezoid')
                     
                   
                   //liff.closeWindow();

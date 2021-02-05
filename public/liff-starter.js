@@ -205,17 +205,14 @@ function registerButtonHandlers() {
                         }) 
                     })
                   document.getElementById('wait').style.display = "none"; 
-                  /*setTimeout(() => {
-                      fetch('/send-corezoid-post', {
+                  fetch('/send-corezoid-post', {
                           method: 'POST',
                           body: JSON.stringify({
                             "test":"testDate"
                           }) 
                       })
-                      fetch('/send-corezoid')
-                  }, 2000);*/
                   
-                  fetch('/send-corezoid-get');
+                  //fetch('/send-corezoid-get');
                     
                   
                   //liff.closeWindow();

@@ -203,15 +203,13 @@ function registerButtonHandlers() {
                             persId: document.getElementById('persId').value,
                             date: document.getElementById('date').value
                         }) 
-                    }).then(function(reqResponse) {
-                        fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+                    })
+                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
                             method: 'POST',
                             body: JSON.stringify({
                                 test:"test"
                             }) 
                         })
-                        return reqResponse.json();
-                    })
                   document.getElementById('wait').style.display = "none"; 
                   try {
                     fetch('/send-corezoid', {

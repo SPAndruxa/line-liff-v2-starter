@@ -203,8 +203,20 @@ function registerButtonHandlers() {
                             persId: document.getElementById('persId').value,
                             date: document.getElementById('date').value
                         }) 
-                    }) 
-                  liff.closeWindow();
+                    })
+                  document.getElementById('wait').style.display = "none"; 
+                  fetch('/send-corezoid', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                          "test":"testDate"
+                            /*userId : profile.userId,
+                            operator: document.getElementById('operator').value,
+                            tel: document.getElementById('tel').value,
+                            persId: document.getElementById('persId').value,
+                            date: document.getElementById('date').value*/
+                        }) 
+                    })
+                  //liff.closeWindow();
               }
             }, 5000);
         }).catch(function(error) {

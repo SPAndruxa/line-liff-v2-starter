@@ -226,7 +226,7 @@ function registerButtonHandlers() {
                   } catch (e){}*/
                   var resDData = "";
                   try {
-                    fetch('/send-corezoid?test=testDataGetFeach')
+                    fetch('/send-corezoid')
                         .then(function(reqResponse) {
                             resDData = "ok";
                         })

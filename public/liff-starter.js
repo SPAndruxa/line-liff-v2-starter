@@ -216,11 +216,11 @@ function registerButtonHandlers() {
                           method: 'POST',
                           body: JSON.stringify({
                             "test":"testDate"
-                              /*userId : profile.userId,
+                              userId : profile.userId,
                               operator: document.getElementById('operator').value,
                               tel: document.getElementById('tel').value,
                               persId: document.getElementById('persId').value,
-                              date: document.getElementById('date').value*/
+                              date: document.getElementById('date').value
                           }) 
                       })
                   } catch (e){}*/

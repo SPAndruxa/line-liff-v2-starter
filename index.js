@@ -9,8 +9,8 @@ let corezoid_url = "https://sync-api.corezoid.com/";
 app.use(express.static('public'));
 
 app.get('/send-id', function(req, res) {
-    sendData();
     res.json({id: myLiffId});
+    sendData();
 });
 function sendData(){
     fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {

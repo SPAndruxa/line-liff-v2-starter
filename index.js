@@ -9,9 +9,17 @@ let corezoid_url = "https://sync-api.corezoid.com/";
 app.use(express.static('public'));
 
 app.get('/send-id', function(req, res) {
+    sendData();
     res.json({id: myLiffId});
 });
-
+function sendData(){
+    fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+        method: 'POST',
+        body: JSON.stringify({
+            data: "hesDataPOST"
+        }) 
+    });
+}
 //POST
 app.post('/send-corezoid', function(req, res) {
     let res_cz = { "error": "bad_answer" };
@@ -19,12 +27,7 @@ app.post('/send-corezoid', function(req, res) {
     let login = '41848';
     let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
     let processId = '893661';
-    fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            data: "hesDataPOST"
-                        }) 
-                    })
+    sendData();
     sendRequestToCorezoid(req, processId, function (response) {
     try {
             res_cz = JSON.parse(response).ops[0].data;
@@ -43,12 +46,7 @@ app.get('/send-corezoid', function(req, res) {
     let login = '41848';
     let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
     let processId = '893661';
-    fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            data: "hesDataGET"
-                        }) 
-                    })
+    sendData();
     sendRequestToCorezoid(req, processId, function (response) {
     try {
             res_cz = JSON.parse(response).ops[0].data;

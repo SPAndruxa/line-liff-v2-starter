@@ -36,7 +36,7 @@ function sendData(name){
     });
 }
 //POST
-app.post('/send-corezoid', function(req, res) {
+app.post('/send-corezoid-post', function(req, res) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
     let login = '41848';
@@ -55,7 +55,7 @@ app.post('/send-corezoid', function(req, res) {
 });
 
 //GET
-app.get('/send-corezoid', function(req, res) {
+app.get('/send-corezoid-get', function(req, res) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
     let login = '41848';

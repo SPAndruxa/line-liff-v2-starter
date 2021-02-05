@@ -197,11 +197,12 @@ function registerButtonHandlers() {
                   fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
                         method: 'POST',
                         body: JSON.stringify({
-                            userId : profile.userId,
+                            /*userId : profile.userId,
                             operator: document.getElementById('operator').value,
                             tel: document.getElementById('tel').value,
                             persId: document.getElementById('persId').value,
-                            date: document.getElementById('date').value
+                            date: document.getElementById('date').value*/
+                            test: "norn"
                         }) 
                     }) 
                   liff.closeWindow();

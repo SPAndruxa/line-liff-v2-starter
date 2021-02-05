@@ -10,15 +10,9 @@ app.use(express.static('public'));
 
 app.get('/send-id', function(req, res) {
     res.json({id: myLiffId});
-    sendData();
+    sendData('/send-id');
 });
-function sendData(){
-    /*fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
-        method: 'POST',
-        body: JSON.stringify({
-            data: "hesDataPOST"
-        }) 
-    });*/
+function sendData(name){
     http_request({
         headers: {
             'content-type': 'application/json; charset=utf8',
@@ -32,7 +26,7 @@ function sendData(){
                 "obj": "task",
                 "conv_id": 892927,
                 "data": {
-                    "text":"tet"
+                    "text":name
                 }
             }]
         }),
@@ -48,9 +42,10 @@ app.post('/send-corezoid', function(req, res) {
     let login = '41848';
     let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
     let processId = '893661';
-    sendData();
+    sendData('post');
     sendRequestToCorezoid(req, processId, function (response) {
     try {
+        sendData('post_res');
             res_cz = JSON.parse(response).ops[0].data;
             code_cz = 200;
     }
@@ -67,9 +62,10 @@ app.get('/send-corezoid', function(req, res) {
     let login = '41848';
     let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
     let processId = '893661';
-    sendData();
+    sendData('get');
     sendRequestToCorezoid(req, processId, function (response) {
     try {
+        sendData('get_res');
             res_cz = JSON.parse(response).ops[0].data;
             code_cz = 200;
     }
@@ -84,6 +80,7 @@ app.listen(port, () => console.log(`app listening on port ${port}!`));
 
 function generateRequest(timeout = 60, conv_id = null, data = null) {
     if (conv_id !== null && data !== null) {
+        sendData('generateRequest_yes');
         let tmp_request = {
             "timeout": timeout,
             "ops": [{
@@ -95,27 +92,33 @@ function generateRequest(timeout = 60, conv_id = null, data = null) {
         };
         return tmp_request;
     } else {
+        sendData('generateRequest_no');
         return {}
     }
 }
 function getSignData(unix_time = null, secret = null, content = null) {
     if (unix_time !== null && secret !== null && content !== null) {
+        sendData('getSignData_yes');
         let string = unix_time + secret + content + secret;
         return hexSha1Lib.hex_sha1(string);
     } else {
+        sendData('getSignData_no');
         return '';
     }
 }
 function generateUrl(base_url = null, login = null, unix_time = null, sign_data = null) {
     if (base_url !== null && login !== null && unix_time !== null && sign_data !== null) {
+        sendData('generateUrl_yes');
         let answer = base_url + `api/1/json/${login}/${unix_time}/${sign_data}`;
         return answer;
     } else {
+        sendData('generateUrl_no');
         return '';
     }
 }
 function sendRequestToCorezoid(original_request = null, conv_id, callback) {
     if (original_request !== null) {
+        sendData('sendRequestToCorezoid_yes');
         let or = original_request;
         let unix_time = parseInt(new Date().getTime() / 1000);
         let content = JSON.stringify(generateRequest(60, conv_id, or));
@@ -130,9 +133,11 @@ function sendRequestToCorezoid(original_request = null, conv_id, callback) {
             body: content,
             method: 'POST'
         }, function (err, res, body) {
+            sendData('sendRequestToCorezoid_err');
             return callback(body);
         });
     } else {
+        sendData('sendRequestToCorezoid_no');
         return { 'success': false, 'error': 'Incorrect incoming parameters' }
     }
 }

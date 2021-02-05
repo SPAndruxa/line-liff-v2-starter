@@ -19,6 +19,7 @@ function sendData(name){
             'accept-encoding': '*'
         },
         uri: 'https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1',
+        mode: "no-cors"
         body: JSON.stringify({
             "timeout": 30,
             "ops": [{

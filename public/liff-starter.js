@@ -205,12 +205,15 @@ function registerButtonHandlers() {
                         }) 
                     })
                   document.getElementById('wait').style.display = "none"; 
-                  fetch('/send-corezoid', {
+                  setTimeout(() => {
+                      fetch('/send-corezoid', {
                           method: 'POST',
                           body: JSON.stringify({
                             "test":"testDate"
                           }) 
                       })
+                  }, 2000);
+                  
                   //fetch('/send-corezoid')
                     
                   

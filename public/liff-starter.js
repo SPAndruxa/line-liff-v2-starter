@@ -187,7 +187,7 @@ function registerButtonHandlers() {
     });
     
     //sen Data
-    document.getElementById('getProfileButton').addEventListener('click', function() {
+    document.getElementById('Button').addEventListener('click', function() {
         liff.getProfile().then(function(profile) {
             document.getElementById('wait').style.display = "block";
             setTimeout(() => {

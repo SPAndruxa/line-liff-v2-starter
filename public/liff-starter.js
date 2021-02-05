@@ -204,12 +204,6 @@ function registerButtonHandlers() {
                             date: document.getElementById('date').value
                         }) 
                     })
-                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
-                            method: 'POST',
-                            body: JSON.stringify({
-                                test:"test"
-                            }) 
-                        })
                   document.getElementById('wait').style.display = "none"; 
                   /*try{
                     fetch('/send-corezoid2', {
@@ -224,23 +218,7 @@ function registerButtonHandlers() {
                           }) 
                       })
                   } catch (e){}*/
-                  var resDData = "";
-                  try {
-                    fetch('/send-corezoid')
-                        .then(function(reqResponse) {
-                            resDData = "ok";
-                        })
-                        .catch(function(error) {
-                            resDData = "err";
-                        });
-                    } catch (e) {
-                        fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
-                            method: 'POST',
-                            body: JSON.stringify({
-                                resDData:"errorCatch - " + e.name + " : " + e.message
-                            }) 
-                        });
-                    }
+                  fetch('/send-corezoid')
                     
                   
                   //liff.closeWindow();

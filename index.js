@@ -18,8 +18,7 @@ app.post('/send-corezoid-post', function(request, response) {
     let login = '41848';
     let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
     let processId = '893661';
-    console.log(`${request}`);
-    sendRequestToCorezoid({}, login, secret, processId, function (res) {
+    sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;

@@ -14,7 +14,7 @@ app.get('/send-id', function(req, res) {
     res.json({id: myLiffId});
 });
 
-app.post('/send-corezoid-post', function(request, response) {
+app.post('/send-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
     let login = corezoid_config.login;

@@ -15,9 +15,9 @@ app.get('/send-id', function(req, res) {
 app.post('/send-corezoid', function(req, res) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    let login = '';
-    let secret = '';
-    let processId = '';
+    let login = '41848';
+    let secret = 'qoy2Xcpuy5YXs4INJvO69F8mvhLpf7Uv31r5b7Ytk4FKEJ4OBA';
+    let processId = '893661';
     sendRequestToCorezoid(req, processId, function (response) {
     try {
             res_cz = JSON.parse(response).ops[0].data;

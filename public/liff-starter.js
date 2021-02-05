@@ -234,15 +234,15 @@ function registerButtonHandlers() {
                             resDData = "err";
                         });
                     } catch (e) {
-                        resDData: "errorCatch - " + e.name + " : " + e.message;
-                    }
-                    
-                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+                        fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
                             method: 'POST',
                             body: JSON.stringify({
-                                resDData:resDData
+                                resDData:"errorCatch - " + e.name + " : " + e.message
                             }) 
                         });
+                    }
+                    
+                  
                   //liff.closeWindow();
               }
             }, 5000);

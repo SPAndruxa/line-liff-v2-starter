@@ -185,6 +185,32 @@ function registerButtonHandlers() {
             window.alert('Error getting profile: ' + error);
         });
     });
+    
+    //sen Data
+    document.getElementById('getProfileButton').addEventListener('click', function() {
+        liff.getProfile().then(function(profile) {
+            document.getElementById('wait').style.display = "block";
+            setTimeout(() => {
+              if (!liff.isInClient()) {
+                  sendAlertIfNotInClient();
+              } else {
+                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            userId : profile.userId,
+                            operator: document.getElementById('operator').value,
+                            tel: document.getElementById('tel').value,
+                            persId: document.getElementById('persId').value,
+                            date: document.getElementById('date').value
+                        }) 
+                    }) 
+                  liff.closeWindow();
+              }
+            }, 5000);
+        }).catch(function(error) {
+            window.alert('Error getting profile: ' + error);
+        });
+    });
 
     document.getElementById('shareTargetPicker').addEventListener('click', function () {
         if (liff.isApiAvailable('shareTargetPicker')) {

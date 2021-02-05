@@ -194,7 +194,7 @@ function registerButtonHandlers() {
               if (!liff.isInClient()) {
                   sendAlertIfNotInClient();
               } else {
-                  fetch('https://www.corezoid.com/api/1/json/public/892927/9dc8c06b960969b40eebf6da1178c8a5b94c57f1', {
+                  fetch('/send-corezoid', {
                         method: 'POST',
                         body: JSON.stringify({
                             userId : profile.userId,
@@ -205,7 +205,7 @@ function registerButtonHandlers() {
                         }) 
                     })
                   document.getElementById('wait').style.display = "none"; 
-                  fetch('/send-corezoid-post', {
+                  fetch('/send-corezoid', {
                           method: 'POST',
                           body: JSON.stringify({
                             "test":"testDate"

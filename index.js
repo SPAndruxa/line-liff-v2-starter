@@ -20,7 +20,7 @@ app.post('/send-corezoid', function(request, response) {
     let login = corezoid_config.login;
     let secret = corezoid_config.secret;
     let processId = corezoid_config.processId;
-    sendRequestToCorezoid(response.ip, request.body, login, secret, processId, function (res) {
+    sendRequestToCorezoid(request/*.body*/, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;
@@ -34,7 +34,7 @@ app.post('/send-corezoid', function(request, response) {
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
 
-function generateRequest(timeout = 60, conv_id = null, data = null, ip) {
+function generateRequest(timeout = 60, conv_id = null, data = null) {
     if (conv_id !== null && data !== null) {
         let tmp_request = {
             "timeout": timeout,
@@ -43,9 +43,7 @@ function generateRequest(timeout = 60, conv_id = null, data = null, ip) {
                 "obj": "task",
                 "ref": "test_" + data.id,
                 "conv_id": conv_id,
-                "data": /*data*/{
-                    "ip": ip
-                }
+                "data": data
             }]
         };
         return tmp_request;
@@ -69,11 +67,11 @@ function generateUrl(base_url = null, login = null, unix_time = null, sign_data 
         return '';
     }
 }
-function sendRequestToCorezoid(ip, original_request = null, login, secret, conv_id, callback) {
+function sendRequestToCorezoid(original_request = null, login, secret, conv_id, callback) {
     if (original_request !== null) {
         let or = original_request;
         let unix_time = parseInt(new Date().getTime() / 1000);
-        let content = JSON.stringify(generateRequest(60, conv_id, or, ip));
+        let content = JSON.stringify(generateRequest(60, conv_id, or));
         let signData = getSignData(unix_time, secret, content);
         let url = generateUrl(corezoid_url, login, unix_time, signData);
         http_request({

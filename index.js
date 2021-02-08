@@ -9,7 +9,6 @@ let corezoid_url = "https://sync-api.corezoid.com/";
 let corezoid_config = require('./corezoid_config');
 let ip = require("ip");
 
-app.set('trust proxy', 'loopback, ' + process.env.IPB_MYIP)
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
 app.get('/send-id', function(req, res) {
@@ -25,6 +24,7 @@ app.post('/send-corezoid', function(request, response) {
     request.body.server_ip = ip.address();
     console.log(ip.address());
     console.log(request.body);
+    console.log(request);
     sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;

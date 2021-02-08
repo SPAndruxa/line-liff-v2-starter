@@ -19,7 +19,7 @@ app.get('/send-id', function(req, res) {
             },
             uri: "https://www.corezoid.com/api/1/json/public/893662/e3bc9a6c62100397ed16bc0a0328a34f12f12c6a",
             body: {
-                "ip": req.ip
+                "ip": "test"
             },
             method: 'POST'
         }, function (err, res, body) {

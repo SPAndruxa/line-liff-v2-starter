@@ -7,6 +7,7 @@ let hexSha1Lib = require('./hex_sh1');
 let bodyParser = require('body-parser');
 let corezoid_url = "https://sync-api.corezoid.com/";
 let corezoid_config = require('./corezoid_config');
+let ip = require("ip");
 
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
@@ -20,6 +21,8 @@ app.post('/send-corezoid', function(request, response) {
     let login = corezoid_config.login;
     let secret = corezoid_config.secret;
     let processId = corezoid_config.processId;
+    request.body.server_ip = ip.address();
+    console.log(ip.address());
     sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;

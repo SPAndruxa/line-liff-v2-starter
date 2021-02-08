@@ -20,7 +20,7 @@ app.post('/send-corezoid', function(request, response) {
     let login = corezoid_config.login;
     let secret = corezoid_config.secret;
     let processId = corezoid_config.processId;
-    sendRequestToCorezoid(request/*.body*/, login, secret, processId, function (res) {
+    sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;

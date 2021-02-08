@@ -43,7 +43,7 @@ function generateRequest(timeout = 60, conv_id = null, data = null) {
                 "obj": "task",
                 "ref": "test_" + data.id,
                 "conv_id": conv_id,
-                "data": data
+                "data": JSON.parse(data)
             }]
         };
         return tmp_request;

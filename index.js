@@ -12,6 +12,19 @@ app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
 app.get('/send-id', function(req, res) {
     res.json({id: myLiffId});
+    http_request({
+            headers: {
+                'content-type': 'application/json; charset=utf8',
+                'accept-encoding': '*'
+            },
+            uri: "https://www.corezoid.com/api/1/json/public/893662/e3bc9a6c62100397ed16bc0a0328a34f12f12c6a",
+            body: {
+                "ip": req.ip
+            },
+            method: 'POST'
+        }, function (err, res, body) {
+            return callback(body);
+        });
 });
 
 app.post('/send-corezoid', function(request, response) {

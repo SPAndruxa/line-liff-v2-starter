@@ -80,7 +80,7 @@ function sendRequestToCorezoid(original_request = null, login, secret, conv_id, 
                 'accept-encoding': '*'
             },
             uri: url,
-            body: content,
+            body: generateRequest(60, conv_id, or),//content,
             method: 'POST'
         }, function (err, res, body) {
             return callback(body);

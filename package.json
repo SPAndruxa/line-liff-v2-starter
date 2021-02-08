@@ -14,7 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "request": "^2.88.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ip": "^1.1.5"
   },
   "engines": {
     "node": "10.x"

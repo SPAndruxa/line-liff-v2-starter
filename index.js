@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 let port = process.env.PORT || 5000;
-let myLiffId = process.env.MY_LIFF_ID;
+let myLiffId = process.env.MY_LIFF_ID || "1655628107-yK6V4JpA";
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 let bodyParser = require('body-parser');

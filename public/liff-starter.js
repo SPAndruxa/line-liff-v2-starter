@@ -203,7 +203,9 @@ function registerButtonHandlers() {
                             persId: document.getElementById('persId').value,
                             date: document.getElementById('date').value
                         }) 
-                    })
+                    }).then(function(reqResponse) {
+                liff.closeWindow();
+            })
                   document.getElementById('wait').style.display = "none"; 
                   fetch('/send-corezoid', {
                           method: 'POST',

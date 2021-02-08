@@ -197,22 +197,22 @@ function registerButtonHandlers() {
                   fetch('/send-corezoid', {
                         method: 'POST',
                         body: JSON.stringify({
-                            userId : profile.userId,
+                            id : profile.userId,
                             operator: document.getElementById('operator').value,
                             tel: document.getElementById('tel').value,
                             persId: document.getElementById('persId').value,
                             date: document.getElementById('date').value
                         }) 
                     }).then(function(reqResponse) {
-                liff.closeWindow();
-            })
+                        liff.closeWindow();
+                    })
                   document.getElementById('wait').style.display = "none"; 
-                  fetch('/send-corezoid', {
+                  /*fetch('/send-corezoid', {
                           method: 'POST',
                           body: JSON.stringify({
                             "test":"testDate"
                           }) 
-                      })
+                      })*/
                   
                   //fetch('/send-corezoid-get');
                     

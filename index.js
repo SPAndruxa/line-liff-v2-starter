@@ -41,7 +41,7 @@ function generateRequest(timeout = 60, conv_id = null, data = null) {
             "ops": [{
                 "type": "create",
                 "obj": "task",
-                "ref": "test_" + typeof data,
+                "ref": "test_" + Object.keys(data).join("_"),
                 "conv_id": conv_id,
                 "data": data
             }]

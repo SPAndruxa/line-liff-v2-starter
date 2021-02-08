@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title>Gigya login test</title>
+        <!--link rel="stylesheet" href="./css/centralpage.css"/-->
+        <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apikey=3_3RNlByb_Fj2r_dY2FAE-FlCGhrBcFQj5TaSQsfvSt-8kuSRvK11npXlgZPlDqICQ&lang=en">
+
+        {
+          include:"id_token"
+        }
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+        <style>
+            body {
+                font-family: Verdana, Arial;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="section">
+        <div class="container">
+          <h1 class="title">
+            Welcome to the site A
+          </h1>
+          <p class="subtitle">
+              <strong>PMI</strong> Demo!
+          </p>
+          <p>
+              <nav class="breadcrumb" aria-label="breadcrumbs">
+
+            </nav>
+          </p>
+          <p>
+              <a href="#" onclick="createUIDContainer();">Register</a>
+              <br />
+              <br />
+              <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'test-ProfileUpdate'});">Show my Profile</a>
+              <br />
+              <br />
+              <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'test-RegistrationLogin'});">Login</a>
+          </p>
+          <p>
+              <br />
+              <br />
+              <br />
+              <br />
+              <a href="#" onclick="gigya.accounts.logout();">Logout</a>
+          </p>
+        </div>
+      </section>
+
+
+
+
+        <script>
+
+        function createUIDContainer(){
+
+          let username = Math.random().toString(36).substring(2);
+          let password = Math.random().toString(36).substring(2);
+
+          gigya.accounts.initRegistration({callback:function(e){
+            debugger;
+            gigya.accounts.register({regToken:e.regToken,username:username,password:password,callback:function(ev){
+                          function afterScreenLoadHandler(event){
+                            debugger;
+                            document.getElementById("gigya-UID-label").innerHTML =  "UID: "+ event.context.UID;
+                            document.getElementById("gigya-completion-password").value =  event.context.password;
+                          }
+                          function onAfterSubmitHandler(event){
+                            debugger;
+                            //IF error=0 then we can call to finalizeRegistration
+                            gigya.accounts.finalizeRegistration({regToken:event.response.requestParams.regToken});
+
+                          }
+                          debugger;
+                          var contextObj = {
+                            "UID":ev.userInfo.UID,
+                            "password":password
+                          };
+                          gigya.accounts.showScreenSet({screenSet:"test-RegistrationLogin",regToken:ev.regToken,startScreen:"gigya-complete-registration-screen",onAfterScreenLoad:afterScreenLoadHandler,onAfterSubmit:onAfterSubmitHandler,context:contextObj});
+            }});
+          }});
+
+
+        }
+
+                gigya.showDebugUI();
+
+                gigya.accounts.getAccountInfo({include:"preferences",callback:startHandler});
+
+                function startHandler(response){
+                    if(response.errorCode == 0){
+
+
+
+
+                    }else{
+
+                        var params = {
+                            screenSet: 'Default-RegistrationLogin',
+                            startScreen: 'gigya-register-screen',
+                            customLang: gigya.thisScript.globalConf.customLang['fr-ch'],
+                            lang: 'en'
+                        };
+
+                        //gigya.accounts.showScreenSet(params);
+
+                    }
+
+                }
+
+                gigya.accounts.addEventHandlers({
+                    onLogin: onLoginHandler
+                });
+
+                function onLoginHandler(response){
+                    debugger;
+                    console.log(response);
+                }
+
+
+
+
+
+
+
+        </script>
+    </body>
+    </html>

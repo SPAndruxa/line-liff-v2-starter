@@ -1,28 +1,1622 @@
-
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Gigya login test</title>
         <!--link rel="stylesheet" href="./css/centralpage.css"/-->
-        <script type="text/javascript" src="/gigya.js">
+        <script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.uk.qpaMTx_s2tw.O/m=client/rt=j/sv=1/d=1/ed=1/am=wQE/rs=AGLTcCPAVMA7Y0_t6QpRP0wEF_UCLcMemg/cb=gapi.loaded_0" async=""></script><script src="https://connect.facebook.net/en_US/sdk.js?hash=13094b0cc47f13e5e694efeb38dc3f67&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://apis.google.com/js/client.js?onload=__gigya_handleClientLoad" gapi_processed="true"></script><script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apikey=3_3RNlByb_Fj2r_dY2FAE-FlCGhrBcFQj5TaSQsfvSt-8kuSRvK11npXlgZPlDqICQ&amp;lang=en">
 
         {
           include:"id_token"
         }
         </script>
-        <link rel="stylesheet" href="/min.css">
-        <script defer src="/all.js"></script>
+        <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-12.5%;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1em}.svg-inline--fa.fa-stack-2x{height:2em;width:2em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+        <script defer="" src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
         <style>
             body {
                 font-family: Verdana, Arial;
             }
         </style>
-    </head>
+    <style type="text/css">.gig-debug-container *, *.gig-debug-container {word-wrap:break-word;padding:0px;margin:0px;color:inherit;text-decoration:none;width:auto;float:none;height:auto;font-family:arial;color:#FFF;position:static;text-align:left;vertical-align:baseline;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}</style><style type="text/css">body {padding-top:100px !important}.gig-debug-container {z-index:99999999999999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding:5px;font-size:12px;position:fixed !important;top:0;left:0;width:100%;background-color:#000;opacity:0.85;color:#FFF}*.gig-debug-user {margin-bottom:5px;display:inline-block;}*.gig-debug-user-loggedIn {cursor:pointer;}*.gig-debug-selected {background-color:#FFF !important;color:#000 !important;border: 2px solid #FFFFFF;}*.gig-debug-user-loggedIn:hover {text-decoration:underline}*.gig-debug-apikey-container {margin-bottom:5px;background-color:#000;}*.gig-debug-apikey {width:500px;background-color:#000;border:none;}*.gig-debug-lastLog {display:inline-block;line-height:18px;}*.gig-debug-settings {margin-bottom:5px}*.gig-debug-footer {overflow:hidden;margin-top:5px;}*.gig-debug-historyButton, *.gig-debug-hideButton, *.gig-debug-detailsButton, *.gig-debug-infoButton, *.gig-debug-importButton, *.gig-debug-exportButton, *.gig-debug-clearButton {margin-right:20px;display:inline-block;width: 18px;text-align:center;font-size:15px;border: 1px solid #000;background-color:#3A3A3A;cursor: pointer;font-weight:bold}*.gig-debug-infoButton, *.gig-debug-importButton, *.gig-debug-exportButton, *.gig-debug-clearButton  {width:auto;padding: 0 3px;font-size:12px;}*.gig-debug-detailsButton, *.gig-debug-infoButton, *.gig-debug-importButton, *.gig-debug-exportButton, *.gig-debug-clearButton {float:right;margin-right:15px}*.gig-debug-historyButton.pressed, .gig-debug-historyButton:hover, *.gig-debug-hideButton:hover, *.gig-debug-detailsButton.pressed, .gig-debug-detailsButton:hover, {background-color:#4A4A4A;}*.gig-debug-timestamp {margin-right:10px;color:#ffd800;}*.gig-debug-history {position: absolute;border:1px solid #000;border-radius:7px;border:1px solid #FFF;background-color:#000;color:#FFF;width:50%;height:400px;overflow: auto;padding:10px;}*.gig-debug-history div {font-weight:bold;}*.gig-debug-history-entry [data-prop] {color:#b6ff00;text-decoration:underline;cursor: pointer;}*.gig-debug-history-entry-error {background-color:#FF0000;}*.gig-debug-history-entry-beforeRequest [data-prop], *.gig-debug-history-entry-afterResponse [data-prop] {color:#B1B100;}*.gig-debug-history-entry-beforeRequest [data-prop], *.gig-debug-history-entry-beforePluginReqwuest [data-prop] {color:#3399FF;}*.gig-debug-hideButton {position:fixed;top:0;right:0;}*.gig-debug-data-details {width: 50%;left: 50%;height:400px;overflow:auto;border-radius:7px;border:1px solid #FFF;}*.gig-debug-data-details  li {margin-left:20px;}*.gig-debug-data-details  ul {}*.gig-debug-data-details-openButton {font-size:11px;display:inline-block;width: 15px;height:15px;line-height:15px;text-align:center;display:inline-block;cursor:pointer;}*.gig-debug-data-details-pressed {background-color:#FFF; color:#000;}*.gig-debug-data-details-closed, *.gig-debug-data-details-open {vertical-align:top;}*.gig-debug-data-details-closed {display:none}*.gig-debug-propertyName {color: #FFFF00;font-weight:bold;}*.gig-debug-propertyValue {margin-left:5px;}*.gig-debug-import {display:none}*.gig-debug-import-shown .gig-debug-import {display:inline-block;font-size:9px;}*.gig-debug-import-shown .gig-debug-importText {display:none;}</style><style type="text/css" data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><style type="text/css">/*modern modal*/
+.gigya-style-modern #gigya-screen-dialog-page-overlay {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: alpha(opacity=20);
+    opacity: 0.2;
+}
 
-    <body>
+.gigya-style-modern div.gigya-screen-dialog-main {
+    border: 0.5px;
+    border-radius: 3px;
+    background-color: transparent;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+    max-height: 99vh;
+    max-width: 99vw;
+    overflow: auto;
+}
+
+.gigya-style-modern div.gigya-screen-dialog-top {
+    overflow: hidden;
+    zoom: 1;
+    background-color: #1371B9;
+    line-height: 38px;
+    padding: 0 10px 0 11px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.gigya-style-modern div.gigya-screen-dialog-close {
+    background-image: initial;
+    background-position: initial;
+    background-repeat: initial;
+    float: right;
+    cursor: pointer;
+}
+
+.gigya-style-modern div.gigya-screen-dialog-close > a > img {
+    margin-top: 11px;
+    vertical-align: initial;
+    border: 0px;
+    width: auto;
+}
+
+.gigya-style-modern div.gigya-screen-dialog-caption {
+    float: left;
+    font-size: 19px;
+    font-family: arial;
+    color: #FFFFFF;
+    padding-right: 20px;
+}
+
+.gigya-style-modern div.gigya-screen-dialog-inner {
+    padding: 0px;
+    overflow: hidden;
+    min-width: 32px;
+    min-height: 64px;
+    background-color: white;
+}
+
+.gigya-style-modern div.gigya-screen-dimmer {
+    position: absolute;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    background-color: #FFFFFF;
+}
+
+.gigya-style-modern div.gigya-screen-loader {
+    position: absolute;
+    background: transparent url("https://cdns3.gigya.com/gs/i//accounts/bigLoader.gif") no-repeat center center;
+    min-height: 32px;
+    min-width: 32px;
+}
+
+.gigya-style-modern.gigya-screen-dialog {
+    position: fixed;
+    border: none;
+}
+
+.gigya-style-modern.gigya-screen-dialog-mobile {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.gigya-style-modern.gigya-screen-dialog-mobile div.gigya-screen-dialog-main {
+    max-height: 100vh;
+    max-width: 100vw;
+    box-shadow: initial;
+}
+
+.gigya-style-modern.gigya-screen-dialog-mobile div.gigya-screen-dialog-top {
+    position: fixed;
+    top: 0px;
+    border-radius: 0px;
+    line-height: 27px;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 1;
+}
+
+.gigya-style-modern.gigya-screen-dialog-mobile div.gigya-screen-dialog-caption {
+    font-size: 14px;
+}
+
+.gigya-style-modern.gigya-screen-dialog-mobile div.gigya-screen-dialog-close > a > img {
+    margin-top: 5px;
+}
+
+.gigya-style-modern.gigya-screen-dialog-mobile div.gigya-screen-dialog-inner {
+    border: 0px;
+    margin-top: 27px;
+    box-sizing: border-box;
+}
+
+.gigya-style-modern.gigya-screen-dialog-mobile div.gigya-screen-dialog-inner > div {
+    margin: 0 auto;
+}
+
+.gigya-style-modern.gigya-ios.gigya-screen-dialog, .gigya-style-modern.gigya-ios.gigya-screen-dialog.gigya-ios-v7.gigya-screen-dialog-mobile div.gigya-screen-dialog-top {
+    position: absolute;
+}
+
+.gigya-style-modern.gigya-android.gigya-screen-dialog-mobile {
+    overflow: auto;
+}
+
+.gigya-style-modern.gigya-ie8 #gigya-screen-dialog-page-overlay {
+    width: 100%;
+    height: 100%;
+}
+
+html.gigya-mobile-modal-mode {
+    overflow: hidden;
+}
+html.gigya-mobile-modal-mode body {
+    height: 0px;
+    overflow: hidden;
+}
+</style><style type="text/css">.gigya-consent-title {
+     font-weight: bold;
+     display: block;
+     font-weight: 700;
+     font-size: 15px;
+     font-family: arial;
+ }
+.gigya-consent-subtitle {
+    font-weight: bold;
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    font-family: arial;
+     }
+
+.gigya-consent-text {
+    display: inline-block;
+}
+.gigya-composite-control-captcha-widget iframe {
+    width: 100%;
+}
+#FunCaptcha {
+    text-align: center;
+}
+.gigya-reset *, div.gigya-reset, .gigya-reset span, .gigya-reset a:hover, .gigya-reset a:visited, .gigya-reset a:link, .gigya-reset a:active {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    color: inherit;
+    text-decoration: none;
+    width: auto;
+    float: none;
+    -moz-border-radius: 0;
+    border-radius: 0;   
+    font-family: arial;
+    font-size: 12px;
+    color: #333333;
+    text-align: left;
+}
+
+.gigya-screen .gigya-error-msg {
+    color: #DD4B39;
+    font-size: 11px;
+    display: block;
+    visibility: hidden;
+}
+
+.gigya-screen .gigya-error-msg.gigya-error-msg-active {
+    color: #DD4B39;
+    font-size: 11px;
+    display: block;
+    visibility: visible;
+}
+
+.gigya-screen .gigya-terms-error,
+.gigya-screen input.gigya-error,
+.gigya-screen input[type=text].gigya-error,
+.gigya-screen input[type=password].gigya-error,
+.gigya-screen input[type=email].gigya-error,
+.gigya-screen select.gigya-error {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #DD4B39;
+    -webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.gigya-screen input.gigya-error[type=checkbox],
+ .gigya-screen input.gigya-error[type=radio]{
+    padding: 0;
+}
+
+.gigya-screen input[disabled],
+.gigya-screen input:disabled {
+    background-color: #e1e1e1;
+    color: #4a4a4a;
+    border-color: #cccccc;
+}
+
+div.gigya-attach-file-upload-form {
+    position: absolute;
+    overflow: hidden;
+    font-size: 50px;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+div.gigya-photo-upload-form > input {
+    font-size: 500px;
+    direction: rtl;
+    height: 100%;
+    cursor: pointer;
+}
+
+.gigya-password-strength-bubble .gig-balloon-nub {
+    background-image: url('https://cdns3.gigya.com/gs/i//screenSet/triangle_left.png');
+    height: 16px;
+    width: 10px;
+    left: +2px;
+}
+.gigya-password-strength-bubble .gig-balloon-nub-up {
+    background-image: url('https://cdns3.gigya.com/gs/i//screenSet/triangle_up.png');
+    height: 10px;
+    width: 16px;
+    top: +2px;
+}
+.gigya-password-strength-bubble .gig-balloon-nub-right {
+    background-image: url('https://cdns3.gigya.com/gs/i//screenSet/triangle_right.png');
+    height: 16px;
+    width: 10px;
+    left: -2px;
+}
+.gigya-password-strength-bubble .gig-balloon-nub-down {
+    background-image: url('https://cdns3.gigya.com/gs/i//screenSet/triangle_down.png');
+    height: 10px;
+    width: 16px;
+    top: -2px;
+}
+.gigya-password-strength-bubble .gig-balloon-frame {
+    background-color: #F3F5F6;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #BFCFDA;
+    -webkit-box-shadow: inset 0 0 1px 1px RGBA(0,0,0,0.05);
+    -moz-box-shadow: inset 0 0 1px 1px RGBA(0,0,0,0.05);
+    box-shadow: inset 0 0 1px 1px RGBA(0,0,0,0.05);
+}
+
+.gigya-password-strength-bubble .gig-balloon {
+    position: relative;
+}
+.gigya-password-strength-bubble.gig-balloon-left .gig-balloon {
+    left: +10px;
+    top: +3px;
+}
+.gigya-password-strength-bubble.gig-balloon-right .gig-balloon {
+    left: -10px;
+    top: +3px;
+}
+.gigya-password-strength-bubble.gig-balloon-up .gig-balloon {
+    left: -5px;
+    top: +17px;
+}
+.gigya-password-strength-bubble.gig-balloon-down .gig-balloon {
+    left: -5px;
+    top: -12px;
+}
+
+.gigya-passwordStrength-text {
+    text-align: center;
+}
+
+span.gigya-passwordStrength-text {
+    font-weight: bold;
+    display: inline-block;
+}
+
+div.gigya-passwordStrength-text-requirements {
+    text-align: center;
+    width: 100%;
+    margin-top: 8px;
+}
+
+span.gigya-passwordStrength-scoreText {
+    margin-left: 3px;
+}
+
+.gigya-passwordStrength-too_weak .gigya-passwordStrength-scoreText {
+    color: #e76468;
+}
+.gigya-passwordStrength-weak .gigya-passwordStrength-scoreText {
+    color: #e76468;
+}
+.gigya-passwordStrength-fair .gigya-passwordStrength-scoreText {
+    color: #d99b4b;
+}
+.gigya-passwordStrength-strong .gigya-passwordStrength-scoreText {
+    color: #4ababc;
+}
+.gigya-passwordStrength-very_strong .gigya-passwordStrength-scoreText {
+    color: #4ababc;
+}
+
+div.gigya-passwordStrength-bar {
+    width: 100%;
+    height: 1px;
+    background-color: #b6b6b6;
+    margin-top: 8px;
+}
+
+div.gigya-passwordStrength-bar-too_weak {
+    width: 20%;
+    height: 100%;
+    background-color: #e76468;
+}
+
+div.gigya-passwordStrength-bar-weak {
+    width: 40%;
+    height: 100%;
+    background-color: #e76468;
+}
+
+div.gigya-passwordStrength-bar-fair {
+    width: 60%;
+    height: 100%;
+    background-color: #d99b4b;
+}
+
+div.gigya-passwordStrength-bar-strong {
+    width: 80%;
+    height: 100%;
+    background-color: #4ababc;
+}
+
+div.gigya-passwordStrength-bar-very_strong {
+    width: 100%;
+    height: 100%;
+    background-color: #4ababc;
+}
+
+.gigya-calculate-size {
+    position: absolute !important;
+    -ms-zoom: 1 !important;
+    zoom: 1 !important;
+    left: 10px !important;
+    top: -1000px !important;
+}
+
+.gigya-calculate-size div.gigya-captcha {
+    min-width: 318px;
+    min-height: 80px;
+    _width: 318px;
+    _height: 80px;
+}
+.gigya-calculate-size div.gigya-captcha.v2 {
+    min-height: 80px;
+    _height: 80px;
+}
+
+.gigya-calculate-size div.gigya-social-login {
+    min-width: 110px;
+    min-height: 120px;
+    _width: 110px;
+    _height: 120px;
+}
+
+.gigya-calculate-size div.gigya-tfa {
+    min-width: 325px;
+    min-height: 200px;
+    _width: 325px;
+    _height: 200px;
+}
+
+div.gigya-container {
+    display: none;
+}
+
+    div.gigya-container.gigya-container-enabled {
+        display: block;
+    }
+
+div.gigya-loginID-availability {
+    line-height: 18px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+div.gigya-loginID-availability-available {
+    padding-left: 17px;
+    background-image: url('https://cdns3.gigya.com/gs/i//accounts/ok.png');
+    color: #4FA373;
+}
+
+div.gigya-loginID-availability-not-available {
+    padding-left: 16px;
+    background-image: url('https://cdns3.gigya.com/gs/i//accounts/error.png');
+    color: #DD4B39;
+}
+
+div.gigya-loginID-availability-progress {
+    padding-left: 20px;
+    background-image: url('https://cdns3.gigya.com/gs/i//accounts/smallLoader.gif');
+    color: #666666;
+}
+
+div.gigya-profile-photo {
+    border-radius: 3px;
+}
+
+.gigya-calculate-size div.gigya-profile-photo {
+    min-width: 64px;
+    min-height: 64px;
+}
+
+div.gigya-screen-dimmer {
+    position: absolute;
+    opacity: 0.5;
+    filter: 'alpha(opacity=50)';
+    background-color: #FFFFFF;
+}
+
+div.gigya-screen-loader {
+    position: absolute;
+    background: transparent url('https://cdns3.gigya.com/gs/i//accounts/bigLoader.gif') no-repeat center center;
+    min-height:32px;
+    min-width:32px;
+}
+
+div.gigya-screen-dialog-content {
+    overflow: auto;
+    padding: 25px;
+}
+
+div.gigya-screen-dialog-mobile div.gigya-composite-control-captcha-widget {
+    padding: 0;
+}
+
+div.gigya-screen-dialog-mobile .gigya-screen {
+    width: 100%;
+}
+
+div.gigya-secret-question {
+    display: none;
+}
+
+div.gigya-photo-upload {
+    height: 63px;
+    width: 300px;
+    zoom: 1;
+}
+
+div.gigya-photo-upload-button {
+    display: inline-block;
+    zoom: 1;
+    margin: 0 8px 8px 0;
+    font-weight: normal;
+    border: 1px solid #CECECE;
+    cursor: pointer;
+    padding: 0 12px;
+    color: #333333;
+    font-weight: bold;
+    border-radius: 4px;
+    line-height: 28px;
+    background: #F2F2F2;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFFFF", endColorstr="#F2F2F2");
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#F2F2F2));
+    background: -moz-linear-gradient(top, #FFFFFF, #F2F2F2);
+}
+
+    div.gigya-photo-upload-button:hover {
+        background: #FFFFFF;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#F2F2F2", endColorstr="#FFFFFF");
+        background: -webkit-gradient(linear, left top, left bottom, from(#F2F2F2), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #F2F2F2, #FFFFFF);
+    }
+
+div.gigya-photo-upload-text {
+    font-size: 11px;
+    color: #666666;
+}
+
+div.gigya-photo-upload-image {
+    border-radius: 6px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+    background-color: #F2F2F2;
+    float: left;
+    margin-right: 8px;
+}
+
+div.gigya-photo-upload-path {
+    white-space: nowrap;
+    width: 107px;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+    background-position: right;
+    background-repeat: no-repeat;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding-right: 20px;
+}
+
+h1.gigya-screen-caption {
+    border-bottom: 1px solid #dbdbdb;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin: 0 auto;
+}
+
+.gigya-error-display {
+    display: none;
+}
+
+    .gigya-error-display.gigya-error-display-active {
+        display: block;
+    }
+
+.gigya-hidden {
+    display: none !important;
+}
+
+.gigya-screen .gigya-tfa input[type=text] {
+    margin: 5px 0px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+    .gigya-screen .gigya-tfa input[type=text]:focus, .gigya-screen .gigya-tfa input[type=text]:focus {
+        border-color: #87B9EA;
+    }
+
+    .gigya-show-checkmark.gigya-valid {
+        background-image: url('https://cdns3.gigya.com/gs/i//screenSet/checkmarkValid.png');
+        background-position-x: 100%;
+        background-position-y: 50%;
+        background-position: right 5px center;
+        background-repeat: no-repeat;
+        padding-right: 25px;
+    }
+
+    .gigya-show-checkmark.gigya-valid.gigya-empty {
+        background-image: none;
+        padding-right: 5px;
+    }
+
+    .gigya-show-checkmark.gigya-pending {
+        background-image: url('https://cdns3.gigya.com/gs/i//screenSet/checkmarkPending.gif');
+        background-position-x: 100%;
+        background-position-y: 50%;
+        background-position: right 5px center;
+        background-repeat: no-repeat;
+        padding-right: 25px;
+    }
+
+/* If changed, update UI Builder too. */
+.gigya-screen .gigya-composite-control-image {
+    overflow: hidden;
+}
+.gigya-image {
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+    background-position: center;
+    min-height: 10px;
+}
+.gigya-image[data-background-size="fit"] {
+    background-size: contain;
+}
+.gigya-image[data-background-size="fit-horizontally"] {
+    background-size: 100% auto;
+}
+.gigya-image[data-background-size="fit-vertically"] {
+    background-size: auto 100%;
+}
+.gigya-image[data-background-size="stretch"] {
+    background-size: 100% 100%;
+}
+
+/*IE8*/
+.gigya-ie8 .gigya-layout-cell {
+    overflow: hidden;
+    margin-left: -1px!important;
+}
+
+.gigya-ie8 .gigya-attach-file-upload-form .gigya-attach-file-upload-file-input {
+    width: 1000px;
+}
+
+.gigya-ie8 .gigya-calculate-size div.gigya-profile-photo {
+    _width: 64px;
+    _height: 64px;
+}
+
+.gigya-ie8 div.gigya-photo-upload {
+    *display: inline;
+}
+
+.gigya-ie8 div.gigya-photo-upload-button {
+    *display: inline;
+}
+.gigya-ie8 .gigya-screen .gigya-placeholder {
+    color: #A9A9BB;
+    padding-left: 5px;
+    text-indent: 0;
+}
+.gigya-ie8 .gigya-placeholder:focus {
+    padding-left: 5px;
+}
+.gigya-ie8 .gigya-screen .gigya-input-text:focus {
+    padding-left: 5px;
+    text-indent: 0;
+}
+.gigya-ie8 .gigya-screen.gigya-input-text, .gigya-ie8 .gigya-screen .gigya-input-text.gigya-error {
+    padding-top: 12px;
+}
+
+/*IE9*/
+.gigya-ie9 .gigya-screen input.gigya-input-text, 
+.gigya-ie9 .gigya-screen input.gigya-input-password {
+    padding-top: 1px;
+    text-indent: 0;   
+    padding-bottom: 5px;
+}
+
+.gigya-ie9 .gigya-screen .gigya-input-text:focus, .gigya-ie9 .gigya-screen .gigya-input-password:focus {
+    box-shadow: 0px 0px 5px 0px #1d87ff;
+    border: 1px solid #87B9EA;
+    /*padding-left: 5px;*/
+    text-indent: 0;
+}
+
+.gigya-ie9 .gigya-screen input.gigya-input-text.gigya-placeholder, .gigya-ie9 .gigya-screen input.gigya-input-password.gigya-placeholder {
+    color: #A9A9BB;
+    padding-top: 5px;
+     text-indent: 0;
+    /*padding-left: 4px;*/
+}
+
+/*IE10*/
+.gigya-ie10 .gigya-screen input.gigya-input-text, 
+.gigya-ie10 .gigya-screen input.gigya-input-password {
+    padding-top: 1px;   
+}
+
+/*remove bottom padding for outline when focused (not needed anyway)*/
+.gigya-screen .forgot-password-cell a,
+.gigya-screen .gigya-composite-control.gigya-forgotPassword,
+.gigya-screen .gigya-composite-control.gigya-change-password-link,
+.gigya-screen .gigya-composite-control.gigya-composite-control-link{
+    padding-bottom: 0px;
+}
+.gigya-screen .gigya-array-manager.disable-delete > .gigya-array-template > .buttons-wrapper button.gigya-array-remove-btn {
+    display: none;
+}
+.gigya-screen .gigya-composite-control-array-widget {
+    margin: 10px 0;
+}
+.gigya-screen .gigya-composite-control-array-widget .gigya-composite-control-array-widget {
+    margin: 10px;
+}
+.gigya-screen .gigya-composite-control-array-widget div.gigya-array-template {
+    padding: 10px 0 10px 0;
+}
+.gigya-screen .gigya-composite-control-array-widget div.gigya-array-template:not(:last-of-type) {
+    border-bottom: 1px #C1C1C1 solid;
+}
+.gigya-screen .gigya-composite-control-array-widget div.gigya-array-template .buttons-wrapper {
+    text-align: right;
+}
+.gigya-screen .gigya-composite-control-array-widget div.gigya-array-template button {
+    background: none;
+    outline: none!important;
+    color: #1371b9;
+    padding: 10px;
+    cursor: pointer;
+}
+.gigya-screen .gigya-composite-control-array-widget div.gigya-array-template button.hidden {
+    display: none;
+}
+.gigya-screen .gigya-disabled-text {
+    color: #8a8a8a;
+    cursor: default;
+}
+
+.gigya-screen .gigya-disabled-text:hover {
+    text-decoration: none;
+    cursor: default;
+}
+
+.gigya-screen .gigya-disabled-text:active {
+    color: #8a8a8a;
+    cursor: default;
+}
+</style><style type="text/css">.gigya-screen-caption{font-family:arial;padding-left:11px;line-height:40px}.gigya-screen,.gigya-screen *{margin:0 auto;padding:0;border:none;color:inherit;text-decoration:none;width:auto;float:none;border-radius:0;font-size:15px;color:#4e515e;text-align:left;font-family:arial;box-sizing:content-box}.gigya-locale-ar .gigya-checkbox-text,.gigya-locale-ar .gigya-composite-control-header,.gigya-locale-ar .gigya-composite-control-label,.gigya-locale-ar .gigya-composite-control-link,.gigya-locale-ar .gigya-label,.gigya-locale-ar .gigya-multi-choice-item label,.gigya-locale-ar input,.gigya-locale-ar select,.gigya-locale-he .gigya-checkbox-text,.gigya-locale-he .gigya-composite-control-header,.gigya-locale-he .gigya-composite-control-label,.gigya-locale-he .gigya-composite-control-link,.gigya-locale-he .gigya-label,.gigya-locale-he .gigya-multi-choice-item label,.gigya-locale-he input,.gigya-locale-he select{direction:rtl}.gigya-screen{box-sizing:border-box;padding-bottom:25px}.gigya-screen .gigya-label{display:block;font-weight:700;font-size:15px;color:#4e515e}.gigya-screen .gigya-label-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-label,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-header-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-label,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-header-subtext,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-header-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-phonenumber,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-header-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-number,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-example,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type span,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-header-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type span,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-yourphone{display:inline-block;font-weight:lighter;font-size:15px;font-family:arial;color:#4e515e}.gigya-screen .gigya-checkbox-text{display:inline}.gigya-screen .gigya-message{font-size:15px;color:#333;display:block;text-align:center}.gigya-screen .gigya-message.left{text-align:left;padding-bottom:40px}.gigya-screen .gigya-social-login-container{margin:auto}.gigya-screen .gigya-forgotPassword,.gigya-screen .gigya-forgotPassword:link{float:right}.gigya-screen .gigya-keep-me-logged-in{display:block}.gigya-screen .gigya-input-password,.gigya-screen .gigya-input-text,.gigya-screen .gigya-textarea,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox{padding-left:7px;box-sizing:border-box;width:100%;text-indent:5px;border-color:#b6bdc5;color:#4e515e;outline:none;border-radius:4.5px;box-shadow:inset 0 1px 3px rgba(0,0,0,.05)}.gigya-screen .gigya-input-password:focus,.gigya-screen .gigya-input-text:focus,.gigya-screen .gigya-textarea:focus,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox:focus{border:1px solid #87b9ea;outline:none;box-shadow:0 0 5px 0 #1d87ff}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gig-tfa-code-textbox,.gigya-screen input.gigya-input-password,.gigya-screen input.gigya-input-text{border:1px solid #b6bdc5}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gig-tfa-code-textbox:disabled,.gigya-screen input.gigya-input-password:disabled,.gigya-screen input.gigya-input-text:disabled{background-color:#f2f2f2;border-color:#d4dee4;color:#6a6a6a}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gigya-error.gig-tfa-code-textbox,.gigya-screen input.gigya-input-password.gigya-error,.gigya-screen input.gigya-input-text.gigya-error{border-radius:4.5px;border-style:solid;border-width:1px;border-color:#e76468}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gig-tfa-code-textbox,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gig-tfa-code-textbox:focus,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gigya-error.gig-tfa-code-textbox,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gigya-error.gig-tfa-code-textbox:focus,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gigya-pending.gig-tfa-code-textbox,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gigya-pending.gig-tfa-code-textbox:focus,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gigya-valid.gig-tfa-code-textbox,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gigya-valid.gig-tfa-code-textbox:focus,.gigya-screen input.gigya-input-password,.gigya-screen input.gigya-input-password.gigya-error,.gigya-screen input.gigya-input-password.gigya-error:focus,.gigya-screen input.gigya-input-password.gigya-pending,.gigya-screen input.gigya-input-password.gigya-pending:focus,.gigya-screen input.gigya-input-password.gigya-valid,.gigya-screen input.gigya-input-password.gigya-valid:focus,.gigya-screen input.gigya-input-password:focus,.gigya-screen input.gigya-input-text,.gigya-screen input.gigya-input-text.gigya-error,.gigya-screen input.gigya-input-text.gigya-error:focus,.gigya-screen input.gigya-input-text.gigya-pending,.gigya-screen input.gigya-input-text.gigya-pending:focus,.gigya-screen input.gigya-input-text.gigya-valid,.gigya-screen input.gigya-input-text.gigya-valid:focus,.gigya-screen input.gigya-input-text:focus{padding-left:7px}.gigya-screen .gigya-input-password,.gigya-screen .gigya-input-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox,.gigya-screen select{height:43px}.gigya-screen .gigya-required-display{color:#e76468;display:inline-block;padding:0 5px}.gigya-screen .gigya-error-display{display:none}.gigya-screen .gigya-error-display.gigya-error-display-active{display:block}.gigya-screen .gigya-error-msg,.gigya-screen .gigya-error-msg-active.gigya-form-error-msg{line-height:14px;font-size:13px;text-align:center;font-weight:400;box-sizing:border-box}.gigya-screen .gigya-error-msg-active.gigya-form-error-msg,.gigya-screen .gigya-error-msg.gigya-error-msg-active{padding-top:8px;padding-bottom:0;color:#e76468;font-weight:700;font-size:13px;line-height:15px}.gigya-screen .gigya-error-msg-active.gigya-form-error-msg{_height:26px;font-size:12px;min-height:26px;text-align:center;margin-top:1px;border:1px #e76468;border-radius:4.4px;font-weight:700;padding:10px}.gigya-screen .gigya-login-provider-row:first-child{padding-top:0}.gigya-screen .gigya-container{text-align:inherit;text-decoration:inherit;font-size:inherit;color:inherit}.gigya-screen div.gigya-container.gigya-visible-when .gigya-composite-control{display:block}.gigya-screen .gigya-myPhoto-profile-box-wrapper{margin-left:0;margin-top:0}.gigya-screen .label-divider{display:block;width:100%;height:80px;background-repeat:repeat-x;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY7h8+TIABPYCeicnV7oAAAAASUVORK5CYII=);background-position:50%;box-sizing:border-box;padding:0!important}.gigya-screen .label-divider span{display:inline-block;background-color:#fff;margin-top:31px;padding-left:10px;padding-right:10px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend:link,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend:visited,.gigya-screen a,.gigya-screen a:active,.gigya-screen a:link,.gigya-screen a:visited{color:#1371b9;text-decoration:none;font-size:15px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend:hover,.gigya-screen a:hover{text-decoration:underline}.gigya-screen h1,.gigya-screen h2{line-height:15px;font-size:15px;color:#4e515e;font-weight:400;text-align:center}.gigya-screen h1{border-bottom:1px solid #dbdbdb;font-weight:700}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend,.gigya-screen a.gigya-button,.gigya-screen input[type=email],.gigya-screen input[type=password],.gigya-screen input[type=text],.gigya-screen select,.gigya-screen textarea{width:100%;border-radius:4.5px;border:1px solid #b6bdc5;background-color:#fff;box-sizing:border-box}.gigya-screen input:-ms-input-placeholder{color:#a9a9a9}.gigya-screen .gig-tfa-button-submit,.gigya-screen .gigya-button,.gigya-screen .gigya-composite-control-link,.gigya-screen .gigya-composite-control-submit,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link,.gigya-screen input[type=button],.gigya-screen input[type=submit]{-webkit-appearance:none;-moz-appearance:none;appearance:none}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend,.gigya-screen a.gigya-button,.gigya-screen input[type=button],.gigya-screen input[type=submit]{cursor:pointer;width:100%;height:43px;border-radius:1.79px;border-color:#1371b9;box-shadow:0 0 1px 0 rgba(0,0,0,.4);color:#fff;background-color:#1d87ff;-ms-flex-line-pack:center;align-content:center;text-align:center;font-size:19px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit:hover,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button:hover,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link:hover,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend:hover,.gigya-screen a.gigya-button:active,.gigya-screen a.gigya-button:hover,.gigya-screen input[type=button]:active,.gigya-screen input[type=button]:hover,.gigya-screen input[type=submit]:active,.gigya-screen input[type=submit]:hover{background-color:#0068de}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link:active,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-button.gig-tfa-phone-code-resend:active,.gigya-screen a.gigya-button:active,.gigya-screen input[type=button]:active,.gigya-screen input[type=submit]:active{box-shadow:inset 0 2px 7px 0 rgba(0,0,0,.4)}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-checkbox,.gigya-screen input[type=checkbox],.gigya-screen input[type=radio]{width:auto;margin:2px 0 0 0;padding:0;border-radius:0;border:none;vertical-align:middle}.gigya-screen option{width:100%;padding:5px}.gigya-screen option:hover{background-color:#3593c1}.gigya-screen label.letter-spacing-s{letter-spacing:-.1px}.gigya-screen .gigya-layout-row{zoom:1;display:block;text-align:center}.gigya-screen .gigya-layout-row:after{content:"";display:table;clear:both}.gigya-screen .gigya-layout-row.with-two-inputs .gigya-composite-control{padding-right:7.5px}.gigya-screen .gigya-layout-row.with-two-inputs>.gigya-layout-cell+.gigya-layout-cell>.gigya-composite-control{padding-right:0;padding-left:7.5px}.gigya-screen .gigya-layout-cell{text-align:center;float:left;width:50%}.gigya-screen .gigya-layout-cell .gigya-error-cell{width:100%;max-width:none;min-width:0}.gigya-screen .gigya-layout-cell .gigya-layout-cell{max-width:50%}.gigya-screen .gigya-layout-footer{text-align:right;clear:both}.gigya-screen.portrait .gigya-layout-row .submit-button{padding-bottom:25px}.gigya-screen.portrait .gigya-layout-row .gigya-layout-cell.responsive,.gigya-screen.portrait .gigya-layout-row.with-divider .gigya-layout-cell.responsive{float:none;min-width:100%;width:100%}.gigya-screen-content div.gigya-screen.landscape{padding-left:43px;padding-right:43px;width:920px}.gigya-screen.landscape{padding-top:50px}.gigya-screen.landscape .gigya-composite-control.gigya-composite-control-social-login{position:relative;right:25px}.gigya-screen.portrait{width:500px;font-size:15px;padding-left:68px;padding-right:68px;padding-top:40px}.gigya-screen.portrait .sub-title-text{font-size:15px}.gigya-screen.portrait .gigya-error-msg-active.gigya-form-error-msg,.gigya-screen.portrait .gigya-error-msg.gigya-error-msg-active{font-size:13px}.gigya-screen.portrait .text-field-disabled{background-color:#f2f2f2;border:1px solid #d6dee4;border-radius:2px;color:#4e515e}.gigya-screen.portrait .gigya-composite-control{padding-left:0;padding-right:0}.gigya-screen.portrait .gigya-composite-control.gigya-composite-control-social-login{width:calc(100% + 50px);position:relative;right:27px}.gigya-screen.portrait.mobile{width:100%;padding-top:30px;padding-bottom:15px;padding-left:20px;padding-right:20px}.gigya-screen.portrait.mobile:before{display:block;width:375px;content:""}.gigya-screen.portrait.mobile .text-field-disabled{color:#4e515e}.gigya-screen.portrait.mobile .forgotpassword,.gigya-screen.portrait.mobile .gigya-composite-control-label,.gigya-screen.portrait.mobile .gigya-error-msg-active.gigya-form-error-msg,.gigya-screen.portrait.mobile .gigya-error-msg.gigya-error-msg-active,.gigya-screen.portrait.mobile .gigya-forgotPassword,.gigya-screen.portrait.mobile .gigya-label,.gigya-screen.portrait.mobile .gigya-label-text,.gigya-screen.portrait.mobile .gigya-login-footer-text-wrapper,.gigya-screen.portrait.mobile .gigya-message,.gigya-screen.portrait.mobile .gigya-terms-of-use,.gigya-screen.portrait.mobile .main-header,.gigya-screen.portrait.mobile .site-title,.gigya-screen.portrait.mobile .sub-title-text,.gigya-screen.portrait.mobile a,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-label,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-header-text,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-label,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-header-subtext,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-header-text,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-phonenumber,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-header-text,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-number,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-example,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type span,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-header-text,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type span,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-yourphone,.gigya-screen.portrait.mobile h1,.gigya-screen.portrait.mobile h2{font-size:13px}.gigya-screen.portrait.mobile input[type=email],.gigya-screen.portrait.mobile input[type=password],.gigya-screen.portrait.mobile input[type=text],.gigya-screen.portrait.mobile select{height:36px;font-size:13px}.gigya-screen.portrait.mobile .gigya-error-msg-active.gigya-form-error-msg,.gigya-screen.portrait.mobile .gigya-error-msg.gigya-error-msg-active{font-size:13px}.gigya-screen.portrait.mobile .gigya-composite-control-social-login{width:calc(100% + 40px);position:relative;right:20px}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-checkbox,.gigya-screen.portrait.mobile input[type=checkbox]{margin-bottom:2px}.gigya-screen.portrait.mobile label.letter-spacing-s{letter-spacing:0}.gigya-screen .gigya-composite-control{padding-bottom:18px}.gigya-screen .gigya-composite-control.gigya-composite-control-label,.gigya-screen .gigya-composite-control.gigya-composite-control-link{display:inline-block}.gigya-screen .gigya-composite-control.gigya-composite-control-label.main-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-header-text{padding-bottom:40px;display:block;text-align:left}.gigya-screen .gigya-composite-control.gigya-composite-control-label.main-text.inlined,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .inlined.gig-tfa-header-text{display:inline-block;text-align:center}.gigya-screen .gigya-composite-control.gigya-composite-control-label.social-login-title{padding-bottom:26px;display:inline-block;text-align:center}.gigya-screen .gigya-composite-control.gigya-composite-control-header{padding-bottom:26px}.gigya-screen .gigya-composite-control.gigya-composite-control-dropdown,.gigya-screen .gigya-composite-control.gigya-composite-control-password,.gigya-screen .gigya-composite-control.gigya-composite-control-textbox{padding-bottom:5px}.gigya-screen .gigya-composite-control.gigya-composite-control-dropdown .gigya-label,.gigya-screen .gigya-composite-control.gigya-composite-control-password .gigya-label,.gigya-screen .gigya-composite-control.gigya-composite-control-textbox .gigya-label{padding-bottom:6px}.gigya-screen .gigya-composite-control.gigya-composite-control-dropdown input,.gigya-screen .gigya-composite-control.gigya-composite-control-dropdown select,.gigya-screen .gigya-composite-control.gigya-composite-control-password input,.gigya-screen .gigya-composite-control.gigya-composite-control-password select,.gigya-screen .gigya-composite-control.gigya-composite-control-textbox input,.gigya-screen .gigya-composite-control.gigya-composite-control-textbox select{margin-bottom:13px}.gigya-screen .gigya-composite-control.gigya-composite-control-dropdown .gigya-error-msg-active,.gigya-screen .gigya-composite-control.gigya-composite-control-password .gigya-error-msg-active,.gigya-screen .gigya-composite-control.gigya-composite-control-textbox .gigya-error-msg-active{padding-top:0;padding-bottom:8px}.gigya-screen .gigya-composite-control.gigya-composite-control-captcha-widget{padding-bottom:0}.gigya-screen .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper{margin-bottom:5px}.gigya-screen .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-captcha{margin:0 auto 13px auto}.gigya-screen .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-captcha input{height:auto}.gigya-screen .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-captcha .recaptcha_only_if_privacy a,.gigya-screen.portrait .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-captcha .recaptcha_only_if_privacy div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-captcha .recaptcha_only_if_privacy .gig-tfa-phone-code-resend{font-size:12px}.gigya-screen .gigya-composite-control.gigya-composite-control-captcha-widget .gigya-captcha-wrapper .gigya-error-msg-active{padding-top:0;padding-bottom:8px}.gigya-screen .gigya-composite-control.gigya-composite-control-tfa-widget{padding-bottom:0}.gigya-screen .gigya-composite-control.gigya-composite-control-button,.gigya-screen .gigya-composite-control.gigya-composite-control-button+.gigya-error-display-active,.gigya-screen .gigya-composite-control.gigya-composite-control-link.gigya-button-link,.gigya-screen .gigya-composite-control.gigya-composite-control-link.gigya-button-link+.gigya-error-display-active,.gigya-screen .gigya-composite-control.gigya-composite-control-submit,.gigya-screen .gigya-composite-control.gigya-composite-control-submit+.gigya-error-display-active{padding-bottom:25px}.gigya-screen .gigya-composite-control.gigya-composite-control-link.gigya-button-link{display:block}.gigya-screen .gigya-composite-control.gigya-composite-control-social-login{padding:0}.gigya-screen .gigya-composite-control.gigya-composite-control-multi-choice .gigya-label{padding-bottom:8px}.gigya-screen .gigya-composite-control.gigya-composite-control-multi-choice .gigya-multi-choice-item{padding-top:10px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.gigya-screen .gigya-composite-control.gigya-composite-control-multi-choice .gigya-multi-choice-item .gigya-input-radio{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}.gigya-screen .gigya-composite-control.gigya-composite-control-multi-choice .gigya-multi-choice-item label{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-left:8px;width:100%;display:block}.gigya-screen .gigya-composite-control.gigya-composite-control-checkbox{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.gigya-screen .gigya-composite-control.gigya-composite-control-checkbox .gigya-input-checkbox{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}.gigya-screen .gigya-composite-control.gigya-composite-control-checkbox .gigya-label{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;margin-left:8px;width:100%;display:block}.gigya-screen .gigya-composite-control.gigya-terms-error{padding:5px;margin-bottom:18px;position:relative;right:6px;width:100%;border-radius:5px;border:1px solid #dd4b39}.gigya-screen div.gigya-loginID-availability-available{margin-bottom:18px}.gigya-screen form.gigya-form-error .gigya-composite-control.gigya-composite-control-button,.gigya-screen form.gigya-form-error .gigya-composite-control.gigya-composite-control-form-error.gigya-error-display-active,.gigya-screen form.gigya-form-error .gigya-composite-control.gigya-composite-control-link.gigya-button-link,.gigya-screen form.gigya-form-error .gigya-composite-control.gigya-composite-control-submit{padding-bottom:10px}.gigya-screen.landscape .gigya-layout-row.with-divider{padding-bottom:25px}.gigya-screen.landscape .gigya-layout-row.with-divider .gigya-composite-control.gigya-composite-control-button,.gigya-screen.landscape .gigya-layout-row.with-divider .gigya-composite-control.gigya-composite-control-link.gigya-button-link,.gigya-screen.landscape .gigya-layout-row.with-divider .gigya-composite-control.gigya-composite-control-submit{padding-bottom:0}.gigya-screen.landscape form.gigya-form-error .gigya-layout-row.with-divider,.gigya-screen.landscape form.gigya-form-error .gigya-layout-row.with-divider .gigya-composite-control.gigya-composite-control-button,.gigya-screen.landscape form.gigya-form-error .gigya-layout-row.with-divider .gigya-composite-control.gigya-composite-control-link.gigya-button-link,.gigya-screen.landscape form.gigya-form-error .gigya-layout-row.with-divider .gigya-composite-control.gigya-composite-control-submit{padding-bottom:10px}.gigya-screen.landscape form.gigya-form-error .gigya-layout-row.with-divider .gigya-composite-control.gigya-composite-control-form-error.gigya-error-display-active{padding-bottom:0}.gigya-screen .gigya-layout-row.with-divider>.gigya-layout-cell{min-width:48%;width:48%}.gigya-screen .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider{min-width:4%;width:4%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY7h8+TIABPYCeicnV7oAAAAASUVORK5CYII=);background-position:50%}.gigya-screen .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider>.gigya-divider-content{padding:0;position:relative;line-height:16px;background:#fff;text-align:center;min-width:10px}.gigya-screen.portrait .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider{height:81px;background-repeat:repeat-x;position:relative}.gigya-screen.portrait .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider>.gigya-divider-content{padding:0 10px 2px 10px;position:absolute;display:inline-block;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.gigya-screen.landscape .gigya-layout-row .gigya-layout-cell.under-site-login{width:370px;text-align:center;min-width:0;margin-left:460px}.gigya-screen.landscape .gigya-layout-row.with-divider{display:-webkit-box;display:-ms-flexbox;display:flex}.gigya-screen.landscape .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider{margin-top:41px;width:87px;background-repeat:repeat-y}.gigya-screen.landscape .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider>.gigya-divider-content{display:block;line-height:15px;padding:10px 0;top:83px;left:0}.gigya-screen.landscape .gigya-layout-row.with-divider>.gigya-layout-cell.with-site-login,.gigya-screen.landscape .gigya-layout-row.with-divider>.gigya-layout-cell.with-social-login{min-width:0;width:370px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-link{margin-left:24%;margin-top:8%}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-email-text{font-weight:700;width:207px;margin:0 auto;font-size:15px;padding-bottom:25px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-email-code-header-text{width:240px;margin:0 auto;padding-top:6px;padding-bottom:5px;font-size:15px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-header-subtext,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-header-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-phonenumber{display:inline}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-header-subtext+.gig-tfa-label{margin-top:40px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-example{display:block}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-label{padding-bottom:6px;display:block;margin:0}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-label,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-example,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-select,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-header-text,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-yourphone-label{margin:0 0 18px 0;padding:0}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-header-text{margin:0}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox{font-size:15px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-error{text-align:center;margin-bottom:18px;margin-top:-10px;font-size:15px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-error:empty{display:none}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type span,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type span{display:inline}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-prefix{display:none;height:43px;width:10%;margin-top:0;margin-right:16px;text-align:center;background-color:#f2f2f2}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-number{margin-top:0;height:43px;width:100%}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container label{display:inline}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type-label,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type-label{display:inline-block;width:33.33333333%;margin-bottom:18px;margin-top:18px;vertical-align:top}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type-label,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type-label{padding:5px 0;width:30.33333333%}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type{margin-right:0;margin-left:0;width:33.33333333%}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type-sms,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type-sms{width:38.33333333%}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-register-type-voice-call,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-type-voice-call{width:31.33333333%}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container{margin:0}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit{background-image:none;-webkit-filter:none;filter:none;font-weight:400;line-height:normal;padding-top:10px;margin-bottom:25px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link{width:70px;line-height:43px;float:right;margin-top:-10px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-numbers{margin-top:26px;line-height:31px}.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-numbers:last-child{padding-bottom:25px}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container input.gig-tfa-phone-prefix,.gigya-screen.portrait div.gigya-tfa .gig-tfa-container input.gig-tfa-phone-prefix{display:none}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-link{font-size:19px;padding:0;margin-top:0}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-prefix{display:none;width:10%;margin-right:8px}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-number{width:100%}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-label{margin-left:0}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-error,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-code-resend{font-size:13px}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-header-text{font-size:13px;color:#4e515e}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-numbers{margin-top:30px}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-edit-numbers .gig-tfa-phone-edit-number{font-size:13px;margin-top:8px;color:#4e515e}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-number,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-prefix{font-size:13px;height:36px}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button,.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-button-container .gig-tfa-button-submit{margin-bottom:15px}.gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-phone-resend-header-text{display:block}.gigya-screen-dialog-mobile .gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-phone-number{width:100%}#gigya-login-screen.gigya-screen.landscape .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider>.gigya-divider-content{top:83px}#gigya-login-screen.gigya-screen.portrait.mobile .gigya-prefered-content-width{width:375px}#gigya-register-screen.gigya-screen.landscape .gigya-layout-row.with-divider>.gigya-layout-cell.with-divider>.gigya-divider-content{top:127px}#gigya-change-password-screen .error-wrapper{width:100%}#gigya-change-password-screen.portrait.mobile input[password]{width:260px}#gigya-change-password-screen.portrait.mobile input[submit]{width:276px}.gigya-screen div.gigya-composite-control-my-photo-widget.update-profile-my-photo{padding-right:20px}.gigya-screen .link-accounts-main-header,.gigya-screen .reauthentication-main-header{margin-bottom:10px}.gigya-subscribe-with-email-form .gigya-header{font-size:1.5em;line-height:1.5em;font-weight:bolder;text-align:center}.subscribe-thank-you{line-height:1.2em;font-size:1.3em;text-align:center}.subscribe-thank-you p{margin-bottom:.5em;text-align:center;font-size:inherit}.gigya-mac .gigya-screen label.letter-spacing-s{letter-spacing:-.3px}.gigya-ios .gigya-screen.landscape .gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-checkbox,.gigya-ios .gigya-screen.landscape input[type=checkbox],.gigya-ios .gigya-screen.portrait.mobile div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-checkbox,.gigya-ios .gigya-screen.portrait.mobile input[type=checkbox],.gigya-ios .gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-remember-checkbox,.gigya-ios .gigya-screen.portrait input[type=checkbox],.gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gigya-ios .gigya-screen.landscape .gig-tfa-code-remember-checkbox{margin-bottom:5px}.gigya-ios .gigya-screen#gigya-change-password-screen form label:first-child{letter-spacing:-.1px}.gigya-ios .gigya-screen#gigya-forgot-password-screen form label:first-child{letter-spacing:-.3px}.gigya-native-mobile-app.gigya-android .gigya-screen.portrait.mobile .gigya-composite-control.gigya-composite-control-social-login{right:28px}.gigya-edge .gigya-screen label.letter-spacing-s,.gigya-ie10 .gigya-screen.portrait label{letter-spacing:-.3px}.gigya-ie10 .gigya-screen.mobile label{letter-spacing:0}.gigya-ie10 .gigya-screen #gigya-change-password-screen.portrait .gigya-message{letter-spacing:-.2px}.gigya-ie10 .gigya-screen #gigya-change-password-screen.mobile{letter-spacing:0}.gigya-ie9 .gigya-screen#gigya-login-screen.landscape .gigya-layout-row.with-divider .gigya-layout-cell.with-divider{height:202px}.gigya-ie9 .gigya-screen#gigya-register-screen.landscape .gigya-layout-row.with-divider .gigya-layout-cell.with-divider{height:300px}.gigya-ie9 .gigya-screen select{font-size:13px}.gigya-ie9 .gigya-screen .gigya-input-password:not(.gigya-placeholder),.gigya-ie9 .gigya-screen .gigya-input-text:not(.gigya-placeholder),.gigya-ie9 .gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox:not(.gigya-placeholder){line-height:40px}.gigya-ie9 .gigya-screen .gigya-composite-control-checkbox .gigya-label,.gigya-ie9 .gigya-screen .gigya-composite-control-multi-choice .gigya-multi-choice-item label{display:inline}.gigya-ie8 .gigya-screen .gigya-layout-cell{margin-left:0!important}.gigya-ie8 .gigya-screen .gigya-layout-cell.under-site-login{margin-left:460px!important}.gigya-ie8 .gigya-screen .gigya-input-password,.gigya-ie8 .gigya-screen .gigya-input-text,.gigya-ie8 .gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox{padding-top:11px}.gigya-ie8 .gigya-screen.portrait .gigya-layout-row.with-divider .gigya-layout-cell.with-divider .gigya-divider-content{top:31px;left:45%}.gigya-ie8 .gigya-screen.portrait .gigya-input-password,.gigya-ie8 .gigya-screen.portrait .gigya-input-text,.gigya-ie8 .gigya-screen.portrait div.gigya-tfa .gig-tfa-container .gig-tfa-code-textbox{padding-top:11px}.gigya-ie8 .gigya-screen.portrait gigya-layout-cell{margin-left:0!important}.gigya-ie8 .gigya-screen.portrait #gigya-change-password-screen.portrait .gigya-message{letter-spacing:-.2px}.gigya-ie8 .gigya-screen.portrait #gigya-change-password-screen.mobile{letter-spacing:0}.gigya-ie8 .gigya-screen.portrait #gigya-forgot-password-screen.portrait label{letter-spacing:-.3px}.gigya-ie8 .gigya-screen.portrait #gigya-forgot-password-screen.mobile label{letter-spacing:0}.gigya-ie8 .gigya-screen#gigya-login-screen.landscape .gigya-layout-row.with-divider .gigya-layout-cell.with-divider{height:202px}.gigya-ie8 .gigya-screen#gigya-register-screen.landscape .gigya-layout-row.with-divider .gigya-layout-cell.with-divider{height:300px}</style></head>
+
+    <body><div id="__gigyaScreenSet_test-RegistrationLogin" style="display: none;"><div class="gigya-screen-set" id="test-RegistrationLogin" data-on-pending-registration-screen="test-RegistrationLogin/gigya-complete-registration-screen" data-on-pending-verification-screen="test-RegistrationLogin/gigya-verification-pending-screen" data-on-pending-tfa-registration-screen="test-RegistrationLogin/gigya-tfa-registration-screen" data-on-pending-tfa-verification-screen="test-RegistrationLogin/gigya-tfa-verification-screen" data-on-pending-password-change-screen="test-RegistrationLogin/gigya-password-change-required-screen" data-on-existing-login-identifier-screen="test-LinkAccounts/gigya-link-account-screen" data-on-pending-recent-login-screen="test-ReAuthentication/gigya-reauthentication-screen" data-width="364" data-responsive="true" data-dialog-style="modern" data-wizard-migration-keys="migrate_translation_handlers_unique_key_v3">
+    <div data-width="auto" gigya-conditional:class="viewport.width < 550 ?gigya-screen v2 portrait mobile:viewport.width < 920 ?gigya-screen v2 portrait:" class="gigya-screen v2 landscape" gigya-expression:data-caption="screenset.translations['GIGYA_LOGIN_SCREEN_CAPTION']" data-screenset-element-id="gigya-login-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 landscape" gigya-default-data-caption="null">
+        <form class="gigya-login-form" onsubmit="return false;" data-screenset-element-id="gigya-login-form" data-screenset-element-id-publish="true" data-screenset-roles="">
+            <div class="gigya-layout-row">
+            </div>
+            <div class="gigya-layout-row with-divider">
+                <div class="gigya-layout-cell responsive with-social-login">
+                    <h2 class="gigya-composite-control gigya-composite-control-header" data-translation-key="HEADER_111188166847589810_LABEL" data-screenset-element-id="__gig_template_element_12_1612874047687" data-screenset-element-id-publish="false" data-screenset-roles=""></h2>
+                    <div class="">
+                        <div class="gigya-composite-control gigya-composite-control-social-login">
+                            <div class="gigya-social-login gigya-reset" data-screenset-element-id="__gig_template_element_18_1612874047688" data-screenset-element-id-publish="false" data-screenset-roles="">
+                                <param name="tabIndex" value="0">
+                                <param name="version" value="2">
+                                <param name="width" value="420" gigya-conditional:value="screenset.width < 430?100%">
+                                <param name="height" value="100">
+                                <param name="enabledProviders" value="facebook,googleplus,twitter,linkedin,amazon,yahoo">
+                                <param name="loginMode" value="standard">
+                                <param name="buttonsStyle" value="fullLogoColored">
+                                <param name="pagingButtonStyle" value="newArrows" gigya-conditional:value="screenset.width < 430?auto:">
+                                <param name="buttonSize" value="45">
+                                <param name="columns" gigya-conditional:value="screenset.width < 430?2:">
+                                <param name="showWhatsThis" value="false">
+                                <param name="showTermsLink" value="false">
+                                <param name="hideGigyaLink" value="true">
+                                <param name="_pluginCenterFix" value="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell responsive with-divider">
+                    <label class="gigya-divider-content gigya-composite-control gigya-composite-control-label" data-translation-key="LABEL_48902362044111190_LABEL" data-screenset-element-id="__gig_template_element_13_1612874047687" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+                </div>
+                <div class="gigya-layout-cell responsive with-site-login">
+                    <h2 class="gigya-composite-control gigya-composite-control-header" data-translation-key="HEADER_131443300282291300_LABEL" data-screenset-element-id="__gig_template_element_14_1612874047687" data-screenset-element-id-publish="false" data-screenset-roles=""></h2>
+                    <div class="gigya-composite-control gigya-composite-control-textbox">
+                        <input type="text" class="gigya-input-text" name="username" tabindex="0" formnovalidate="formnovalidate" gigya-expression:data-gigya-placeholder="screenset.translations['LOGINID_1311311543682226_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['LOGINID_1311311543682226_PLACEHOLDER']" data-screenset-element-id="__gig_template_element_7_1612874047676" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-data-gigya-placeholder="null" gigya-default-aria-label="null" data-gigya-name="loginID" data-original-value="">
+                        <span class="gigya-error-msg" data-bound-to="loginID" data-screenset-element-id="__gig_template_element_3_1612874047675" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-password">
+                        <input type="password" name="password" class="gigya-input-password" tabindex="0" formnovalidate="formnovalidate" gigya-expression:data-gigya-placeholder="screenset.translations['PASSWORD_132128826476804690_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['PASSWORD_132128826476804690_PLACEHOLDER']" data-screenset-element-id="__gig_template_element_8_1612874047677" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-data-gigya-placeholder="null" gigya-default-aria-label="null" data-gigya-name="password" data-original-value="">
+                        <span class="gigya-error-msg" data-bound-to="password" data-screenset-element-id="__gig_template_element_4_1612874047675" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-composite-control gigya-composite-control-checkbox gigya-keep-me-logged-in">
+                                <input type="checkbox" name="remember" class="gigya-input-checkbox" tabindex="0" data-screenset-element-id="gigya-checkbox-remember" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="remember" data-original-value="false">
+                                <label class="gigya-label" data-screenset-element-for="gigya-checkbox-remember">
+                                    <span class="gigya-label-text gigya-checkbox-text" data-translation-key="CHECKBOX_76374189532411820_LABEL" data-screenset-element-id="__gig_template_element_15_1612874047687" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                                    <label class="gigya-required-display gigya-reset" data-bound-to="remember" style="" data-screenset-element-id="__gig_template_element_11_1612874047683" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gigya-layout-cell">
+                            <a data-switch-screen="gigya-forgot-password-screen" class="gigya-forgotPassword gigya-composite-control gigya-composite-control-link" data-translation-key="LINK_146308315993881860_LABEL" data-screenset-element-id="__gig_template_element_16_1612874047687" data-screenset-element-id-publish="false" data-screenset-roles=""></a>
+                        </div>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-captcha-widget gigya-unsupported gigya-v2">
+                        <div class="gigya-captcha-wrapper gigya-error-display" data-error-flags="captchaNeeded" data-bound-to="gigya-login-form" data-screenset-element-id="__gig_template_element_1_1612874047674" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                            <div class="gigya-captcha gigya-reset" data-screenset-element-id="__gig_template_element_10_1612874047683" data-screenset-element-id-publish="false" data-screenset-roles="">
+                                <param name="theme" value="white">
+                            </div>
+                            <span class="gigya-error-msg" data-bound-to="captchaText" data-screenset-element-id="__gig_template_element_5_1612874047675" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-submit">
+                        <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_142674579108303380_VALUE']" data-screenset-element-id="__gig_template_element_9_1612874047682" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-value="null">
+                    </div>
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-login-form" data-screenset-element-id="__gig_template_element_2_1612874047675" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-login-form" data-screenset-element-id="__gig_template_element_6_1612874047675" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell responsive under-site-login">
+                    <a data-switch-screen="gigya-register-screen" class="gigya-composite-control gigya-composite-control-link" data-translation-key="LINK_105018431100429140_LABEL" data-screenset-element-id="__gig_template_element_17_1612874047687" data-screenset-element-id-publish="false" data-screenset-roles=""></a>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </form>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 landscape" gigya-conditional:class="viewport.width < 550 ?gigya-screen v2 portrait mobile:viewport.width < 920 ?gigya-screen v2 portrait:" data-on-pending-verification-screen="gigya-verification-sent-screen" gigya-expression:data-caption="screenset.translations['GIGYA_REGISTER_SCREEN_CAPTION']" data-screenset-element-id="gigya-register-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 landscape" gigya-default-data-caption="null">
+        <form class="gigya-register-form" onsubmit="return false;" data-screenset-element-id="gigya-register-form" data-screenset-element-id-publish="true" data-screenset-roles="">
+            <div class="gigya-layout-row"></div>
+            <div class="gigya-layout-row with-divider">
+                <div class="gigya-layout-cell responsive with-social-login" data-screenset-element-id="register-social-login" data-screenset-element-id-publish="true" data-screenset-roles="">
+                    <div class="gigya-layout-row">
+                        <h2 class="gigya-composite-control gigya-composite-control-header" style="display: block;" data-translation-key="HEADER_108728337563591200_LABEL" data-screenset-element-id="__gig_template_element_34_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles=""></h2>
+                        <div class="gigya-composite-control gigya-composite-control-social-login" style="display: block;">
+                            <div class="gigya-social-login gigya-reset" data-screenset-element-id="__gig_template_element_40_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles="">
+                                <param name="tabIndex" value="0">
+                                <param name="version" value="2">
+                                <param value="420" name="width" gigya-conditional:value="screenset.width < 430?100%">
+                                <param value="100" name="height">
+                                <param name="enabledProviders" value="facebook,googleplus,twitter,linkedin,amazon,yahoo">
+                                <param name="loginMode" value="standard">
+                                <param name="buttonsStyle" value="fullLogoColored">
+                                <param name="pagingButtonStyle" value="newArrows" gigya-conditional:value="screenset.width < 430?auto:">
+                                <param name="buttonSize" value="45">
+                                <param name="columns" gigya-conditional:value="screenset.width < 430?2:">
+                                <param name="showWhatsThis" value="false">
+                                <param name="showTermsLink" value="false">
+                                <param name="hideGigyaLink" value="true">
+                                <param name="_pluginCenterFix" value="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                    <div class="gigya-layout-row"></div>
+                </div>
+                <div class="gigya-layout-cell responsive with-divider">
+                    <label class="gigya-divider-content gigya-label-text gigya-composite-control gigya-composite-control-label" data-translation-key="LABEL_139978773486588850_LABEL" data-screenset-element-id="__gig_template_element_35_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+                </div>
+                <div class="gigya-layout-cell responsive with-site-login" data-screenset-element-id="register-site-login" data-screenset-element-id-publish="true" data-screenset-roles="">
+                    <div class="gigya-layout-row">
+                        <h2 class="gigya-composite-control gigya-composite-control-header" data-translation-key="HEADER_63695688742051540_LABEL" data-screenset-element-id="__gig_template_element_36_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles=""></h2>
+                        <div class="gigya-layout-row">
+                            <div class="gigya-composite-control gigya-composite-control-textbox">
+                                <input type="text" class="gigya-input-text" name="email" show-valid-checkmark="true" data-display-name="" aria-label="Email" formnovalidate="formnovalidate" tabindex="0" gigya-expression:data-gigya-placeholder="screenset.translations['LOGINID_126653578050634370_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['LOGINID_126653578050634370_PLACEHOLDER']" data-screenset-element-id="__gig_template_element_26_1612874047691" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-data-gigya-placeholder="null" gigya-default-aria-label="Email" data-gigya-name="email" data-original-value="">
+                                <span class="gigya-error-msg" data-bound-to="email" data-screenset-element-id="__gig_template_element_20_1612874047690" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row with-two-inputs" data-screenset-element-id="names-row" data-screenset-element-id-publish="true" data-screenset-roles="">
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                                <input type="text" aria-label="First name" class="gigya-input-text" name="profile.firstName" show-valid-checkmark="true" formnovalidate="formnovalidate" tabindex="0" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_72105706170970860_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_72105706170970860_PLACEHOLDER']" data-screenset-element-id="__gig_template_element_27_1612874047691" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-data-gigya-placeholder="null" gigya-default-aria-label="First name" data-gigya-name="profile.firstName" data-original-value="">
+                                <span class="gigya-error-msg" data-bound-to="profile.firstName" data-screenset-element-id="__gig_template_element_21_1612874047690" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                            </div>
+                        </div>
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                                <input type="text" aria-label="Last name" class="gigya-input-text" name="profile.lastName" show-valid-checkmark="true" tabindex="0" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_75385478551382400_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_75385478551382400_PLACEHOLDER']" data-screenset-element-id="__gig_template_element_28_1612874047693" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-data-gigya-placeholder="null" gigya-default-aria-label="Last name" data-gigya-name="profile.lastName" data-original-value="">
+                                <span class="gigya-error-msg" data-bound-to="profile.lastName" data-screenset-element-id="__gig_template_element_22_1612874047690" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row with-two-inputs" data-screenset-element-id="password-row" data-screenset-element-id-publish="true" data-screenset-roles="">
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-composite-control gigya-composite-control-password" style="display: block;">
+                                <input type="password" aria-label="Password" name="password" class="gigya-input-password" show-valid-checkmark="true" tabindex="0" show-password-strength="left" gigya-conditional:show-password-strength="viewport.width < 920?up" gigya-expression:data-gigya-placeholder="screenset.translations['PASSWORD_92109928057504110_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['PASSWORD_92109928057504110_PLACEHOLDER']" data-screenset-element-id="__gig_template_element_29_1612874047693" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-show-password-strength="left" gigya-default-data-gigya-placeholder="null" gigya-default-aria-label="Password" data-gigya-name="password" data-original-value="">
+                                <span class="gigya-error-msg" data-bound-to="password" data-screenset-element-id="__gig_template_element_23_1612874047690" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                            </div>
+                        </div>
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-composite-control gigya-composite-control-password">
+                                <input type="password" aria-label="Confirm password" class="gigya-input-password" name="passwordRetype" tabindex="0" show-valid-checkmark="true" data-required="true" gigya-expression:data-gigya-placeholder="screenset.translations['PASSWORD_18495765554860224_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['PASSWORD_18495765554860224_PLACEHOLDER']" data-screenset-element-id="__gig_template_element_30_1612874047694" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-data-gigya-placeholder="null" gigya-default-aria-label="Confirm password" data-gigya-name="passwordRetype" data-original-value="">
+                                <span class="gigya-error-msg" data-bound-to="passwordRetype" data-screenset-element-id="__gig_template_element_24_1612874047690" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                            </div>
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-checkbox">
+                        <input type="checkbox" name="data.subscribe" class="gigya-input-checkbox" data-display-name="" tabindex="0" data-screenset-element-id="gigya-checkbox-subscribe" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="data.subscribe" data-original-value="false">
+                        <label class="gigya-label" data-screenset-element-for="gigya-checkbox-subscribe">
+                            <span class="gigya-label-text gigya-checkbox-text" data-translation-key="CHECKBOX_11798816851057300_LABEL" data-screenset-element-id="__gig_template_element_37_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                            <label class="gigya-required-display gigya-reset" data-bound-to="data.subscribe" style="" data-screenset-element-id="__gig_template_element_32_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                        </label>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-checkbox">
+                        <input type="checkbox" name="data.terms" class="gigya-input-checkbox" data-display-name="" tabindex="0" data-screenset-element-id="gigya-checkbox-terms" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="data.terms" data-original-value="false">
+                        <label class="gigya-label" data-screenset-element-for="gigya-checkbox-terms">
+                            <span class="gigya-label-text gigya-checkbox-text" data-translation-key="CHECKBOX_79786885293367740_LABEL" data-screenset-element-id="__gig_template_element_38_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                            <label class="gigya-required-display gigya-reset" data-bound-to="data.terms" style="" data-screenset-element-id="__gig_template_element_33_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                        </label>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-submit">
+                        <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_7667737432077126_VALUE']" data-screenset-element-id="__gig_template_element_31_1612874047694" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-value="null">
+                    </div>
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-register-form" data-screenset-element-id="__gig_template_element_19_1612874047690" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-register-form" data-screenset-element-id="__gig_template_element_25_1612874047690" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell responsive under-site-login">
+                    <a data-switch-screen="gigya-login-screen" class="gigya-composite-control gigya-composite-control-link" data-translation-key="LINK_55817364832410216_LABEL" data-screenset-element-id="__gig_template_element_39_1612874047695" data-screenset-element-id-publish="false" data-screenset-roles=""></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_COMPLETE_REGISTRATION_SCREEN_CAPTION']" data-screenset-element-id="gigya-complete-registration-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <form class="gigya-profile-form" onsubmit="return false;" data-screenset-element-id="gigya-profile-form" data-screenset-element-id-publish="true" data-screenset-roles="">
+            <div class="gigya-layout-row">
+                <label class="gigya-composite-control gigya-composite-control-label" data-binding="true" data-translation-key="LABEL_124619257904412830_LABEL" data-screenset-element-id="gigya-UID-label" data-screenset-element-id-publish="true" data-screenset-roles=""></label><div class="gigya-composite-control-metadata">          <input type="hidden" class="gigya-metadata" name="password" data-screenset-element-id="gigya-completion-password" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="password" data-original-value=""> </div><label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text" data-translation-key="LABEL_82751524717670350_LABEL" data-screenset-element-id="__gig_template_element_50_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+                <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                    <label class="gigya-label" data-screenset-element-for="gigya-textbox-email">
+                        <span class="gigya-label-text" data-translation-key="TEXTBOX_136884197726350880_LABEL" data-screenset-element-id="__gig_template_element_51_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                        <label class="gigya-required-display gigya-reset" data-bound-to="email" style="" data-screenset-element-id="__gig_template_element_47_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                    </label>
+                    <input type="text" value="" name="email" class="gigya-input-text" formnovalidate="formnovalidate" tabindex="0" data-screenset-element-id="gigya-textbox-email" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="email" data-original-value="">
+                    <span class="gigya-error-msg" data-bound-to="email" data-screenset-element-id="__gig_template_element_42_1612874047698" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                </div>
+            <div class="gigya-composite-control gigya-composite-control-password"><label class="gigya-label" data-binding="true" data-screenset-element-id="__gig_template_element_54_1612874047700" data-screenset-element-id-publish="false" data-screenset-roles="" data-screenset-element-for="gigya-password-129673395814705760"><span class="gigya-label-text" data-translation-key="PASSWORD_129673395814705760_LABEL" data-screenset-element-id="__gig_template_element_52_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles=""></span><label class="gigya-required-display gigya-reset" data-bound-to="newPassword" style="" data-screenset-element-id="__gig_template_element_48_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label></label>          <input type="password" class="gigya-input-password" show-password-strength="up" gigya-conditional:show-password-strength="screenset.width < 900?up" autocomplete="new-password" show-valid-checkmark="true" name="newPassword" gigya-expression:data-gigya-placeholder="screenset.translations['PASSWORD_129673395814705760_PLACEHOLDER']" data-screenset-element-id="gigya-password-129673395814705760" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-show-password-strength="up" gigya-default-data-gigya-placeholder="null" data-gigya-name="newPassword" data-original-value="">     <span class="gigya-error-msg" data-bound-to="newPassword" data-screenset-element-id="__gig_template_element_43_1612874047698" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span> </div><div class="gigya-composite-control gigya-composite-control-password"><label class="gigya-label" data-binding="true" data-screenset-element-id="__gig_template_element_55_1612874047700" data-screenset-element-id-publish="false" data-screenset-roles="" data-screenset-element-for="gigya-password-39566403167939800"><span class="gigya-label-text" data-translation-key="PASSWORD_39566403167939800_LABEL" data-screenset-element-id="__gig_template_element_53_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles=""></span><label class="gigya-required-display gigya-reset" data-bound-to="passwordRetype" style="" data-screenset-element-id="__gig_template_element_49_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label></label>          <input type="password" class="gigya-input-password" show-password-strength="up" gigya-conditional:show-password-strength="screenset.width < 900?up" autocomplete="current-password" show-valid-checkmark="true" name="passwordRetype" gigya-expression:data-gigya-placeholder="screenset.translations['PASSWORD_39566403167939800_PLACEHOLDER']" data-screenset-element-id="gigya-password-39566403167939800" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-show-password-strength="up" gigya-default-data-gigya-placeholder="null" data-gigya-name="passwordRetype" data-original-value="">     <span class="gigya-error-msg" data-bound-to="passwordRetype" data-screenset-element-id="__gig_template_element_44_1612874047698" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span> </div></div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                    <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_31429658457676556_VALUE']" data-screenset-element-id="__gig_template_element_46_1612874047699" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-value="null">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-profile-form" data-screenset-element-id="__gig_template_element_41_1612874047697" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form" data-screenset-element-id="__gig_template_element_45_1612874047698" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500? gigya-screen v2 portrait mobile" gigya-expression:data-caption="screenset.translations['GIGYA_FORGOT_PASSWORD_SCREEN_CAPTION']" data-screenset-element-id="gigya-forgot-password-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <form class="gigya-reset-password-form" data-on-success-screen="gigya-forgot-password-success-screen" onsubmit="return false;" data-screenset-element-id="gigya-reset-password-form" data-screenset-element-id-publish="true" data-screenset-roles="">
+            <label class="gigya-composite-control gigya-composite-control-label main-text letter-spacing-s" data-translation-key="LABEL_47776247120507590_LABEL" data-screenset-element-id="__gig_template_element_61_1612874047703" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-composite-control-textbox email-wrapper" style="display: block;"><label class="gigya-label" data-screenset-element-for="gigya-textbox-loginID"><span class="gigya-label-text" data-translation-key="LOGINID_1762354922073180_LABEL" data-screenset-element-id="__gig_template_element_62_1612874047703" data-screenset-element-id-publish="false" data-screenset-roles=""></span><label class="gigya-required-display gigya-reset" data-bound-to="loginID" data-screenset-element-id="__gig_template_element_60_1612874047703" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label></label>
+                    <input type="text" name="username" class="gigya-input-text" formnovalidate="formnovalidate" tabindex="0" data-screenset-element-id="gigya-textbox-loginID" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="loginID" data-original-value="">
+                    <span class="gigya-error-msg" data-bound-to="loginID" data-screenset-element-id="__gig_template_element_57_1612874047700" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-composite-control-submit submit-wrapper">
+                    <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_81725475708397440_VALUE']" data-screenset-element-id="__gig_template_element_59_1612874047701" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-value="null">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-reset-password-form" data-screenset-element-id="__gig_template_element_56_1612874047700" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-reset-password-form" data-screenset-element-id="__gig_template_element_58_1612874047700" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <a class="gigya-composite-control gigya-composite-control-link" data-switch-screen="gigya-login-screen" data-translation-key="LINK_125263109889403890_LABEL" data-screenset-element-id="__gig_template_element_63_1612874047703" data-screenset-element-id-publish="false" data-screenset-roles=""></a>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell"></div>
+                <div class="gigya-layout-cell"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_FORGOT_PASSWORD_SUCCESS_SCREEN_CAPTION']" data-screenset-element-id="gigya-forgot-password-success-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <div class="gigya-layout-row">
+            <label class="gigya-composite-control gigya-composite-control-label main-text gigya-message" data-translation-key="LABEL_32342199862391930_LABEL" data-screenset-element-id="__gig_template_element_64_1612874047704" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <a tabindex="-1" class="gigya-composite-control gigya-composite-control-link gigya-button-link" data-switch-screen="gigya-login-screen" style="text-align: center;" data-translation-key="LINK_64563424514074200_LABEL" data-screenset-element-id="__gig_template_element_65_1612874047704" data-screenset-element-id-publish="false" data-screenset-roles=""></a>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row"></div>
+        <div class="gigya-clear"></div>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_RESET_PASSWORD_SCREEN_CAPTION']" data-screenset-element-id="gigya-reset-password-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <form class="gigya-reset-password-form" data-on-success-screen="gigya-reset-password-success-screen" onsubmit="return false;" data-screenset-element-id="gigya-reset-password-form" data-screenset-element-id-publish="true" data-screenset-roles="">
+            <div class="gigya-layout-row">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text" data-translation-key="LABEL_31901611131936240_LABEL" data-screenset-element-id="__gig_template_element_73_1612874047706" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+                <div class="gigya-composite-control gigya-composite-control-password"><label class="gigya-label" data-screenset-element-for="gigya-password-newPassword"><span class="gigya-label-text" data-translation-key="PASSWORD_24487772290225964_LABEL" data-screenset-element-id="__gig_template_element_74_1612874047706" data-screenset-element-id-publish="false" data-screenset-roles=""></span><label class="gigya-required-display gigya-reset" data-bound-to="newPassword" data-screenset-element-id="__gig_template_element_71_1612874047706" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label></label><input type="password" name="newPassword" class="gigya-input-password" tabindex="0" show-password-strength="left" gigya-conditional:show-password-strength="viewport.width < 900?up" show-valid-checkmark="true" data-screenset-element-id="gigya-password-newPassword" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-show-password-strength="left" data-gigya-name="newPassword" data-original-value=""><span class="gigya-error-msg" data-bound-to="newPassword" data-screenset-element-id="__gig_template_element_67_1612874047705" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span></div>
+                <div class="gigya-composite-control gigya-composite-control-password"><label class="gigya-label" data-screenset-element-for="gigya-password-passwordRetype"><span class="gigya-label-text" data-translation-key="PASSWORD_53816046531769560_LABEL" data-screenset-element-id="__gig_template_element_75_1612874047706" data-screenset-element-id-publish="false" data-screenset-roles=""></span><label class="gigya-required-display gigya-reset" data-bound-to="passwordRetype" data-screenset-element-id="__gig_template_element_72_1612874047706" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label></label><input type="password" name="passwordRetype" class="gigya-input-password" data-required="true" tabindex="0" show-valid-checkmark="true" data-screenset-element-id="gigya-passsord-passwordRetype" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="passwordRetype" data-original-value=""><span class="gigya-error-msg" data-bound-to="passwordRetype" data-screenset-element-id="__gig_template_element_68_1612874047705" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span></div>
+                <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;"><input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_48518527117736720_VALUE']" data-screenset-element-id="__gig_template_element_70_1612874047706" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-value="null"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell"></div>
+                <div class="gigya-layout-cell"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-reset-password-form" data-screenset-element-id="__gig_template_element_66_1612874047705" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-reset-password-form" data-screenset-element-id="__gig_template_element_69_1612874047705" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_RESET_PASSWORD_SUCCESS_SCREEN_CAPTION']" data-screenset-element-id="gigya-reset-password-success-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <div class="gigya-layout-row"><label class="gigya-composite-control gigya-composite-control-label gigya-message main-text" data-translation-key="LABEL_43754194743648540_LABEL" data-screenset-element-id="__gig_template_element_76_1612874047707" data-screenset-element-id-publish="false" data-screenset-roles=""></label></div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+          <a class="gigya-composite-control gigya-composite-control-link gigya-button-link" data-switch-screen="gigya-login-screen" style="text-align: center;" target="_blank" data-translation-key="LINK_122104312720648740_LABEL" data-screenset-element-id="__gig_template_element_77_1612874047707" data-screenset-element-id-publish="false" data-screenset-roles=""></a>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row"></div>
+        <div class="gigya-clear"></div>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_PASSWORD_CHANGE_REQUIRED_SCREEN_CAPTION']" data-screenset-element-id="gigya-password-change-required-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <form class="gigya-profile-form" onsubmit="return false;" data-screenset-element-id="gigya-profile-form" data-screenset-element-id-publish="true" data-screenset-roles="">
+            <div class="gigya-layout-row">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text" data-translation-key="LABEL_16240548663414458_LABEL" data-screenset-element-id="__gig_template_element_87_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+                <div class="gigya-composite-control gigya-composite-control-password" style="display: block;">
+                    <label class="gigya-label" data-screenset-element-for="password">
+                        <span class="gigya-label-text" data-translation-key="PASSWORD_101426512808638880_LABEL" data-screenset-element-id="__gig_template_element_88_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                        <label class="gigya-required-display gigya-reset" data-bound-to="password" data-screenset-element-id="__gig_template_element_84_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                    </label>
+                    <input type="password" name="password" class="gigya-input-password" tabindex="0" show-valid-checkmark="true" data-screenset-element-id="gigya-password-password" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="password" data-original-value="">
+                    <span class="gigya-error-msg" data-bound-to="password" data-screenset-element-id="__gig_template_element_79_1612874047707" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-password">
+                    <label class="gigya-label" data-screenset-element-for="gigya-password-newPassword">
+                        <span class="gigya-label-text" data-translation-key="PASSWORD_17036595420608126_LABEL" data-screenset-element-id="__gig_template_element_89_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                        <label class="gigya-required-display gigya-reset" data-bound-to="newPassword" data-screenset-element-id="__gig_template_element_85_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                    </label>
+                    <input type="password" name="newPassword" class="gigya-input-password" tabindex="0" show-valid-checkmark="true" show-password-strength="left" gigya-conditional:show-password-strength="viewport.width < 900?up" data-screenset-element-id="gigya-password-newPassword" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-show-password-strength="left" data-gigya-name="newPassword" data-original-value="">
+                    <span class="gigya-error-msg" data-bound-to="newPassword" data-screenset-element-id="__gig_template_element_80_1612874047707" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-password" style="display: block;">
+                    <label class="gigya-label" data-screenset-element-for="gigya-password-passwordRetype">
+                        <span class="gigya-label-text" data-translation-key="PASSWORD_19612919353342308_LABEL" data-screenset-element-id="__gig_template_element_90_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                        <label class="gigya-required-display gigya-reset" data-bound-to="passwordRetype" data-screenset-element-id="__gig_template_element_86_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                    </label>
+                    <input type="password" name="passwordRetype" class="gigya-input-password" data-required="true" tabindex="0" show-valid-checkmark="true" data-screenset-element-id="gigya-passsord-passwordRetype" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="passwordRetype" data-original-value="">
+                    <span class="gigya-error-msg" data-bound-to="passwordRetype" data-screenset-element-id="__gig_template_element_81_1612874047707" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                </div>
+                <div class="gigya-layout-cell">
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+            </div>
+            <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_65931489860940900_VALUE']" data-screenset-element-id="__gig_template_element_83_1612874047708" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-value="null">
+            </div>
+            <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-profile-form" data-screenset-element-id="__gig_template_element_78_1612874047707" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form" data-screenset-element-id="__gig_template_element_82_1612874047707" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </form>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_VERIFICATION_PENDING_SCREEN_CAPTION']" data-screenset-element-id="gigya-verification-pending-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <form class="gigya-resend-verification-code-form" data-on-success-screen="gigya-verification-sent-screen" onsubmit="return false;" data-screenset-element-id="gigya-resend-verification-code-form" data-screenset-element-id-publish="true" data-screenset-roles="">
+            <div class="gigya-layout-row">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label" style="display: block;" data-translation-key="LABEL_114745734160901840_LABEL" data-screenset-element-id="__gig_template_element_96_1612874047710" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+                <div class="gigya-composite-control gigya-spacer" data-units="1" style="height: 10px;">
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                    <label class="gigya-label" data-screenset-element-for="gigya-textbox-email">
+                        <span class="gigya-label-text" data-translation-key="TEXTBOX_53553186815043370_LABEL" data-screenset-element-id="__gig_template_element_97_1612874047710" data-screenset-element-id-publish="false" data-screenset-roles=""></span>
+                        <label class="gigya-required-display gigya-reset" data-bound-to="email" data-screenset-element-id="__gig_template_element_95_1612874047710" data-screenset-element-id-publish="false" data-screenset-roles="" aria-hidden="true">*</label>
+                    </label>
+                    <input type="text" name="email" class="gigya-input-text" formnovalidate="formnovalidate" tabindex="0" data-screenset-element-id="gigya-textbox-email" data-screenset-element-id-publish="true" data-screenset-roles="" data-gigya-name="email" data-original-value="">
+                    <span class="gigya-error-msg" data-bound-to="email" data-screenset-element-id="__gig_template_element_92_1612874047709" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-composite-control-submit" style="display: block;">
+                    <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_59040383411520670_VALUE']" data-screenset-element-id="__gig_template_element_94_1612874047710" data-screenset-element-id-publish="false" data-screenset-roles="" gigya-default-value="null">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-resend-verification-code-form" data-screenset-element-id="__gig_template_element_91_1612874047709" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-resend-verification-code-form" data-screenset-element-id="__gig_template_element_93_1612874047709" data-screenset-element-id-publish="false" data-screenset-roles="" aria-atomic="true" role="alert"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-spacer" data-units="8">
+                </div>
+                <label class="gigya-composite-control gigya-composite-control-label gigya-message" style="display: block;" data-translation-key="LABEL_135099439990555600_LABEL" data-screenset-element-id="__gig_template_element_98_1612874047710" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                </div>
+                <div class="gigya-layout-cell">
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-layout-cell">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </form>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_TFA_REGISTRATION_SCREEN_CAPTION']" data-screenset-element-id="gigya-tfa-registration-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <div class="gigya-layout-row">
+            <div class="gigya-composite-control gigya-composite-control-tfa-widget gigya-composite-control-tfa-register">
+                <div class="gigya-tfa gigya-reset" data-screenset-element-id="__gig_template_element_99_1612874047711" data-screenset-element-id-publish="false" data-screenset-roles=""><param name="mode" value="register"></div>
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+        </div>
+        <div class="gigya-clear">
+        </div>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_TFA_VERIFICATION_SCREEN_CAPTION']" data-screenset-element-id="gigya-tfa-verification-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <div class="gigya-layout-row">
+            <div class="gigya-composite-control gigya-composite-control-tfa-widget gigya-composite-control-tfa-verify">
+                <div class="gigya-tfa gigya-reset" data-screenset-element-id="__gig_template_element_100_1612874047711" data-screenset-element-id-publish="false" data-screenset-roles=""><param name="mode" value="verify"></div>
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+        </div>
+        <div class="gigya-clear">
+        </div>
+    </div>
+    <div data-width="auto" class="gigya-screen v2 portrait" gigya-conditional:class="viewport.width < 500 ?gigya-screen v2 portrait mobile:" gigya-expression:data-caption="screenset.translations['GIGYA_VERIFICATION_SENT_SCREEN_CAPTION']" data-screenset-element-id="gigya-verification-sent-screen" data-screenset-element-id-publish="true" data-screenset-roles="" gigya-default-class="gigya-screen v2 portrait" gigya-default-data-caption="null">
+        <div class="gigya-layout-row">
+            <div class="gigya-composite-control gigya-spacer" data-units="4">
+            </div>
+            <label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text" data-translation-key="LABEL_4529849558267223_LABEL" data-screenset-element-id="__gig_template_element_101_1612874047712" data-screenset-element-id-publish="false" data-screenset-roles=""></label>
+            <div class="gigya-composite-control gigya-spacer" data-units="5">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <a tabindex="-1" class="gigya-composite-control gigya-composite-control-link gigya-button-link" data-switch-screen="_finish" style="text-align: center;" data-translation-key="LINK_19224603862200704_LABEL" data-screenset-element-id="__gig_template_element_102_1612874047712" data-screenset-element-id-publish="false" data-screenset-roles=""></a>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-layout-cell">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-layout-cell">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+        </div>
+        <div class="gigya-clear">
+        </div>
+    </div>
+</div>
+</div><div id="gig_1612872882732_showDebugUI" gigid="showDebugUI" class="gig-debug-container" style="z-index: 1000000000; position: absolute;"><div class="gig-debug-hideButton">_</div><div class="gig-debug-bar-container" style="display: none;"><div class="gig-debug-user">Logged out</div><div class="gig-debug-apikey-container">API key: <input class="gig-debug-apikey" readonly="readonly">&nbsp;</div><div class="gig-debug-settings"><input type="checkbox" class="gig-debug-autoload">&nbsp;Auto load</div><div style="gig-debug-footer"><div class="gig-debug-historyButton">...</div><div class="gig-debug-lastLog"><div class="gig-debug-history-entry gig-debug-history-entry-hide" data-log-id="1612874070911_0.08543334088657484"><span class="gig-debug-timestamp">[14:34:30]</span>Event&nbsp;<span data-prop="event" class="">hide</span> fired (source=showScreenSet)</div></div><div class="gig-debug-detailsButton">...</div><div class="gig-debug-infoButton">Info</div><div class="gig-debug-importButton"><span class="gig-debug-importText">Import</span><input class="gig-debug-import" type="file"></div><div class="gig-debug-exportButton">Export</div><div class="gig-debug-clearButton">Clear</div></div></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
         <section class="section">
         <div class="container">
           <h1 class="title">
@@ -32,24 +1626,24 @@
               <strong>PMI</strong> Demo!
           </p>
           <p>
-              <nav class="breadcrumb" aria-label="breadcrumbs">
+              </p><nav class="breadcrumb" aria-label="breadcrumbs">
 
             </nav>
-          </p>
+          <p></p>
           <p>
               <a href="#" onclick="createUIDContainer();">Register</a>
-              <br />
-              <br />
+              <br>
+              <br>
               <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'test-ProfileUpdate'});">Show my Profile</a>
-              <br />
-              <br />
+              <br>
+              <br>
               <a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'test-RegistrationLogin'});">Login</a>
           </p>
           <p>
-              <br />
-              <br />
-              <br />
-              <br />
+              <br>
+              <br>
+              <br>
+              <br>
               <a href="#" onclick="gigya.accounts.logout();">Logout</a>
           </p>
         </div>
@@ -132,5 +1726,6 @@
 
 
         </script>
-    </body>
-    </html>
+    
+    
+<iframe title="Api Service" aria-hidden="true" src="https://cdns.eu1.gigya.com/gs/webSdk/Api.aspx?apiKey=3_3RNlByb_Fj2r_dY2FAE-FlCGhrBcFQj5TaSQsfvSt-8kuSRvK11npXlgZPlDqICQ&amp;version=latest&amp;build=11690#origin=https://victor.gigya-cs.com/consents/siteA/#&amp;gig_loggerConfig=%7B%22logLevel%22%3A0%2C%22clientMuteLevel%22%3A0%2C%22logTheme%22%3A1%7D" style="position: absolute; height: 0px; width: 0px; display: none;"></iframe><div class="gig-debug-container gig-debug-history" style="top: 98px; display: none;"><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse" data-log-id="1612872883688_0.6753610038516431"><span class="gig-debug-timestamp">[14:14:43]</span>Got callback for <span data-prop="event">socialize.getUserInfo</span> (source=showDebugUI, errorCode=0)</div><div class="gig-debug-history-entry gig-debug-history-entry-load" data-log-id="1612872883707_0.5976239956376412"><span class="gig-debug-timestamp">[14:14:43]</span>Event&nbsp;<span data-prop="event">load</span> fired (source=showDebugUI)</div><div class="gig-debug-history-entry gig-debug-history-entry-facebookLoaded" data-log-id="1612872883714_0.2148318304220247"><span class="gig-debug-timestamp">[14:14:43]</span>Global event&nbsp;<span data-prop="event" class="">facebookLoaded</span> fired</div><div class="gig-debug-history-entry gig-debug-history-entry-beforeRequest" data-log-id="1612874045895_0.9444451834380854"><span class="gig-debug-timestamp">[14:34:05]</span>Calling <span data-prop="event" class="">accounts.initRegistration</span></div><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse" data-log-id="1612874046387_0.2686393187198777"><span class="gig-debug-timestamp">[14:34:06]</span>Got callback for <span data-prop="event" class="">accounts.initRegistration</span></div><div class="gig-debug-history-entry gig-debug-history-entry-beforeRequest" data-log-id="1612874046397_0.7352075619645126"><span class="gig-debug-timestamp">[14:34:06]</span>Calling <span data-prop="event" class="">accounts.register</span></div><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse gig-debug-history-entry-error" data-log-id="1612874047011_0.4046382454202486"><span class="gig-debug-timestamp">[14:34:07]</span>Got callback for <span data-prop="event">accounts.register</span></div><div class="gig-debug-history-entry gig-debug-history-entry-beforePluginLoad" data-log-id="1612874047015_0.43674477396077926"><span class="gig-debug-timestamp">[14:34:07]</span>Global event&nbsp;<span data-prop="event" class="">beforePluginLoad</span> fired (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-beforePluginRequest" data-log-id="1612874047292_0.5811734928849102"><span class="gig-debug-timestamp">[14:34:07]</span>Calling UI plugin <span data-prop="event" class="">showScreenSet</span></div><div class="gig-debug-history-entry gig-debug-history-entry-beforeRequest" data-log-id="1612874047308_0.33923795130060697"><span class="gig-debug-timestamp">[14:34:07]</span>Calling <span data-prop="event" class="">accounts.getScreenSets</span> (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse" data-log-id="1612874047642_0.22851867948598414"><span class="gig-debug-timestamp">[14:34:07]</span>Got callback for <span data-prop="event">accounts.getScreenSets</span> (source=showScreenSet, errorCode=0)</div><div class="gig-debug-history-entry gig-debug-history-entry-onAfterModalCenter" data-log-id="1612874047653_0.6930892305499778"><span class="gig-debug-timestamp">[14:34:07]</span>Event&nbsp;<span data-prop="event">onAfterModalCenter</span> fired</div><div class="gig-debug-history-entry gig-debug-history-entry-load" data-log-id="1612874047725_0.8282745331088242"><span class="gig-debug-timestamp">[14:34:07]</span>Event&nbsp;<span data-prop="event" class="gig-debug-selected">load</span> fired (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-beforeRequest" data-log-id="1612874047739_0.572168346083646"><span class="gig-debug-timestamp">[14:34:07]</span>Calling <span data-prop="event">accounts.getPolicies</span> (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-beforeRequest" data-log-id="1612874047746_0.9458319788436365"><span class="gig-debug-timestamp">[14:34:07]</span>Calling <span data-prop="event">accounts.getSchema</span> (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-beforeRequest" data-log-id="1612874047754_0.754494742252446"><span class="gig-debug-timestamp">[14:34:07]</span>Calling <span data-prop="event">accounts.getAccountInfo</span> (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-beforeRequest" data-log-id="1612874047757_0.6005016168328068"><span class="gig-debug-timestamp">[14:34:07]</span>Calling <span data-prop="event">accounts.tfa.getProviders</span> (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-onAfterModalCenter" data-log-id="1612874047893_0.5600716881383492"><span class="gig-debug-timestamp">[14:34:07]</span>Event&nbsp;<span data-prop="event">onAfterModalCenter</span> fired</div><div class="gig-debug-history-entry gig-debug-history-entry-onRefreshExternalComponentsEvent" data-log-id="1612874047895_0.4752423090173139"><span class="gig-debug-timestamp">[14:34:07]</span>Event&nbsp;<span data-prop="event">onRefreshExternalComponentsEvent</span> fired (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse" data-log-id="1612874047901_0.44039124551023434"><span class="gig-debug-timestamp">[14:34:07]</span>Got callback for <span data-prop="event">accounts.getPolicies</span> (source=showScreenSet, errorCode=0)</div><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse" data-log-id="1612874048065_0.6617360862211115"><span class="gig-debug-timestamp">[14:34:08]</span>Got callback for <span data-prop="event">accounts.tfa.getProviders</span> (source=showScreenSet, errorCode=0)</div><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse" data-log-id="1612874048133_0.9164715052020178"><span class="gig-debug-timestamp">[14:34:08]</span>Got callback for <span data-prop="event">accounts.getSchema</span> (source=showScreenSet, errorCode=0)</div><div class="gig-debug-history-entry gig-debug-history-entry-afterResponse" data-log-id="1612874048146_0.4866255817054721"><span class="gig-debug-timestamp">[14:34:08]</span>Got callback for <span data-prop="event">accounts.getAccountInfo</span> (source=showScreenSet, errorCode=0)</div><div class="gig-debug-history-entry gig-debug-history-entry-beforeScreenLoad" data-log-id="1612874048152_0.7925445274066172"><span class="gig-debug-timestamp">[14:34:08]</span>Event&nbsp;<span data-prop="event">beforeScreenLoad</span> fired (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-onAfterModalCenter" data-log-id="1612874048195_0.18417663561039155"><span class="gig-debug-timestamp">[14:34:08]</span>Event&nbsp;<span data-prop="event">onAfterModalCenter</span> fired</div><div class="gig-debug-history-entry gig-debug-history-entry-afterScreenLoad" data-log-id="1612874048197_0.9549092136851218"><span class="gig-debug-timestamp">[14:34:08]</span>Event&nbsp;<span data-prop="event">afterScreenLoad</span> fired (source=showScreenSet)</div><div class="gig-debug-history-entry gig-debug-history-entry-hide" data-log-id="1612874070911_0.08543334088657484"><span class="gig-debug-timestamp">[14:34:30]</span>Event&nbsp;<span data-prop="event">hide</span> fired (source=showScreenSet)</div></div><div class="gig-debug-container gig-debug-data-details" style="top: 98px; display: none;"><div><div class="gig-debug-data-details-object"><ul><li><span class="gig-debug-propertyName">eventName:</span><span class="gig-debug-propertyValue">load</span></li><li><span class="gig-debug-propertyName">context:</span><span class="gig-debug-propertyValue"><div class="gig-debug-data-details-openButton">{ }</div><div class="gig-debug-data-details-closed"><div class="gig-debug-data-details-object"><ul><li><span class="gig-debug-propertyName">UID:</span><span class="gig-debug-propertyValue">4b270e757c7c487ba63a77babf03fb50</span></li><li><span class="gig-debug-propertyName">password:</span><span class="gig-debug-propertyValue">9q6g7ljy72a</span></li></ul></div></div></span></li><li><span class="gig-debug-propertyName">source:</span><span class="gig-debug-propertyValue">showScreenSet</span></li><li><span class="gig-debug-propertyName">instanceID:</span><span class="gig-debug-propertyValue">screenSet</span></li></ul></div></div></div></body></html>

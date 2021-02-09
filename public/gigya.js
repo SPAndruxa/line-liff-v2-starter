@@ -1,11 +1,8 @@
 // ### server injected code ###
 var gigya = window.gigya;
-/*if (typeof gigya == 'undefined' || !gigya.isGigya) {
+if (typeof gigya == 'undefined' || !gigya.isGigya) {
     gigya = {isGigya: true};
-}*/
-gigya = {
-    isGigya: true
-};
+}
 gigya.apiKey = '3_3RNlByb_Fj2r_dY2FAE-FlCGhrBcFQj5TaSQsfvSt-8kuSRvK11npXlgZPlDqICQ';
 gigya.defaultApiDomain = 'gigya.com';
 gigya.dataCenter = 'eu1';
@@ -18,7 +15,24 @@ gigya.gmidVersion = 'ver4';
 if (typeof gigya.partnerSettings == 'undefined') {
     gigya.partnerSettings = {
         "authMode": "cookie",
-        "globalConf": "{\n    // A comma-delimited list of provider names to enable.\n    enabledProviders: '*',\n\n    // Define the language of Gigya's user interface and error message.\n    lang: 'en',\n    \n    customLang: {\n            \"fr-ch\":{\n                account_is_disabled: 'New Custom Error',\n                password_must_contain_at_least: 'This is new custom text',\n                num_characters_total: '%num this is also custom text',\n                password_does_not_meet_complexity_requirements: 'error in English',\n                invalid_login_or_password: 'custom error',\n                email_address_is_invalid: 'custom error FRANCES'\n            },\n            \"it-ch\":{\n                account_is_disabled: 'New Custom Error',\n                password_must_contain_at_least: 'This is new custom text',\n                num_characters_total: '%num this is also custom text',\n                password_does_not_meet_complexity_requirements: 'error in English',\n                invalid_login_or_password: 'custom error',\n                email_address_is_invalid: 'custom error ITALIANO'\n            },\n            \"de-ch\":{\n                account_is_disabled: 'New Custom Error',\n                password_must_contain_at_least: 'This is new custom text',\n                num_characters_total: '%num this is also custom text',\n                password_does_not_meet_complexity_requirements: 'error in English',\n                invalid_login_or_password: 'custom error',\n                email_address_is_invalid: 'custom error ALEMAN'\n            }\n        },\n    \n    // Bind globally to events\n    // See: http://developers.gigya.com/display/GD/Events#Events-OverridingtheDefaultEventMap\n    customEventMap: {\n        eventMap: [{\n            events: '*',\n            args: [function(e) {\n                return e;\n            }],\n            method: function(e) {\n                if (e.fullEventName === 'login') {\n                    // Handle login event here.\n                } else if (e.fullEventName === 'logout') {\n                    // Handle logout event here.\n                }\n            }\n        }]\n    }\n}",
+        "globalConf": "{
+            \n    // A comma-delimited list of provider names to enable.
+            \n    enabledProviders: '*',\n\n    
+            // Define the language of Gigya's user interface and error message.
+            \n    lang: 'en',
+            \n    
+            \n    customLang: {
+                \n            \"fr-ch\":{
+                    \n                account_is_disabled: 'New Custom Error',
+                    \n                password_must_contain_at_least: 'This is new custom text',
+                    \n                num_characters_total: '%num this is also custom text',
+                    \n                password_does_not_meet_complexity_requirements: 'error in English',
+                    \n                invalid_login_or_password: 'custom error',
+                    \n                email_address_is_invalid: 'custom error FRANCES'
+                    \n            },
+                \n            \"it-ch\":{
+                     \n                account_is_disabled: 'New Custom Error',
+                     \n                password_must_contain_at_least: 'This is new custom text',\n                num_characters_total: '%num this is also custom text',\n                password_does_not_meet_complexity_requirements: 'error in English',\n                invalid_login_or_password: 'custom error',\n                email_address_is_invalid: 'custom error ITALIANO'\n            },\n            \"de-ch\":{\n                account_is_disabled: 'New Custom Error',\n                password_must_contain_at_least: 'This is new custom text',\n                num_characters_total: '%num this is also custom text',\n                password_does_not_meet_complexity_requirements: 'error in English',\n                invalid_login_or_password: 'custom error',\n                email_address_is_invalid: 'custom error ALEMAN'\n            }\n        },\n    \n    // Bind globally to events\n    // See: http://developers.gigya.com/display/GD/Events#Events-OverridingtheDefaultEventMap\n    customEventMap: {\n        eventMap: [{\n            events: '*',\n            args: [function(e) {\n                return e;\n            }],\n            method: function(e) {\n                if (e.fullEventName === 'login') {\n                    // Handle login event here.\n                } else if (e.fullEventName === 'logout') {\n                    // Handle logout event here.\n                }\n            }\n        }]\n    }\n}",
         "captchaProvider": "Google",
         "invisibleRecaptcha": {
             "siteKey": "6LfuCiwUAAAAACWvqC2sUz4coFBf1CtVF_jdj-9M"

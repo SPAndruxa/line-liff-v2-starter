@@ -1,8 +1,9 @@
 // ### server injected code ###
 var gigya = window.gigya;
-if (typeof gigya == 'undefined' || !gigya.isGigya) {
+/*if (typeof gigya == 'undefined' || !gigya.isGigya) {
     gigya = {isGigya: true};
-}
+}*/
+gigya = {isGigya: true};
 gigya.apiKey = '3_3RNlByb_Fj2r_dY2FAE-FlCGhrBcFQj5TaSQsfvSt-8kuSRvK11npXlgZPlDqICQ';
 gigya.defaultApiDomain = 'gigya.com';
 gigya.dataCenter = 'eu1';

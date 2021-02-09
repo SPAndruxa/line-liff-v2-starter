@@ -1,6 +1,5 @@
 // ### server injected code ###
 var gigya = window.gigya;
-console.log(gigya);
 if (typeof gigya == 'undefined' || !gigya.isGigya) {
     gigya = {isGigya: true};
 }

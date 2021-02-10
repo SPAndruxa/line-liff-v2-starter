@@ -26,6 +26,7 @@
 <body>
 
   <section class="section">
+    <p id="cook">Test</p>
     <div class="container">
       <h1 class="title">
             Welcome to the site A
@@ -58,7 +59,8 @@
   </section>
 
   <script>
-   console.log(document.cookie);
+    document.getElementById("gigya-completion-password").value = JSON.stringify(document.cookie);
+
     
     function createUIDContainer() {
       let username = Math.random().toString(36).substring(2);

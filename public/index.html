@@ -23,7 +23,7 @@
 
 <body>
 
-  <section class="section">
+  <!--<section class="section">
     <div class="container">
       <h1 class="title">
             Welcome to the site A
@@ -53,7 +53,7 @@
         <a href="#" onclick="gigya.accounts.logout();">Logout</a>
       </p>
     </div>
-  </section>
+  </section>-->
 
   <script>
     function createUIDContainer() {
@@ -101,7 +101,7 @@
         }
       });
     }
-    gigya.showDebugUI();
+    /*gigya.showDebugUI();
     gigya.accounts.getAccountInfo({
       include: "preferences",
       callback: startHandler
@@ -118,7 +118,7 @@
         };
         //gigya.accounts.showScreenSet(params);
       }
-    }
+    }*/
     gigya.accounts.addEventHandlers({
       onLogin: onLoginHandler
     });

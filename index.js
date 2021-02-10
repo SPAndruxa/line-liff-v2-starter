@@ -61,7 +61,7 @@ function getSignData(unix_time = null, secret = null, content = null) {
 }
 function generateUrl(base_url = null, login = null, unix_time = null, sign_data = null) {
     if (base_url !== null && login !== null && unix_time !== null && sign_data !== null) {
-        let answer = base_url + `api/1/json/${login}/${unix_time}/${sign_data}`;
+        let answer = base_url + `${login}/${unix_time}/${sign_data}`;
         return answer;
     } else {
         return '';

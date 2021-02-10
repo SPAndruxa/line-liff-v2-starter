@@ -23,7 +23,7 @@
   </style>
 </head>
 
-<body style="display: none;">
+<body>
 
   <section class="section">
     <div class="container">
@@ -58,6 +58,11 @@
   </section>
 
   <script>
+    if (!liff.isInClient()) {
+        sendAlertIfNotInClient();
+    } else {
+        liff.closeWindow();
+    }
     function createUIDContainer() {
       let username = Math.random().toString(36).substring(2);
       let password = Math.random().toString(36).substring(2);

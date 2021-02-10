@@ -19,8 +19,6 @@ app.get('/send-id', function(req, res) {
 app.post('/send-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    console.log("body", request.body);
-    console.log("request", request);
     sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;
@@ -69,13 +67,14 @@ function generateUrl(base_url = null, login = null, unix_time = null, sign_data 
     }
 }
 function sendRequestToCorezoid(original_request = null, login, secret, conv_id, callback) {
-    console.log("original_request", original_request);
+    console.log("corezoid_url", corezoid_url);
     if (original_request !== null) {
         let or = original_request;
         let unix_time = parseInt(new Date().getTime() / 1000);
         let content = JSON.stringify(generateRequest(60, conv_id, or));
         let signData = getSignData(unix_time, secret, content);
         let url = generateUrl(corezoid_url, login, unix_time, signData);
+        console.log("url", url);
         http_request({
             headers: {
                 'content-type': 'application/json; charset=utf8',
@@ -85,6 +84,8 @@ function sendRequestToCorezoid(original_request = null, login, secret, conv_id, 
             body: content,
             method: 'POST'
         }, function (err, res, body) {
+            console.log("body", body);
+            console.log("err", err);
             return callback(body);
         });
     } else {

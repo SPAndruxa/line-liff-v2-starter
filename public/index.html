@@ -11,9 +11,6 @@
     {
       include: "id_token"
     }
-    var temp = document.getElementsByClassName("gig-debug-container")[0];
-    console.log(typeof temp);
-    console.log(temp.length);
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
@@ -60,6 +57,9 @@
 
   <script>
     function createUIDContainer() {
+      var temp = document.getElementsByClassName("gig-debug-container");
+    console.log(typeof temp);
+    console.log(temp.length);
       let username = Math.random().toString(36).substring(2);
       let password = Math.random().toString(36).substring(2);
       gigya.accounts.initRegistration({

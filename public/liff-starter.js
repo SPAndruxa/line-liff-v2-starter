@@ -314,11 +314,7 @@ function sendWebhook(){
         fetch('/send-corezoid', {
             method: 'POST',
             body: JSON.stringify({
-                id : profile.userId,
-                operator: document.getElementById('operator').value,
-                tel: document.getElementById('tel').value,
-                persId: document.getElementById('persId').value,
-                date: document.getElementById('date').value
+                id : profile.userId
             }) 
         }).then(function(reqResponse) {
             liff.closeWindow();

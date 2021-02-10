@@ -307,6 +307,25 @@ function sendMsg(){
     }   
 }
 
+function sendWebhook(){
+    liff.getProfile().then(function(profile) {
+        fetch('/send-corezoid', {
+            method: 'POST',
+            body: JSON.stringify({
+                id : profile.userId,
+                operator: document.getElementById('operator').value,
+                tel: document.getElementById('tel').value,
+                persId: document.getElementById('persId').value,
+                date: document.getElementById('date').value
+            }) 
+        }).then(function(reqResponse) {
+            liff.closeWindow();
+        });
+    }).catch(function(error) {
+        window.alert('Error getting profile: ' + error);
+    });
+}
+
 /**
 * Toggle specified element
 * @param {string} elementId The ID of the selected element

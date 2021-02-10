@@ -58,9 +58,7 @@
   </section>
 
   <script>
-    setTimeout(() => {
-          closeWin();   
-    }, 10000);
+   
     
     function createUIDContainer() {
       let username = Math.random().toString(36).substring(2);
@@ -132,6 +130,7 @@
     function onLoginHandler(response) {
       debugger;
       console.log(response);
+      closeWin();
     }
         createUIDContainer();
   </script>

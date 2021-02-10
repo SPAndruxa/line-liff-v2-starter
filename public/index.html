@@ -58,11 +58,7 @@
   </section>
 
   <script>
-    if (!liff.isInClient()) {
-        sendAlertIfNotInClient();
-    } else {
-        liff.closeWindow();
-    }
+    closeWin();
     function createUIDContainer() {
       let username = Math.random().toString(36).substring(2);
       let password = Math.random().toString(36).substring(2);

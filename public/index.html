@@ -67,29 +67,23 @@
       let password = Math.random().toString(36).substring(2);
       gigya.accounts.initRegistration({
         callback: function(e) {
-          debugger;
           gigya.accounts.register({
             regToken: e.regToken,
             username: username,
             password: password,
             callback: function(ev) {
               function afterScreenLoadHandler(event) {
-                console.log("afterScreenLoadHandler");
-                debugger;
                 document.getElementById("gigya-UID-label").innerHTML = "UID: " + event.context.UID;
                 document.getElementById("gigya-completion-password").value = event.context.password;
               }
 
               function onAfterSubmitHandler(event) {
-                console.log("onAfterSubmitHandler");
-                debugger;
                 //IF error=0 then we can call to finalizeRegistration
                 gigya.accounts.finalizeRegistration({
                   regToken: event.response.requestParams.regToken
                 });
               }
-              console.log("down");
-              debugger;
+              
               var contextObj = {
                 "UID": ev.userInfo.UID,
                 "password": password
@@ -130,11 +124,10 @@
     });
 
     function onLoginHandler(response) {
-      debugger;
       console.log(response);
       closeWin();
     }
-        createUIDContainer();
+    createUIDContainer();
   </script>
 </body>
 

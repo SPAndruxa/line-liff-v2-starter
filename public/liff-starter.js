@@ -310,6 +310,7 @@ function sendMsg(){
 function sendWebhook(regData){
     liff.getProfile().then(function(profile) {
         regData.userId = profile.userId;
+        regData.language = liff.getLanguage();
         fetch('/send-corezoid', {
             method: 'POST',
             headers: {

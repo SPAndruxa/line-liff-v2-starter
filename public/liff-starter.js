@@ -292,7 +292,20 @@ function closeWin() {
         liff.closeWindow();
     }
 }
-
+function sendMsg(){
+    if (!liff.isInClient()) {
+        sendAlertIfNotInClient();
+    } else {
+        liff.sendMessages([{
+            'type': 'text',
+            'text': "You've successfully sent a message! Hooray!"
+        }]).then(function() {
+            window.alert('Message sent');
+        }).catch(function(error) {
+            window.alert('Error sending message: ' + error);
+        });
+    }   
+}
 
 /**
 * Toggle specified element

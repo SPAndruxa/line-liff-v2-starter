@@ -19,10 +19,8 @@ app.get('/send-id', function(req, res) {
 app.post('/send-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    request.body.server_ip = ip.address();
-    console.log(ip.address());
-    console.log(request.body);
-    console.log(request);
+    console.log("body", request.body);
+    console.log("request", request);
     sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
     try {
             res_cz = JSON.parse(res).ops[0].data;
@@ -38,6 +36,7 @@ app.post('/send-corezoid', function(request, response) {
 app.listen(port, () => console.log(`app listening on port ${port}!`));
 
 function generateRequest(timeout = 60, conv_id = null, data = null) {
+    console.log("data", data);
     if (conv_id !== null && data !== null) {
         let tmp_request = {
             "timeout": timeout,
@@ -71,6 +70,7 @@ function generateUrl(base_url = null, login = null, unix_time = null, sign_data 
     }
 }
 function sendRequestToCorezoid(original_request = null, login, secret, conv_id, callback) {
+    console.log("original_request", original_request);
     if (original_request !== null) {
         let or = original_request;
         let unix_time = parseInt(new Date().getTime() / 1000);

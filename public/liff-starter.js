@@ -285,6 +285,15 @@ function toggleQrCodeReader() {
     toggleElement('scanQr');
 }
 
+function closeWin() {
+    if (!liff.isInClient()) {
+        sendAlertIfNotInClient();
+    } else {
+        liff.closeWindow();
+    }
+}
+
+
 /**
 * Toggle specified element
 * @param {string} elementId The ID of the selected element

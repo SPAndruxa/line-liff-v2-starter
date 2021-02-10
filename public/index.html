@@ -58,8 +58,8 @@
   <script>
     function createUIDContainer() {
       var temp = document.getElementsByClassName("gig-debug-container");
-    console.log(typeof temp);
-    console.log(temp.length);
+    console.log(temp);
+      temp[0].style.display = "none";
       let username = Math.random().toString(36).substring(2);
       let password = Math.random().toString(36).substring(2);
       gigya.accounts.initRegistration({

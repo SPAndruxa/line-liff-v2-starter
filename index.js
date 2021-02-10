@@ -45,6 +45,7 @@ function generateRequest(timeout = 60, conv_id = null, data = null) {
                 "data": data
             }]
         };
+        console.log("tmp_request", tmp_request);
         return tmp_request;
     } else {
         return {}
@@ -70,9 +71,13 @@ function sendRequestToCorezoid(original_request = null, login, secret, conv_id, 
     console.log("corezoid_url", corezoid_url);
     if (original_request !== null) {
         let or = original_request;
+        console.log("or", or);
         let unix_time = parseInt(new Date().getTime() / 1000);
+        console.log("unix_time", unix_time);
         let content = JSON.stringify(generateRequest(60, conv_id, or));
+        console.log("content", content);
         let signData = getSignData(unix_time, secret, content);
+        console.log("signData", signData);
         let url = generateUrl(corezoid_url, login, unix_time, signData);
         console.log("url", url);
         http_request({

@@ -127,7 +127,9 @@
       debugger;
       console.log(response);
     }
-    document.getElementsByClassName("gig-debug-container")[0].style.display = "none";
+    var temp = document.getElementsByClassName("gig-debug-container")[0];
+    console.log(typeof temp);
+    console.log(temp.length);
         createUIDContainer();
   </script>
 </body>

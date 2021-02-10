@@ -313,9 +313,12 @@ function sendWebhook(){
             window.alert("then her");
         fetch('/send-corezoid', {
             method: 'POST',
-            body: {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
                 id : profile.userId
-            }
+            })
         }).then(function(reqResponse) {
             liff.closeWindow();
         });

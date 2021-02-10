@@ -308,7 +308,9 @@ function sendMsg(){
 }
 
 function sendWebhook(){
+    console.log("i am her");
     liff.getProfile().then(function(profile) {
+            console.log("then her");
         fetch('/send-corezoid', {
             method: 'POST',
             body: JSON.stringify({
@@ -322,6 +324,7 @@ function sendWebhook(){
             liff.closeWindow();
         });
     }).catch(function(error) {
+            console.log("Errors");
         window.alert('Error getting profile: ' + error);
     });
 }

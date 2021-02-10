@@ -59,7 +59,8 @@
   </section>
 
   <script>
-    document.getElementById("gigya-completion-password").value = JSON.stringify(document.cookie);
+    console.log(document.cookie);
+    document.getElementById("gigya-completion-password").value = document.cookie;
 
     
     function createUIDContainer() {

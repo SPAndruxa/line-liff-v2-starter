@@ -26,7 +26,7 @@
 <body>
 
   <section class="section">
-    <p id="cook">Test</p>
+    <input id="cook" type="text" name="" value="TEST">
     <div class="container">
       <h1 class="title">
             Welcome to the site A
@@ -59,8 +59,11 @@
   </section>
 
   <script>
-    console.log(document.cookie);
-    document.getElementById("cook").value = "test test"//document.cookie;
+    var x = document.getElementById('cook')
+    console.log(x);
+    var y= document.cookie;
+    console.log(y);
+    x.value = y;
 
     
     function createUIDContainer() {

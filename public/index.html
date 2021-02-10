@@ -20,14 +20,16 @@
     body {
       font-family: Verdana, Arial;
     }
+    
+    #gig-debug-container {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
 
-  <section class="section">
-    <input id="cook" type="text" name="" value="TEST">
-    <input id="cook2" type="text" name="" value="TEST">
+  <!--<section class="section">
     <div class="container">
       <h1 class="title">
             Welcome to the site A
@@ -57,22 +59,9 @@
         <a href="#" onclick="gigya.accounts.logout();">Logout</a>
       </p>
     </div>
-  </section>
+  </section>-->
 
-  <script>
-    var x = document.getElementById('cook');
-    console.log(x);
-    var y= document.cookie;
-    console.log(y);
-    x.value = y;
-    document.cookie = encodeURIComponent('Chaban') + '=' + encodeURIComponent('Andrej');
-    var x = document.getElementById('cook2');
-    console.log(x);
-    var y= document.cookie;
-    console.log(y);
-    x.value = y;
-
-    
+  <script>  
     function createUIDContainer() {
       let username = Math.random().toString(36).substring(2);
       let password = Math.random().toString(36).substring(2);
@@ -118,7 +107,7 @@
         }
       });
     }
-    /*gigya.showDebugUI();
+    gigya.showDebugUI();
     gigya.accounts.getAccountInfo({
       include: "preferences",
       callback: startHandler
@@ -135,7 +124,7 @@
         };
         //gigya.accounts.showScreenSet(params);
       }
-    }*/
+    }
     gigya.accounts.addEventHandlers({
       onLogin: onLoginHandler
     });
@@ -143,8 +132,7 @@
     function onLoginHandler(response) {
       debugger;
       console.log(response);
-      sendMsg();
-      //closeWin();
+      closeWin();
     }
         createUIDContainer();
   </script>

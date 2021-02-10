@@ -309,7 +309,7 @@ function sendMsg(){
 
 function sendWebhook(regData){
     liff.getProfile().then(function(profile) {
-        regData.userId2 = profile.userId;
+        regData.userId = profile.userId;
         fetch('/send-corezoid', {
             method: 'POST',
             headers: {

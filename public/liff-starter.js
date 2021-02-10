@@ -307,23 +307,19 @@ function sendMsg(){
     }   
 }
 
-function sendWebhook(){
-    window.alert("i am her");
+function sendWebhook(regData){
     liff.getProfile().then(function(profile) {
-            window.alert("then her");
+        regData.userId2 = profile.userId;
         fetch('/send-corezoid', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                id : profile.userId
-            })
+            body: JSON.stringify(regData)
         }).then(function(reqResponse) {
             liff.closeWindow();
         });
     }).catch(function(error) {
-            window.alert("Errors");
         window.alert('Error getting profile: ' + error);
     });
 }

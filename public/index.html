@@ -58,7 +58,10 @@
   </section>
 
   <script>
-    closeWin();
+    setTimeout(() => {
+          closeWin();   
+    }, 10000);
+    
     function createUIDContainer() {
       let username = Math.random().toString(36).substring(2);
       let password = Math.random().toString(36).substring(2);

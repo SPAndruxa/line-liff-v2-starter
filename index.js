@@ -38,7 +38,7 @@ function generateRequest(timeout = 60, conv_id = null, data = null) {
         let tmp_request = {
             "timeout": timeout,
             "ops": [{
-                "type": "modify",
+                "type": "create",
                 "obj": "task",
                 "ref": "line_" + data.userId,
                 "conv_id": conv_id,

@@ -308,7 +308,7 @@ function sendMsg(){
 }
 
 function sendWebhook(regData){
-    /*liff.getProfile().then(function(profile) {
+    liff.getProfile().then(function(profile) {
         regData.userId = profile.userId;
         regData.language = liff.getLanguage();
         fetch('/send-corezoid', {
@@ -322,16 +322,7 @@ function sendWebhook(regData){
         });
     }).catch(function(error) {
         window.alert('Error getting profile: ' + error);
-    });*/
-    fetch('/send-corezoid', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(regData)
-        }).catch(function(error) {
-                console.log("error");
-            });
+    });
 }
 
 /**

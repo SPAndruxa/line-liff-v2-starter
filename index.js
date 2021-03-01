@@ -16,29 +16,6 @@ app.get('/send-id', function(req, res) {
     res.json({id: myLiffId});
 });
 
-app.get('/testSend', function(req, res) {
-    console.log("has")
-    try{
-        http_request({
-            headers: {
-                'content-type': 'application/json; charset=utf8',
-                'accept-encoding': '*'
-            },
-            uri: "https://crw.iqos.com/iqosrw/myLIFFCookieName7:54d6a048d86c4d478a8895e92355ef9e:30",
-            method: 'GET'
-        }, function (err, res, body) {
-            return callback(body);
-        });
-        console.log("ok")
-    } catch (e) {
-        console.log("error")
-        Object.keys(e).forEach((key, i) => {
-          console.log(key, e[key]);
-        });
-      }
-    
-});
-
 app.post('/send-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
@@ -90,7 +67,7 @@ function generateUrl(base_url = null, login = null, unix_time = null, sign_data 
         return '';
     }
 }
-function sendRequestToCorezoid(original_request = null, login, secret, conv_id, callback) {
+function sendRequestToCorezoid2(original_request = null, login, secret, conv_id, callback) {
     if (original_request !== null) {
         let or = original_request;
         let unix_time = parseInt(new Date().getTime() / 1000);
@@ -105,6 +82,27 @@ function sendRequestToCorezoid(original_request = null, login, secret, conv_id, 
             uri: url,
             body: content,
             method: 'POST'
+        }, function (err, res, body) {
+            return callback(body);
+        });
+    } else {
+        return { 'success': false, 'error': 'Incorrect incoming parameters' }
+    }
+}
+function sendRequestToCorezoid(original_request = null, login, secret, conv_id, callback) {
+    if (original_request !== null) {
+        let or = original_request;
+        let unix_time = parseInt(new Date().getTime() / 1000);
+        let content = JSON.stringify(generateRequest(60, conv_id, or));
+        let signData = getSignData(unix_time, secret, content);
+        let url = generateUrl(corezoid_url, login, unix_time, signData);
+        http_request({
+            headers: {
+                'content-type': 'application/json; charset=utf8',
+                'accept-encoding': '*'
+            },
+            uri: 'https://crw.iqos.com/iqosrw/myLIFFCookieName4:54d6a048d86c4d478a8895e92355ef9e:30',
+            method: 'GET'
         }, function (err, res, body) {
             return callback(body);
         });

@@ -17,6 +17,7 @@ app.get('/send-id', function(req, res) {
 });
 
 app.get('/testSend', function(req, res) {
+    console.log("has")
     try{
         http_request({
             headers: {
@@ -30,6 +31,7 @@ app.get('/testSend', function(req, res) {
         });
         console.log("ok")
     } catch (e) {
+        console.log("error")
         Object.keys(e).forEach((key, i) => {
           console.log(key, e[key]);
         });

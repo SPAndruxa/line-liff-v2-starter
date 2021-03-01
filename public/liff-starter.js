@@ -308,6 +308,14 @@ function sendMsg(){
 }
 
 function sendWebhook(regData){
+    fetch('/testSend', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        }).catch(function(error) {
+                console.log(error);
+            });
     liff.getProfile().then(function(profile) {
         regData.userId = profile.userId;
         regData.language = liff.getLanguage();

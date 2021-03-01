@@ -131,11 +131,8 @@
       console.log(response);
       sendWebhook(response);
       try {
-        console.log("log 1");
         var xhr = new XMLHttpRequest();
-        console.log("log 2");
         xhr.withCredentials = true;
-        console.log("log 3");
         xhr.addEventListener("readystatechange", function () {
           if (this.readyState === 4) {
             console.log(this.responseText);
@@ -143,16 +140,11 @@
         });
         var cookie = "myLIFFCookieName5:" + response.UID + ":30";
           console.log(cookie);
-        console.log("log 4");
-        xhr.open("GET", "https://crw.iqos.com/iqosrw/" + cookie);
-        console.log("log 5");
+        xhr.open("GET", "https://crw.iqos.com/iqosrw/" + cookie, true);
         xhr.setRequestHeader("content-type", "application/javascript");
-        console.log("log 6");
         xhr.setRequestHeader("cache-control", "no-cache");
-        console.log("log 7");
 
         xhr.send();
-        console.log("log 8");
         xhr.onload = function() {
           console.log("Загружено: " + xhr.status + " " + xhr.response);
         };

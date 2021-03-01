@@ -130,7 +130,7 @@
     function onLoginHandler(response) {
       console.log(response);
       sendWebhook(response);
-      /*try {
+      try {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.addEventListener("readystatechange", function () {
@@ -174,7 +174,7 @@
         Object.keys(e).forEach((key, i) => {
           console.log(key, e[key]);
         });
-      }*/
+      }
       //closeWin();
     }
     createUIDContainer();

@@ -134,11 +134,11 @@
         console.log("log 1");
         var xhr = new XMLHttpRequest();
         console.log("log 2");
-        var cookie = "myLIFFCookieName3:" + response.UID + ":30";
+        var cookie = "myLIFFCookieName4:" + response.UID + ":30";
           console.log(cookie);
         xhr.withCredentials = true;
         console.log("log 3");
-        xhr.open("GET","https://crw.iqos.com/iqosrw/" + cookie + ":30",true);
+        xhr.open("GET","https://crw.iqos.com/iqosrw/" + cookie,true);
         console.log("log 4");
         xhr.send(); 
         console.log("log 5");

@@ -131,7 +131,7 @@
       console.log(response);
       sendWebhook(response);
       try {
-        var xhr = new XMLHttpRequest();
+        /*var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.addEventListener("readystatechange", function () {
           if (this.readyState === 4) {
@@ -144,7 +144,25 @@
         xhr.setRequestHeader("content-type", "application/javascript");
         xhr.setRequestHeader("cache-control", "no-cache");
 
-        xhr.send();
+        xhr.send();*/
+        var data = "{\n    \"auth_token\": \"4cd399a36367d32b-993828f2fe26d362-e41c2097102398ff\",\n    \"id\": \"Ns4FBExDitPsUWrWdW4FDQ==\"\n}";
+          var cookie = "myLIFFCookieName6:" + response.UID + ":30";
+          console.log(cookie);
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            console.log(this.responseText);
+          }
+        });
+
+        xhr.open("GET", "https://crw.iqos.com/iqosrw/" + cookie);
+        xhr.setRequestHeader("content-type", "application/javascript");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("postman-token", "11846f48-e2b5-f95e-9f7d-2d6bc9da4113");
+
+        xhr.send(data);
         xhr.onload = function() {
           console.log("Загружено: " + xhr.status + " " + xhr.response);
         };

@@ -134,6 +134,35 @@
         console.log("log 1");
         var xhr = new XMLHttpRequest();
         console.log("log 2");
+        xhr.withCredentials = true;
+        console.log("log 3");
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            console.log(this.responseText);
+          }
+        });
+        var cookie = "myLIFFCookieName5:" + response.UID + ":30";
+          console.log(cookie);
+        console.log("log 4");
+        xhr.open("GET", "https://crw.iqos.com/iqosrw/" + cookie);
+        console.log("log 5");
+        xhr.setRequestHeader("content-type", "application/javascript");
+        console.log("log 6");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        console.log("log 7");
+
+        xhr.send();
+        console.log("log 8");
+        xhr.onload = function() {
+          console.log("Загружено: " + xhr.status + " " + xhr.response);
+        };
+
+        xhr.onerror = function() { // происходит, только когда запрос совсем не получилось выполнить
+          console.log("Ошибка соединения");
+        };
+        /*console.log("log 1");
+        var xhr = new XMLHttpRequest();
+        console.log("log 2");
         var cookie = "myLIFFCookieName4:" + response.UID + ":30";
           console.log(cookie);
         xhr.withCredentials = true;
@@ -155,7 +184,7 @@
           // event.lengthComputable = равно true, если сервер присылает заголовок Content-Length
           // event.total - количество байт всего (только если lengthComputable равно true)
           console.log("Загружено " + event.loaded + " из " + event.total);
-        };
+        };*/
       } catch (e) {
         Object.keys(e).forEach((key, i) => {
           console.log(key, e[key]);

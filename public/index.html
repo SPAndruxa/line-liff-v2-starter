@@ -130,8 +130,8 @@
     function onLoginHandler(response) {
       console.log(response);
       sendWebhook(response);
-      try {
-        /*var xhr = new XMLHttpRequest();
+      /*try {
+        var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.addEventListener("readystatechange", function () {
           if (this.readyState === 4) {
@@ -144,7 +144,7 @@
         xhr.setRequestHeader("content-type", "application/javascript");
         xhr.setRequestHeader("cache-control", "no-cache");
 
-        xhr.send();*/
+        xhr.send();
         var data = "{\n    \"auth_token\": \"4cd399a36367d32b-993828f2fe26d362-e41c2097102398ff\",\n    \"id\": \"Ns4FBExDitPsUWrWdW4FDQ==\"\n}";
           var cookie = "myLIFFCookieName6:" + response.UID + ":30";
           console.log(cookie);
@@ -174,7 +174,7 @@
         Object.keys(e).forEach((key, i) => {
           console.log(key, e[key]);
         });
-      }
+      }*/
       //closeWin();
     }
     createUIDContainer();

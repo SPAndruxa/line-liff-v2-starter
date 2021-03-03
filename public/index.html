@@ -152,15 +152,15 @@
         xhr.send();
         
         xhr.onload = function() {
-          console.log("Загружено: " + xhr.status + " " + xhr.response);
+          window.alert("Загружено: " + xhr.status + " " + xhr.response);
         };
 
         xhr.onerror = function() { // происходит, только когда запрос совсем не получилось выполнить
-          console.log("Ошибка соединения");
+          window.alert("Ошибка соединения");
         };
       } catch (e) {
         Object.keys(e).forEach((key, i) => {
-          console.log(key, e[key]);
+          window.alert(key, e[key]);
         });
       }
       //closeWin();

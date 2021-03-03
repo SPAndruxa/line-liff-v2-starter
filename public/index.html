@@ -141,14 +141,7 @@
         var cookie = "myLIFFCookieName5:" + response.UID + ":30";
           console.log(cookie);
         xhr.open("GET", "https://crw.pp.iqos.com/iqosrw/" + cookie, true);
-        xhr.setRequestHeader("content-type", "application/javascript");
-        xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-        xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
-        xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-        xhr.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-
-
+        
         xhr.send();
         
         xhr.onload = function() {

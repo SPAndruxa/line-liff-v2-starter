@@ -73,7 +73,7 @@
         <strong>PMI</strong> Demo!
       </p>
       <p>
-        <a href="#" onclick='gigya.accounts.showScreenSet({screenSet: "DCE 2.0 - RegistrationLogin_V2",regToken: ev.regToken,startScreen: "Registration_Web_LINE",onAfterScreenLoad: afterScreenLoadHandler,onAfterSubmit: onAfterSubmitHandler,context: contextObj});'>Login</a>
+        <a href="#" onclick='createUIDContainer();'>Login</a>
       </p>
     </div>
   </section>
@@ -108,10 +108,18 @@
                 "UID": ev.userInfo.UID,
                 "password": password
               };
-              gigya.accounts.showScreenSet({
+              /*gigya.accounts.showScreenSet({
                 screenSet: "test-RegistrationLogin",
                 regToken: ev.regToken,
                 startScreen: "gigya-complete-registration-screen",
+                onAfterScreenLoad: afterScreenLoadHandler,
+                onAfterSubmit: onAfterSubmitHandler,
+                context: contextObj
+              });*/
+              gigya.accounts.showScreenSet({
+                screenSet: "DCE 2.0 - RegistrationLogin_V2",
+                regToken: ev.regToken,
+                startScreen: "Registration_Web_LINE",
                 onAfterScreenLoad: afterScreenLoadHandler,
                 onAfterSubmit: onAfterSubmitHandler,
                 context: contextObj
@@ -175,7 +183,7 @@
       //closeWin();
     }
     //createUIDContainer();
-    gigya.accounts.showScreenSet({screenSet:'test-RegistrationLogin'});
+    //gigya.accounts.showScreenSet({screenSet:'test-RegistrationLogin'});
   </script>
 </body>
 

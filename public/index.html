@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Gigya login test</title>
-<!--link rel="stylesheet" href="./css/centralpage.css"/-->
-<script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=3_qUWN1t8e4Q6No0LeJhpNWfYCQ3Opc44qDmrmz_BUUXVF6N1yZHtzGWgrxUViMTLr">
-</head>
-<body>
-<a href="#" onclick="showScreen();">Registration / Login</a>
-</body>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title>Gigya login test</title>
+        <!--link rel="stylesheet" href="./css/centralpage.css"/-->
+        <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=3_qUWN1t8e4Q6No0LeJhpNWfYCQ3Opc44qDmrmz_BUUXVF6N1yZHtzGWgrxUViMTLr"></script>
+    </head>
+    <body>
+    <a href="#" onclick="showScreen();">Registration / Login</a>
+    </body>
 <script>
-function showScreen(){
-gigya.accounts.showScreenSet({screenSet:'DCE 2.0 - RegistrationLogin_V2',lang:'es',startScreen:'Registration_Web_LINE',onAfterSubmit:function(e){console.log(e)}});
-}
+  function showScreen(){
+    gigya.accounts.showScreenSet({screenSet:'DCE 2.0 - RegistrationLogin_V2',lang:'es',startScreen:'Registration_Web_LINE',onAfterSubmit:function(e){console.log(e)}});
+  }
 </script>
 </html>

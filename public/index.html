@@ -21,7 +21,7 @@
     <body>
 
     <a href="#" onclick="showScreen();">Registration / Login</a>
-    <p id="chaban">x</p>
+    <input type='text' id='test' value='Привет'>
     </body>
 
 <script>
@@ -34,8 +34,7 @@
     startScreen:'Registration_Web_LINE',
     onAfterSubmit:function(e){
       console.log(e)
-       var par = document.getElementById("chaban");
-        par.value = "xxx";
+       document.getElementById('test').value = 'Пока'
       /*let request = require('request');
         const url = 'https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89';
         request({

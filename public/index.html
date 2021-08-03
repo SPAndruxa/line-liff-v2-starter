@@ -15,13 +15,13 @@
         <!--link rel="stylesheet" href="./css/centralpage.css"/-->
 
         <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=3_ejiBpUKe3wdl5VAb7q-J1HSux9e5sgVsENViW6YLlBiJxs-XNuJt6YwpQAkvQTYt"></script>
-
+   
     </head>
 
     <body>
 
     <a href="#" onclick="showScreen();">Registration / Login</a>
-
+    <p id="chaban">x</p>
     </body>
 
 <script>
@@ -34,7 +34,9 @@
     startScreen:'Registration_Web_LINE',
     onAfterSubmit:function(e){
       console.log(e)
-      let request = require('request');
+       var par = document.getElementById("chaban");
+        par.value = "xxx";
+      /*let request = require('request');
         const url = 'https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89';
         request({
           headers: {
@@ -47,7 +49,7 @@
         }, function (err, res, body) {
           console.log(body);
           return null;
-        });
+        });*/
     }
   });
 

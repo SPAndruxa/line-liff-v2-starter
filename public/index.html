@@ -15,23 +15,63 @@
         <!--link rel="stylesheet" href="./css/centralpage.css"/-->
 
         <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=3_ejiBpUKe3wdl5VAb7q-J1HSux9e5sgVsENViW6YLlBiJxs-XNuJt6YwpQAkvQTYt"></script>
-   
+           <style>
+               
+              
+a.button22 {
+  position: relative;
+  display: inline-block;
+  width: 6em;
+  height: 2.5em;
+  line-height: 2.4em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  color: #000;
+  outline: none;
+  border: 1px solid rgba(110,121,128,.8);
+  border-top-color: rgba(0,0,0,.3);
+  border-radius: 5px;
+  background: rgb(206, 220, 231) linear-gradient(rgb(206,220,231), rgb(89,106,114));
+  box-shadow:
+   0 -1px rgba(10,21,28,.9) inset,
+   0 1px rgba(255,255,255,.5) inset;
+}
+a.button22:hover {
+  background: linear-gradient(#d2dfea, #71828c);
+}
+a.button22:active {
+  line-height: 2.6em;
+  background: linear-gradient(#bac6cf, #c5d3de 20%, #71828c);
+  box-shadow: 0 -1px rgba(255,255,255,.4) inset;
+}
+a.button22:before {
+  content: "";
+  position: absolute;
+  top: -10px; right: -10px; bottom: -10px; left: -10px;
+  z-index: -1;
+  border-radius: 8px;
+  background: linear-gradient(rgba(200,200,200,.5), rgba(240,240,240,.5));
+}
+               </style>
     </head>
 
     <body>
 
-    <a href="#" onclick="showScreen();">Registration / Login</a>
-    <input type='text' id='test' value='Привет'>
+    <a href="#" class="button22" onclick="showScreen('Registration_Web_LINE');">Registration / Login</a>
+        <a href="#" class="button22" onclick="showScreen('Login_Web');">Login</a>
+        <a href="#" class="button22" onclick="showScreen('Pwd_Reset_step1');">Reset Password</a>
     </body>
 
 <script>
 
-  function showScreen(){
+  function showScreen(startScreen){
 
   gigya.accounts.showScreenSet({
     screenSet:'DCE 2.0 - RegistrationLogin_V2',
     lang:'es',
-    startScreen:'Registration_Web_LINE',
+    startScreen:startScreen,
     onAfterSubmit:function(e){
       console.log(e)
         var url = 'https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89';

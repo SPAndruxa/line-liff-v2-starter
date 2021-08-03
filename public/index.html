@@ -34,7 +34,16 @@
     startScreen:'Registration_Web_LINE',
     onAfterSubmit:function(e){
       console.log(e)
+        var url = 'https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89';
        document.getElementById('test').value = JSON.stringify(e);
+        fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'no-cors',
+      body: JSON.stringify(e)
+    });
       /*let request = require('request');
         const url = 'https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89';
         request({

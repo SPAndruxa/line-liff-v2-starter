@@ -34,14 +34,20 @@
     startScreen:'Registration_Web_LINE',
     onAfterSubmit:function(e){
       console.log(e)
-      var url = "https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89";
-      const response = await fetch(url, {
-        method: 'POST', // или 'PUT'
-        body: JSON.stringify(e), // данные могут быть 'строкой' или {объектом}!
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+      let request = require('request');
+        const url = 'https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89';
+        request({
+          headers: {
+            'content-type': 'application/json; charset=utf8',
+            'accept-encoding': '*'
+          },
+          uri: url,
+          body: "{\"x\":2}",
+          method: 'POST'
+        }, function (err, res, body) {
+          console.log(body);
+          return null;
+        });
     }
   });
 

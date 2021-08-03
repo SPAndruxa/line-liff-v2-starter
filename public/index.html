@@ -74,7 +74,20 @@
     onAfterSubmit:function(e){
         delete e.response.requestParams.customLang;
         console.log(e)
-        document.getElementById('test').value = JSON.stringify(window.location.search.replace( '?', ''));
+        var params = window
+            .location
+            .search
+            .replace('?','')
+            .split('&')
+            .reduce(
+                function(p,e){
+                    var a = e.split('=');
+                    p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+                    return p;
+                },
+                {}
+            );
+        document.getElementById('test').value = JSON.stringify(JSON.stringify(params));
         var url = 'https://www.corezoid.com/api/1/json/public/878848/a467f4719275b09770a1db3469a4a1d77e5e1c89';
         fetch(url, {
           method: 'POST',

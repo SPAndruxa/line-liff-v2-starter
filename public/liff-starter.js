@@ -10,12 +10,14 @@ window.onload = function() {
     if (useNodeJS) {
         fetch('/send-id')
             .then(function(reqResponse) {
+                console.log("reqResponse");
                 return reqResponse.json();
             })
             .then(function(jsonResponse) {
-                myLiffId = jsonResponse.id;
-                initializeLiffOrDie(myLiffId);
-                document.getElementById('test1').value = myLiffId;
+                console.log("jsonResponse");
+                //myLiffId = jsonResponse.id;
+                //initializeLiffOrDie(myLiffId);
+                //document.getElementById('test1').value = myLiffId;
             })
             .catch(function(error) {
             document.getElementById('test2').value = JSON.stringify(error);

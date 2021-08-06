@@ -37,6 +37,18 @@ app.post('/test-close', function(request, response) {
     console.log(request.body)
     let res_cz = { "error": "ok" };
     let code_cz = 200;
+    liff
+        .init({
+            liffId: request.body.liffId
+        })
+        .then(() => {
+            console.log("start init then");
+            // start to use LIFF's api
+            initializeApp();
+        })
+        .catch((err) => {
+            console.log("initializeLiff error");
+        });
     try {
         console.log("closeWindow")
             request.body.closeWindow();

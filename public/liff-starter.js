@@ -54,7 +54,6 @@ function initializeLiff(myLiffId) {
     console.log("start initializeLiff");
     liff
         .init({
-            console.log("start init");
             liffId: myLiffId
         })
         .then(() => {

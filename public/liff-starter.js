@@ -31,7 +31,7 @@ window.onload = function() {
 function closeBeck(){
     console.log("closeBeck");
     console.log(liff.id);
-    ocation.replace('https://learn.javascript.ru/settimeout-setinterval');
+    location.replace('https://learn.javascript.ru/settimeout-setinterval');
     setTimeout(() => liff.closeWindow(), 5000);
     /*fetch('/test-close',{
         method: 'POST',

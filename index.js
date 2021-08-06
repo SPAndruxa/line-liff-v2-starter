@@ -9,7 +9,7 @@ let secret = process.env.secret;
 let processId = process.env.processId;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
-let liff = require('./liff_sdk');
+//let liff = require('./liff_sdk');
 let bodyParser = require('body-parser');
 console.log(myLiffId, corezoid_url, login, secret, processId)
 app.use(express.static('public'));

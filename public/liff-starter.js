@@ -33,7 +33,7 @@ function closeBeck(){
     console.log(liff.id);
     liff.openWindow({
         url:'https://learn.javascript.ru/settimeout-setinterval',
-        external:true
+        external:false
     });
     //window.open('https://learn.javascript.ru/settimeout-setinterval', '_blank')
     //location.replace('https://learn.javascript.ru/settimeout-setinterval');

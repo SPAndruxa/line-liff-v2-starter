@@ -32,14 +32,13 @@ function closeBeck(){
     console.log("closeBeck");
     fetch('/test-close',{
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(liff) 
     })
     .then(function(reqResponse) {
         console.log("closeBeck reqResponse");
-        return reqResponse.json();
-    })
-    .then(function(jsonResponse) {
-        console.log("closeBeck then jsonResponse");
     })
     .catch(function(error) {
         console.log(closeBeck);

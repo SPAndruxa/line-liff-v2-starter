@@ -34,7 +34,7 @@ app.post('/send-corezoid', function(request, response) {
 
 app.post('/test-close', function(request, response) {
     console.log("/test-close")
-    console.log(request)
+    console.log(request.body)
     let res_cz = { "error": "ok" };
     let code_cz = 200;
     try {

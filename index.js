@@ -10,10 +10,11 @@ let processId = process.env.processId;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 let bodyParser = require('body-parser');
-
+console.log(myLiffId, corezoid_url, login, secret, processId)
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
 app.get('/send-id', function(req, res) {
+    console.log("id - ", myLiffId)
     res.json({id: myLiffId});
 });
 

@@ -30,6 +30,7 @@ window.onload = function() {
 
 function closeBeck(){
     console.log("closeBeck");
+    console.log(liff);
     fetch('/test-close',{
         method: 'POST',
         headers: {

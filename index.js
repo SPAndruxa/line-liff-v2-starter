@@ -37,10 +37,9 @@ app.post('/test-close', function(request, response) {
     console.log(request)
     let res_cz = { "error": "ok" };
     let code_cz = 200;
-    var liff = JSON.parse(request.body);
     try {
         console.log("closeWindow")
-            liff.closeWindow();
+            request.body.closeWindow();
     }
     catch (error) {
         console.log(error.message)

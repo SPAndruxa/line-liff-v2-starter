@@ -15,11 +15,12 @@ window.onload = function() {
             .then(function(jsonResponse) {
                 myLiffId = jsonResponse.id;
                 initializeLiffOrDie(myLiffId);
-                document.getElementById('test').value = myLiffId;
+                document.getElementById('test1').value = myLiffId;
             })
             .catch(function(error) {
-                document.getElementById("liffAppContent").classList.add('hidden');
-                document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
+            document.getElementById('test2').value = JSON.stringify(error);
+                //document.getElementById("liffAppContent").classList.add('hidden');
+                //document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
             });
     } else {
         myLiffId = defaultLiffId;

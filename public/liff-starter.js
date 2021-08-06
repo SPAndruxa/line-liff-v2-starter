@@ -28,6 +28,27 @@ window.onload = function() {
     }
 };
 
+function closeBeck(){
+    console.log("closeBeck");
+    fetch('/test-close',{
+        method: 'POST',
+        body: JSON.stringify({
+            liff : liff
+        }) 
+    })
+    .then(function(reqResponse) {
+        console.log("closeBeck reqResponse");
+        return reqResponse.json();
+    })
+    .then(function(jsonResponse) {
+        console.log("closeBeck then jsonResponse");
+    })
+    .catch(function(error) {
+        console.log(closeBeck);
+        console.log(error);
+    });
+}
+
 /**
 * Check if myLiffId is null. If null do not initiate liff.
 * @param {string} myLiffId The LIFF ID of the selected element

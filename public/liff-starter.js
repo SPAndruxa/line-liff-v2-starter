@@ -14,8 +14,9 @@ window.onload = function() {
                 return reqResponse.json();
             })
             .then(function(jsonResponse) {
-                console.log("jsonResponse");
-                //myLiffId = jsonResponse.id;
+                
+                myLiffId = jsonResponse.id;
+            console.log(myLiffId);
                 //initializeLiffOrDie(myLiffId);
                 //document.getElementById('test1').value = myLiffId;
             })

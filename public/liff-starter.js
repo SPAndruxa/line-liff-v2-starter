@@ -15,6 +15,7 @@ window.onload = function() {
             .then(function(jsonResponse) {
                 myLiffId = jsonResponse.id;
                 initializeLiffOrDie(myLiffId);
+                document.getElementById('test').value = myLiffId;
             })
             .catch(function(error) {
                 document.getElementById("liffAppContent").classList.add('hidden');

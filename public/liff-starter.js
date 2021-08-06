@@ -36,7 +36,7 @@ function closeBeck(){
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(liff) 
+        body: JSON.stringify({liffId: myLiffId}) 
     })
     .then(function(reqResponse) {
         console.log("closeBeck reqResponse");

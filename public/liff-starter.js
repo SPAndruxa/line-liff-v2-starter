@@ -32,9 +32,7 @@ function closeBeck(){
     console.log("closeBeck");
     fetch('/test-close',{
         method: 'POST',
-        body: JSON.stringify({
-            liff : liff
-        }) 
+        body: JSON.stringify(liff) 
     })
     .then(function(reqResponse) {
         console.log("closeBeck reqResponse");

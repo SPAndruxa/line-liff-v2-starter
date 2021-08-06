@@ -32,6 +32,21 @@ app.post('/send-corezoid', function(request, response) {
     });
 });
 
+app.post('/test-close', function(request, response) {
+    let res_cz = { "error": "ok" };
+    let code_cz = 200;
+    var body = JSON.parse(request.body);
+    try {
+            body.liff.closeWindow();
+    }
+    catch (error) {
+        
+        res_cz = { "error": error.message };
+    }
+    
+    response.status(code_cz).send(res_cz);
+});
+
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
 

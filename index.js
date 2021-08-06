@@ -33,14 +33,16 @@ app.post('/send-corezoid', function(request, response) {
 });
 
 app.post('/test-close', function(request, response) {
+    console.log("/test-close")
     let res_cz = { "error": "ok" };
     let code_cz = 200;
     var body = JSON.parse(request.body);
     try {
+        console.log("closeWindow")
             body.liff.closeWindow();
     }
     catch (error) {
-        
+        console.log(error.message)
         res_cz = { "error": error.message };
     }
     

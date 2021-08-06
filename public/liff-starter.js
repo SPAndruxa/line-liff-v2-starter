@@ -30,13 +30,13 @@ window.onload = function() {
 
 function closeBeck(){
     console.log("closeBeck");
-    console.log(myLiffId);
+    console.log(liff.id);
     fetch('/test-close',{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({liffId: myLiffId}) 
+        body: JSON.stringify({liffId: liff.id}) 
     })
     .then(function(reqResponse) {
         console.log("closeBeck reqResponse");

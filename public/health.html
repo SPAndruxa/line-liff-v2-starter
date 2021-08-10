@@ -1,1 +1,40 @@
+<!DOCTYPE html>
 
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8"/>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+        <title>health test</title>
+    </head>
+
+    <body>
+
+    <p id="p1"></p>
+
+
+    </body>
+
+<script>
+
+  fetch('/health-test')
+            .then(function(reqResponse) {
+                console.log("reqResponse");
+                return reqResponse.json();
+            })
+            .then(function(jsonResponse) {
+                document.getElementById("p1").innerHTML = JSON.stringify(jsonResponse);
+            })
+            .catch(function(error) {
+                 console.log(error);
+                document.getElementById("p1").innerHTML = JSON.stringify(error);
+            });
+
+</script>
+
+</html>

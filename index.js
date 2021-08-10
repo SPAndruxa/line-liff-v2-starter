@@ -18,7 +18,10 @@ app.get('/send-id', function(req, res) {
     console.log("id - ", myLiffId)
     res.json({id: myLiffId});
 });
-
+app.get('/health-test', function(req, res) {
+    console.log("health-test")
+    res.json(process.env);
+});
 app.post('/send-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;

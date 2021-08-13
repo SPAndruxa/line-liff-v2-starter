@@ -103,8 +103,8 @@
         delete e.response.requestParams.customLang;
         console.log(e)
         
-        e.chat_id_hax = params["liff.state"].slice(2);
-        document.getElementById('test').value = JSON.stringify(JSON.stringify(params));
+        //e.chat_id_hax = params["liff.state"].slice(2);
+        //document.getElementById('test').value = JSON.stringify(JSON.stringify(params));
         var url = 'https://core.dev.corezoidhubpmi.com/api/1/json/public/2167/a46180adc6a91f1a63aae34981a4057e870f8560';
         fetch(url, {
           method: 'POST',
@@ -116,7 +116,14 @@
         });
     }
   });
-
+    fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({"end":"end"})
+        });
 }
 
 </script>

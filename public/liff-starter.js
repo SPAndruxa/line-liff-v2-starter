@@ -21,23 +21,62 @@ window.onload = function() {
                 /*liff.login({
                     "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https:&#47;&#47;core.dev.corezoidhubpmi.com&#47;api&#47;1&#47;json&#47;public&#47;2183&#47;1d002f6fdecdf6c8bf4ab1efa26cf45c08c8d1af&state=${makeid()}&scope=profile%20openid`
                 });*/
-                console.log(liff.isLoggedIn());
+                var url = 'https://www.corezoid.com/api/1/json/public/971812/2b7e9bf7ce28a259596c3b31e02c13297c12c72d';
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({"isLoggedIn":liff.isLoggedIn()})
+        });
                 liff.logout();
-                console.log(liff.isLoggedIn());
+                var url = 'https://www.corezoid.com/api/1/json/public/971812/2b7e9bf7ce28a259596c3b31e02c13297c12c72d';
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({"isLoggedIn":liff.isLoggedIn()})
+        });
                 if (!liff.isLoggedIn()) {
                     /*liff.login({
                             "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://core.dev.corezoidhubpmi.com/api/1/json/public/2183/1d002f6fdecdf6c8bf4ab1efa26cf45c08c8d1af&state=${makeid()}&scope=profile%20openid%20email`
                         });*/
                     try{
-                        console.log("start");
+                        var url = 'https://www.corezoid.com/api/1/json/public/971812/2b7e9bf7ce28a259596c3b31e02c13297c12c72d';
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({"status":"start"})
+        });
                         liff.login({
                         "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://core.dev.corezoidhubpmi.com/api/1/json/public/2183/1d002f6fdecdf6c8bf4ab1efa26cf45c08c8d1af&state=${makeid()}&scope=profile%20openid%20email`
                             //"redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https:&#47;&#47;core.dev.corezoidhubpmi.com&#47;api&#47;1&#47;json&#47;public&#47;2183&#47;1d002f6fdecdf6c8bf4ab1efa26cf45c08c8d1af&state=${makeid()}&scope=profile%20openid`
                         });
-                        console.log("end");
+                        var url = 'https://www.corezoid.com/api/1/json/public/971812/2b7e9bf7ce28a259596c3b31e02c13297c12c72d';
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({"status":"end"})
+        });
                     } catch(e){
-                        console.log("error");
-                        console.log(e);
+                        var url = 'https://www.corezoid.com/api/1/json/public/971812/2b7e9bf7ce28a259596c3b31e02c13297c12c72d';
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({"status":"error", "error":e})
+        });
                     }
                 } else {
                       liff.logout();

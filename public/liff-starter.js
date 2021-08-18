@@ -18,6 +18,7 @@ window.onload = function() {
                 myLiffId = jsonResponse.id;
                 console.log(myLiffId);
                 initializeLiffOrDie(myLiffId);
+                liff.login();
             })
             .catch(function(error) {
                 console.log(error);

@@ -2,7 +2,7 @@ console.log("liff life");
 let express = require('express');
 let app = express();
 let port = process.env.PORT || 5000;
-let myLiffId = process.env.MY_LIFF_ID || "1655628107-yK6V4JpA";
+let myLiffId = process.env.MY_LIFF_ID || "1656328523-KD4jnlDk";
 let corezoid_url = process.env.corezoid_url;
 let login = process.env.login;
 let secret = process.env.secret;

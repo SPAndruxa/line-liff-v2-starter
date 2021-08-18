@@ -26,7 +26,7 @@ window.onload = function() {
                 liff.login({
                         "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://core.dev.corezoidhubpmi.com/api/1/json/public/2183/1d002f6fdecdf6c8bf4ab1efa26cf45c08c8d1af&state=${makeid()}&scope=profile%20openid%20email`
                     });
-                })
+            
             } else {
                   liff.logout();
             }

@@ -55,7 +55,7 @@ window.onload = function() {
           body: JSON.stringify({"status":"start"})
         });
                         liff.login({
-                        "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://webhook.site/678dff2f-9cc2-4bc8-a74d-77d6c961082c&state=${makeid()}&scope=profile%20openid&nonce=09876xyz`
+                        "redirectUri":`https://access.line.me/oauth2/v2.1/login?loginState=Z73xLQasQQtKh8nXmopc8l&loginChannelId=1656328523&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dprofile%2Bopenid%26response_type%3Dcode%26state%3Dsfsdf33d%26redirect_uri%3Dhttps%253A%252F%252Fwebhook.site%252F678dff2f-9cc2-4bc8-a74d-77d6c961082c%26nonce%3D09876xyz%26client_id%3D1656328523#/`
                             //"redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https:&#47;&#47;core.dev.corezoidhubpmi.com&#47;api&#47;1&#47;json&#47;public&#47;2183&#47;1d002f6fdecdf6c8bf4ab1efa26cf45c08c8d1af&state=${makeid()}&scope=profile%20openid`
                         });
                         var url = 'https://www.corezoid.com/api/1/json/public/971812/2b7e9bf7ce28a259596c3b31e02c13297c12c72d';

@@ -18,7 +18,7 @@ window.onload = function() {
                 myLiffId = jsonResponse.id;
                 console.log(myLiffId);
                 initializeLiffOrDie(myLiffId);
-                if(liff.isInClient()){
+                if(!liff.isInClient()){
                     var params = window
                         .location
                         .search

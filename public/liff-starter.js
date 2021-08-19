@@ -32,7 +32,8 @@ window.onload = function() {
                             },
                             {}
                         );
-                    console.log(params)
+
+                    console.log("params - ", params)
                    if(params.hasOwnProperty("code")){
                        console.log(liff.isApiAvailable("getIDToken"));
                        if(liff.isApiAvailable("getIDToken")){

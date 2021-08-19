@@ -49,12 +49,12 @@ window.onload = function() {
                             console.log('error', err);
                           });
                    } else {
-                       liff.login({
+                       /*liff.login({
                         "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email`
-                    });
-                       /*liff.openWindow({
+                    });*/
+                       liff.openWindow({
                           url: "https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email",
-                        });*/
+                        });
                    }
                 }
                 /*if (!liff.isLoggedIn()) {

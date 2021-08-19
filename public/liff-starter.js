@@ -35,11 +35,19 @@ window.onload = function() {
 
                     console.log("params - ", params)
                    if(params.hasOwnProperty("code")){
-                       console.log(liff.isApiAvailable("getIDToken"));
-                       if(liff.isApiAvailable("getIDToken")){
-                           console.log(liff.getIDToken())
-                       }
-                       
+                       console.log(liff.getIDToken())
+                       liff.sendMessages([
+                          {
+                            type: 'text',
+                            text: 'Hello, World!'
+                          }
+                        ])
+                          .then(() => {
+                            console.log('message sent');
+                          })
+                          .catch((err) => {
+                            console.log('error', err);
+                          });
                    } else {
                        liff.openWindow({
                           url: "https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email",

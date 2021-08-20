@@ -43,9 +43,6 @@ function initializeLiff(myLiffId) {
                 // set `redirectUri` to redirect the user to a URL other than the front page of your LIFF app.
                 liff.login();
             } else {
-                /*liff.openWindow({
-                  url: "https://line.me/R/ti/p/@579psxyw?from=page"
-                });*/
                 document.getElementById("regOrLogin").hidden = false;
                 /*if(liff.isInClient()){
                 
@@ -55,6 +52,11 @@ function initializeLiff(myLiffId) {
         .catch((err) => {
             alert("Error initializeApp")
         });
+}
+function goToBot(){
+    liff.openWindow({
+      url: "https://line.me/R/ti/p/@579psxyw?from=page"
+    });
 }
 
 

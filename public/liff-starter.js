@@ -57,3 +57,42 @@ function initializeLiff(myLiffId) {
 }
 
 
+ function showScreen(startScreen){
+    var params = window
+            .location
+            .search
+            .replace('?','')
+            .split('&')
+            .reduce(
+                function(p,e){
+                    var a = e.split('=');
+                    p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+                    return p;
+                },
+                {}
+            );
+      
+  gigya.accounts.showScreenSet({
+    screenSet:'DCE 2.0 - RegistrationLogin_V2',
+    lang:'es',
+    startScreen:startScreen,
+    onAfterSubmit:function(e){
+        delete e.response.requestParams.customLang;
+        console.log(e)
+        
+        e.chat_id_hax = params.id;
+        e.sup = params.sup;
+        //document.getElementById('test').value = JSON.stringify(JSON.stringify(params));
+        var url = 'https://core.dev.corezoidhubpmi.com/api/1/json/public/2167/a46180adc6a91f1a63aae34981a4057e870f8560';
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors',
+          body: JSON.stringify(e)
+        });
+    }
+  });
+}
+

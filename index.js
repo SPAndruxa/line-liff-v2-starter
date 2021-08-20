@@ -9,29 +9,31 @@ let secret = process.env.secret;
 let processId = process.env.processId;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
-//let liff = require('./liff_sdk');
+
 let bodyParser = require('body-parser');
 console.log(myLiffId, corezoid_url, login, secret, processId)
+
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
+
 app.get('/send-id', function(req, res) {
     console.log("id - ", myLiffId)
     res.json({id: myLiffId});
 });
+
 app.get('/health-test', function(req, res) {
     console.log("health-test")
     res.json(process.env);
 });
+
 app.post('/send-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
     sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
-    try {
+        try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;
-    }
-    catch {
-    }
+        } catch {}
         response.status(code_cz).send(res_cz);
     });
 });

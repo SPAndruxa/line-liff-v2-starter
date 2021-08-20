@@ -19,7 +19,7 @@ window.onload = function() {
                 console.log(myLiffId);
                 initializeLiffOrDie(myLiffId);
                 liff.login({
-                    "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email`
+                    "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email&nonce=09876xyz`
                 });
                 /*if (liff.isInClient()) {
                   liff.login({

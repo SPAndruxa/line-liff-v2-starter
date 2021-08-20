@@ -18,13 +18,13 @@ window.onload = function() {
                 myLiffId = jsonResponse.id;
                 console.log(myLiffId);
                 initializeLiffOrDie(myLiffId);
-                if (liff.isInClient()) {
+                /*if (liff.isInClient()) {
                   liff.login({
                     "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22wds&scope=profile%20openid%20email`
                 });
                 } else {
                   alert("error")
-                }
+                }*/
                 /*if(!liff.isInClient()){
                     var params = window
                         .location
@@ -64,14 +64,14 @@ window.onload = function() {
                         });*/
                    //}
                 //}
-                /*if (!liff.isLoggedIn()) {
+                if (!liff.isLoggedIn()) {
                     liff.login({
                         "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email`
                     });
-                    liff.openWindow({
+                    /*liff.openWindow({
                       url: "https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email",
-                    });
-                }*/
+                    });*/
+                }
             })
             .catch(function(error) {
                 console.log(error);

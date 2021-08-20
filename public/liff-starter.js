@@ -25,7 +25,7 @@ window.onload = function() {
                 } else {
                   alert("error")
                 }*/
-                /*if(!liff.isInClient()){
+                if(!liff.isInClient()){
                     var params = window
                         .location
                         .search
@@ -62,17 +62,21 @@ window.onload = function() {
                        /*liff.openWindow({
                           url: "https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email",
                         });*/
-                   //}
-                //}
-                if (!liff.isLoggedIn()) {
+                   }
+                } else {
+                    liff.login({
+                        "redirectUri":`https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email`
+                    });
+                }
+                /*if (!liff.isLoggedIn()) {
                     
                     liff.login({
                         "redirectUri":"https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds2w2ds&scope=profile%20openid%20email&nonce=09876xyz"
                     });
-                    /*liff.openWindow({
+                    liff.openWindow({
                       url: "https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656328523&redirect_uri=https://liff.line.me/1656328523-KD4jnlDk&state=dds22ds&scope=profile%20openid%20email",
-                    });*/
-                }
+                    });
+                }*/
             })
             .catch(function(error) {
                 console.log(error);

@@ -44,37 +44,20 @@ function initializeLiff(myLiffId) {
                 liff.login();
             } else {
                 document.getElementById("regOrLogin").hidden = false;
-                /*if(liff.isInClient()){
-                
-                }*/
             }
         })
         .catch((err) => {
             alert("Error initializeApp")
         });
 }
+
 function goToBot(){
     liff.openWindow({
       url: "https://line.me/R/ti/p/@579psxyw?from=page"
     });
 }
 
-
- function showScreen(startScreen){
-    var params = window
-            .location
-            .search
-            .replace('?','')
-            .split('&')
-            .reduce(
-                function(p,e){
-                    var a = e.split('=');
-                    p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
-                    return p;
-                },
-                {}
-            );
-      
+function showScreen(startScreen){
   gigya.accounts.showScreenSet({
     screenSet:'DCE 2.0 - RegistrationLogin_V2',
     lang:'es',
@@ -83,9 +66,8 @@ function goToBot(){
         delete e.response.requestParams.customLang;
         console.log(e)
         
-        e.chat_id_hax = params.id;
-        e.sup = params.sup;
-        //document.getElementById('test').value = JSON.stringify(JSON.stringify(params));
+        e.chat_id_hax = urlParams.id;
+        e.sup = urlParams.sup;
         var url = 'https://core.dev.corezoidhubpmi.com/api/1/json/public/2167/a46180adc6a91f1a63aae34981a4057e870f8560';
         fetch(url, {
           method: 'POST',
@@ -99,3 +81,11 @@ function goToBot(){
   });
 }
 
+var urlParams = window.location.search.replace('?','').split('&').reduce(
+    function(p,e){
+        var a = e.split('=');
+        p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+        return p;
+    },
+    {}
+);

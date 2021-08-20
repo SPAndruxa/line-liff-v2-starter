@@ -41,15 +41,16 @@ function initializeLiff(myLiffId) {
         .then(() => {
             // start to use LIFF's api
             //initializeApp();
+            document.getElementById('liffLoginButton').addEventListener('click', function() {
+                if (!liff.isLoggedIn()) {
+                    // set `redirectUri` to redirect the user to a URL other than the front page of your LIFF app.
+                    liff.login();
+                }
+            });
         })
         .catch((err) => {
             alert("Error initializeApp")
         });
 }
 
-document.getElementById('liffLoginButton').addEventListener('click', function() {
-        if (!liff.isLoggedIn()) {
-            // set `redirectUri` to redirect the user to a URL other than the front page of your LIFF app.
-            liff.login();
-        }
-    });
+

@@ -43,12 +43,21 @@ function initializeLiff(myLiffId) {
                 liff.login();
             } else {
                 document.getElementById("regOrLogin").hidden = false;
+                let userProfile = {};
+                liff.getProfile().then(profile => {
+                  userProfile.displayName = profile.displayName;
+                    userProfile.userId = profile.userId;
+                    userProfile.pictureUrl = profile.pictureUrl;
+                    userProfile.statusMessage = profile.statusMessage;
+                }).catch((err) => {
+                  console.log('error', err);
+                });
                 fetch('/send-sync-corezoid', {
                     method:"POST",
                     headers: {
                       'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(liff.getProfile())
+                    body: JSON.stringify(userProfile)
                 }).then(function(reqResponse) {
                     return reqResponse.json();
                 }).then(function(jsonResponse) {

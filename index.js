@@ -32,6 +32,7 @@ app.post('/send-sync-corezoid', function(request, response) {
     sendSyncRequestToCorezoid(request.body, corezoid_url, login, secret, processId, function (res) {
         try {
             res_cz = JSON.parse(res).ops[0].data;
+            console.log(res_cz);
             code_cz = 200;
         } catch {}
         response.status(code_cz).send(res_cz);

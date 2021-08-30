@@ -47,6 +47,8 @@ function initializeLiff(myLiffId) {
             } else {
                 console.log("login");
                 document.getElementById("regOrLogin").hidden = false;
+                console.log(liff.getProfile());
+                ///send-sync-corezoid
             }
         })
         .catch((err) => {

@@ -11,10 +11,10 @@ let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 
 let bodyParser = require('body-parser');
-console.log(myLiffId, corezoid_url, login, secret, processId)
 
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
+app.listen(port, () => console.log(`app listening on port ${port}!`));
 
 app.get('/send-id', function(req, res) {
     console.log("id - ", myLiffId)
@@ -26,10 +26,10 @@ app.get('/health-test', function(req, res) {
     res.json(process.env);
 });
 
-app.post('/send-corezoid', function(request, response) {
+app.post('/send-sync-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    sendRequestToCorezoid(request.body, login, secret, processId, function (res) {
+    sendSyncRequestToCorezoid(request.body, url, login, secret, processId, function (res) {
         try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;
@@ -38,38 +38,32 @@ app.post('/send-corezoid', function(request, response) {
     });
 });
 
-app.post('/test-close', function(request, response) {
-    console.log("/test-close")
-    console.log(request.body)
-    let res_cz = { "error": "ok" };
-    let code_cz = 200;
-    liff
-        .init({
-            liffId: request.body.liffId
-        })
-        .then(() => {
-            console.log("start init then");
-            // start to use LIFF's api
-            initializeApp();
-        })
-        .catch((err) => {
-            console.log("initializeLiff error");
-        });
-    try {
-        console.log("closeWindow")
-            request.body.closeWindow();
-    }
-    catch (error) {
-        console.log(error.message)
-        res_cz = { "error": error.message };
-    }
-    
-    response.status(code_cz).send(res_cz);
-});
+function sendSyncRequestToCorezoid(data, url, login, secret, processId, callback){
+    let unix_time = parseInt(new Date().getTime() / 1000);
+    let content = JSON.stringify({
+      "timeout": 30,
+      "ops": [{
+          "type": "create",
+          "obj": "task",
+          "conv_id": processId,
+          "data": data
+      }]
+    });
+    let signatura = hexSha1Lib.hex_sha1(unix_time + secret + content + secret);
+    http_request({
+        headers: {
+            'content-type': 'application/json; charset=utf8',
+            'accept-encoding': '*'
+        },
+        uri: `${url}${login}/${unix_time}/${signatura}`,
+        body: content,
+        method: 'POST'
+      }, function (err, res, body) {
+        return callback(body);
+      });
+}
 
-
-app.listen(port, () => console.log(`app listening on port ${port}!`));
-
+/*
 function generateRequest(timeout = 60, conv_id = null, data = null) {
     if (conv_id !== null && data !== null) {
         let tmp_request = {
@@ -126,4 +120,4 @@ function sendRequestToCorezoid(original_request = null, login, secret, conv_id, 
         return { 'success': false, 'error': 'Incorrect incoming parameters' }
     }
 }
-
+*/

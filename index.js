@@ -29,7 +29,7 @@ app.get('/health-test', function(req, res) {
 app.post('/send-sync-corezoid', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    sendSyncRequestToCorezoid(request.body, url, login, secret, processId, function (res) {
+    sendSyncRequestToCorezoid(request.body, corezoid_url, login, secret, processId, function (res) {
         try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;

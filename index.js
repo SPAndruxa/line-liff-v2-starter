@@ -50,6 +50,8 @@ function sendSyncRequestToCorezoid(data, url, login, secret, processId, callback
       }]
     });
     let signatura = hexSha1Lib.hex_sha1(unix_time + secret + content + secret);
+    console.log(`${url}${login}/${unix_time}/${signatura}`);
+    console.log(content);
     http_request({
         headers: {
             'content-type': 'application/json; charset=utf8',

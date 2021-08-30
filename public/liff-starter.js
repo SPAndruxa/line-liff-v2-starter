@@ -48,7 +48,20 @@ function initializeLiff(myLiffId) {
                 console.log("login");
                 document.getElementById("regOrLogin").hidden = false;
                 console.log(liff.getProfile());
-                ///send-sync-corezoid
+                fetch('/send-sync-corezoid', {
+                    method:"POST",
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({"TEST":"TEST"})
+                }).then(function(reqResponse) {
+                    return reqResponse.json();
+                }).then(function(jsonResponse) {
+                    console.log(jsonResponse)
+                }).catch(function(error) {
+                    console.log(error)
+                });
+                ///
             }
         })
         .catch((err) => {

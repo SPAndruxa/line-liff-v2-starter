@@ -41,8 +41,11 @@ function initializeLiff(myLiffId) {
         .then(() => {
             if (!liff.isLoggedIn()) {
                 // set `redirectUri` to redirect the user to a URL other than the front page of your LIFF app.
+                console.log("nologin");
                 liff.login();
+                console.log("afterlogin");
             } else {
+                console.log("login");
                 document.getElementById("regOrLogin").hidden = false;
             }
         })

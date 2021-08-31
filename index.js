@@ -7,6 +7,7 @@ let corezoid_url = process.env.corezoid_url;
 let login = process.env.login;
 let secret = process.env.secret;
 let processId = process.env.processId;
+let havVerify = process.evn.havVerify;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 
@@ -52,6 +53,7 @@ app.post('/send-sync-corezoid', function(request, response) {
                     //Показываем контент с информацией о том что будет редирект для прохождения HAV + таймер и редирект
                     res_cz.type = "hav";
                     res_cz.body = `to add to the official account, we ask you to confirm your age`;
+                    res_cz.havVerify = havVerify;
                 } else {
                     res_cz.type = "successful";
                 }

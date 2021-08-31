@@ -69,7 +69,7 @@ function initializeLiff(myLiffId) {
         });
 }
 
-function redirect(url){
+function redirectOnUrl(url){
     liff.openWindow({
       url: url
     });
@@ -106,9 +106,21 @@ function checkTypeAndGoNextStep(data) {
         document.getElementById("contentText").innerHTML = data.body;
     } else if (data.type === "hav") {
         document.getElementById("wait").hidden = true;
-        redirect(data.url);
+        document.getElementById("formRedirect").hidden = false;
+        (function myLoop(i) {
+            setTimeout(function () {
+                console.log();
+                document.getElementById("timer").innerHTML = data.body;
+                if (--i >= 0) {
+                    myLoop(i);
+                } else {
+                    console.log("END");
+                    redirectOnUrl(data.url);
+                }      //  decrement i and call myLoop again if i > 0
+            }, 1000);
+        })(6 - 1);
     } else if (data.type === "successful") {
-        redirect(data.url);
+        redirectOnUrl(data.url);
     } else {
         alert("Unknown error")
     }

@@ -344,9 +344,11 @@ a.button22:before {
 /* end style of button */
 
 /* start style main element */
+
 #regOrLogin{
   position: absolute;
   left: 50%;
   top: 50%;
+  margin-left: -0.35em;
 }
 /* end style main element */

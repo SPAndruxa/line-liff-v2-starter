@@ -354,10 +354,10 @@ a.button22:before {
   left: 20%;
   top: 20%;
 }
-div#regOrLogin + p{
+div#regOrLogin > p{
   text-align: center;
 }
-div#regOrLogin + a{
+div#regOrLogin > a{
   align: center;
 }
 /* end style main element */

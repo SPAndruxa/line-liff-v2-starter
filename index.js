@@ -133,7 +133,7 @@ function getUserProfile(UID, callback) {
     console.log("getUserProfile");
     http_request({
         headers: {
-            'Content-Type: application/x-www-form-urlencoded',
+            'Content-Type': 'application/x-www-form-urlencoded',
             'accept-encoding': '*'
         },
         uri: "https://accounts.eu1.gigya.com/accounts.getAccountInfo",

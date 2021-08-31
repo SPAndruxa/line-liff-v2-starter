@@ -32,8 +32,31 @@ app.post('/send-sync-corezoid', function(request, response) {
     sendSyncRequestToCorezoid(request.body, corezoid_url, login, secret, processId, function (res) {
         try {
             res_cz = JSON.parse(res).ops[0].data;
-            console.log(res_cz);
             code_cz = 200;
+            if (!res_cz.userProfile.guid) {
+                //Показываем кнопки входа и регистрации + контекст с просьбой зарегится или входа
+                res_cz.type = "nothing";
+                res_cz.body = "";
+            } else {
+                var email = "anrii.chaban@corezoid.com";
+                if (!res_cz.userProfile.verified) {
+                    //Показываем кнопки входа и регистрации + Контекст с просьбой пройти верификацию на почте или войти или зарегистрироватся
+                    res_cz.type = "verified";
+                    res_cz.body = `Email ${email} registered but verification failed. Please complete the registration`;
+                } else if (!res_cz.userProfile.loggedin) {
+                    //Показываем кнопки входа и регистрации + Контекст что прошла успшная регистрация
+                    res_cz.type = "loggedin";
+                    res_cz.body = `Successful registration by Email ${email}`;
+                } else if (!res_cz.userProfile.hav) {
+                    //Показываем контент с информацией о том что будет редирект для прохождения HAV + таймер и редирект
+                    res_cz.type = "hav";
+                    res_cz.body = `to add to the official account, we ask you to confirm your age`;
+                } else {
+                    res_cz.type = "successful";
+                }
+            }
+            console.log(res_cz);
+            
         } catch {}
         response.status(code_cz).send(res_cz);
     });

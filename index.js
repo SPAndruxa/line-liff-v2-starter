@@ -42,9 +42,11 @@ app.post('/send-sync-corezoid', function(request, response) {
                 res_cz.type = "nothing";
                 res_cz.body = "";
             } else {
+                console.log("st -  getUserProfile");
                 getUserProfile(res_cz.userProfile.guid, function (res){
                     console.log(JSON.parse(res))
                 });
+                console.log("end -  getUserProfile")
                 var email = "anrii.chaban@corezoid.com";
                 if (!res_cz.userProfile.verified) {
                     //Показываем кнопки входа и регистрации + Контекст с просьбой пройти верификацию на почте или войти или зарегистрироватся

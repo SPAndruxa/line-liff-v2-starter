@@ -42,7 +42,7 @@ function initializeLiff(myLiffId) {
             if (!liff.isLoggedIn()) {
                 liff.login();
             } else {
-                document.getElementById("regOrLogin").hidden = false;                
+                //document.getElementById("regOrLogin").hidden = false;                
                 liff.getProfile().then(profile => {
                     fetch('/send-sync-corezoid', {
                         method:"POST",
@@ -53,7 +53,10 @@ function initializeLiff(myLiffId) {
                     }).then(function(reqResponse) {
                         return reqResponse.json();
                     }).then(function(jsonResponse) {
+                        document.getElementsByClassName("holder").hidden = true;
+                        document.getElementsByClassName("preloader").hidden = true;
                         console.log(jsonResponse)
+                        document.getElementById("regOrLogin").hidden = false;
                     }).catch(function(error) {
                         console.log(error)
                     });

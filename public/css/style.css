@@ -309,7 +309,7 @@ a.button22 {
   position: relative;
   display: inline-block;
   width: 6em;
-  left: 30%;
+  left: 37%;
   height: 2.5em;
   line-height: 2.4em;
   vertical-align: middle;
@@ -349,7 +349,7 @@ a.button22:before {
 #regOrLogin{
   height: 80%;
   width: 60%;
-  background: #ddd;
+  background: #eaeaea;
   border: 1px solid black;
   position: absolute;
   left: 20%;

@@ -53,9 +53,8 @@ function initializeLiff(myLiffId) {
                     }).then(function(reqResponse) {
                         return reqResponse.json();
                     }).then(function(jsonResponse) {
-                        document.getElementById("wait").hidden = true;
                         console.log(jsonResponse)
-                        document.getElementById("regOrLogin").hidden = false;
+                        checkTypeAndGoNextStep(jsonResponse);
                     }).catch(function(error) {
                         console.log(error)
                     });
@@ -98,6 +97,20 @@ function showScreen(startScreen){
         });
     }
   });
+}
+
+function checkTypeAndGoNextStep(data) {
+    if (data.type === "nothing" || data.type === "verified" || data.type === "loggedin") {
+        document.getElementById("wait").hidden = true;
+        document.getElementById("regOrLogin").hidden = false;
+        document.getElementById("contentText").innerHTML = data.body;
+    } else if (data.type === "hav") {
+        document.getElementById("wait").hidden = true;
+    } else if (data.type === "successful") {
+        goToBot()
+    } else {
+        alert("Unknown error")
+    }
 }
 
 var urlParams = window.location.search.replace('?','').split('&').reduce(

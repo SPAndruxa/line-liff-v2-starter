@@ -345,10 +345,15 @@ a.button22:before {
 
 /* start style main element */
 
-#regOrLogin{
+/*#regOrLogin{
   position: absolute;
   left: 50%;
   top: 50%;
+  margin-left: -0.35em;
+}*/
+#regOrLogin{
+display: inline-block;
+  vertical-align: middle;
   margin-left: -0.35em;
 }
 /* end style main element */

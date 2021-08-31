@@ -69,9 +69,9 @@ function initializeLiff(myLiffId) {
         });
 }
 
-function goToBot(){
+function redirect(url){
     liff.openWindow({
-      url: "https://line.me/R/ti/p/@579psxyw?from=page"
+      url: url
     });
 }
 
@@ -106,8 +106,9 @@ function checkTypeAndGoNextStep(data) {
         document.getElementById("contentText").innerHTML = data.body;
     } else if (data.type === "hav") {
         document.getElementById("wait").hidden = true;
+        redirect(data.url);
     } else if (data.type === "successful") {
-        goToBot()
+        redirect(data.url);
     } else {
         alert("Unknown error")
     }

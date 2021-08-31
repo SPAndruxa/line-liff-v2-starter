@@ -9,6 +9,7 @@ let secret = process.env.secret;
 let processId = process.env.processId;
 let havVerify = process.env.havVerify;
 let botLink = process.env.botLink;
+let corezoidWebhook = process.env.corezoidWebhook;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 
@@ -67,6 +68,19 @@ app.post('/send-sync-corezoid', function(request, response) {
     });
 });
 
+app.post('/send-corezoid-webhook', function(request, response) {
+    let res_cz = { "error": "bad_answer" };
+    let code_cz = 500;
+    sendOnWebhook(request.body, function (res) {
+        try {
+            res_cz = JSON.parse(res).ops[0].data;
+            code_cz = 200;
+            console.log(res_cz.userProfile.guid); 
+        } catch {}
+        response.status(code_cz).send(res_cz);
+    });
+});
+
 function sendSyncRequestToCorezoid(data, url, login, secret, processId, callback){
     let unix_time = parseInt(new Date().getTime() / 1000);
     let content = JSON.stringify({
@@ -79,8 +93,7 @@ function sendSyncRequestToCorezoid(data, url, login, secret, processId, callback
       }]
     });
     let signatura = hexSha1Lib.hex_sha1(unix_time + secret + content + secret);
-    console.log(`${url}${login}/${unix_time}/${signatura}`);
-    console.log(content);
+
     http_request({
         headers: {
             'content-type': 'application/json; charset=utf8',
@@ -92,6 +105,23 @@ function sendSyncRequestToCorezoid(data, url, login, secret, processId, callback
       }, function (err, res, body) {
         return callback(body);
       });
+}
+
+function sendOnWebhook(data, callback) {
+    console.log("sendOnWebhook");
+    http_request({
+        headers: {
+            'content-type': 'application/json; charset=utf8',
+            'accept-encoding': '*'
+        },
+        uri: corezoidWebhook,
+        body: JSON.stringify(data),
+        method: 'POST'
+    }, function (err, res, body) {
+        console.log(err);
+        console.log(body);
+        return callback(body);
+    });
 }
 
 /*

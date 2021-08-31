@@ -7,8 +7,8 @@ let corezoid_url = process.env.corezoid_url;
 let login = process.env.login;
 let secret = process.env.secret;
 let processId = process.env.processId;
-let havVerify = process.evn.havVerify;
-let botLink = process.evn.botLink;
+let havVerify = process.env.havVerify;
+let botLink = process.env.botLink;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 

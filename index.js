@@ -53,9 +53,10 @@ app.post('/send-sync-corezoid', function(request, response) {
                     //Показываем контент с информацией о том что будет редирект для прохождения HAV + таймер и редирект
                     res_cz.type = "hav";
                     res_cz.body = `to add to the official account, we ask you to confirm your age`;
-                    res_cz.havVerify = havVerify;
+                    res_cz.url = havVerify;
                 } else {
                     res_cz.type = "successful";
+                    res_cz.url = "https://line.me/R/ti/p/@579psxyw?from=page";
                 }
             }
             console.log(res_cz);

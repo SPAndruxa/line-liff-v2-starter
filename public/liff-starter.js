@@ -53,8 +53,7 @@ function initializeLiff(myLiffId) {
                     }).then(function(reqResponse) {
                         return reqResponse.json();
                     }).then(function(jsonResponse) {
-                        document.getElementsByClassName("holder").hidden = true;
-                        document.getElementsByClassName("preloader").hidden = true;
+                        document.getElementById("wait").hidden = true;
                         console.log(jsonResponse)
                         document.getElementById("regOrLogin").hidden = false;
                     }).catch(function(error) {

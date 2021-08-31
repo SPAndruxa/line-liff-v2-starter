@@ -309,6 +309,7 @@ a.button22 {
   position: relative;
   display: inline-block;
   width: 6em;
+  align-items: center;
   height: 2.5em;
   line-height: 2.4em;
   vertical-align: middle;
@@ -357,7 +358,5 @@ a.button22:before {
 div#regOrLogin > p{
   text-align: center;
 }
-div#regOrLogin > a.button22{
-  text-align: center;
-}
+
 /* end style main element */

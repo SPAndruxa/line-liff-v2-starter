@@ -357,7 +357,7 @@ a.button22:before {
 div#regOrLogin > p{
   text-align: center;
 }
-div#regOrLogin > a{
+div#regOrLogin > a.button22{
   align: center;
 }
 /* end style main element */

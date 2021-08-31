@@ -348,9 +348,16 @@ a.button22:before {
 #regOrLogin{
   height: 80%;
   width: 60%;
+  background: #ddd
   border: 1px solid black;
   position: absolute;
   left: 20%;
   top: 20%;
+}
+div#regOrLogin + p{
+  text-align: center;
+}
+div#regOrLogin + a{
+  align: center;
 }
 /* end style main element */

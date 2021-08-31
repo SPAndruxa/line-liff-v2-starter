@@ -8,6 +8,7 @@ let login = process.env.login;
 let secret = process.env.secret;
 let processId = process.env.processId;
 let havVerify = process.evn.havVerify;
+let botLink = process.evn.botLink;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 
@@ -56,7 +57,7 @@ app.post('/send-sync-corezoid', function(request, response) {
                     res_cz.url = havVerify;
                 } else {
                     res_cz.type = "successful";
-                    res_cz.url = "https://line.me/R/ti/p/@579psxyw?from=page";
+                    res_cz.url = botLink;
                 }
             }
             console.log(res_cz);

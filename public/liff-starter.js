@@ -110,7 +110,7 @@ function checkTypeAndGoNextStep(data) {
         (function myLoop(i) {
             setTimeout(function () {
                 console.log();
-                document.getElementById("timer").innerHTML = data.body;
+                document.getElementById("timer").innerHTML = i;
                 if (--i >= 0) {
                     myLoop(i);
                 } else {

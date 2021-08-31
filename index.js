@@ -42,6 +42,9 @@ app.post('/send-sync-corezoid', function(request, response) {
                 res_cz.type = "nothing";
                 res_cz.body = "";
             } else {
+                getUserProfile(res_cz.userProfile.guid, function (res){
+                    console.log(JSON.parse(res))
+                });
                 var email = "anrii.chaban@corezoid.com";
                 if (!res_cz.userProfile.verified) {
                     //Показываем кнопки входа и регистрации + Контекст с просьбой пройти верификацию на почте или войти или зарегистрироватся
@@ -116,6 +119,28 @@ function sendOnWebhook(data, callback) {
         },
         uri: corezoidWebhook,
         body: JSON.stringify(data),
+        method: 'POST'
+    }, function (err, res, body) {
+        console.log(err);
+        console.log(body);
+        return callback(body);
+    });
+}
+
+function getUserProfile(UID, callback) {
+    console.log("getUserProfile");
+    http_request({
+        headers: {
+            'Content-Type: application/x-www-form-urlencoded',
+            'accept-encoding': '*'
+        },
+        uri: "https://accounts.eu1.gigya.com/accounts.getAccountInfo",
+        body: JSON.stringify({
+            ApiKey:"3_ejiBpUKe3wdl5VAb7q-J1HSux9e5sgVsENViW6YLlBiJxs-XNuJt6YwpQAkvQTYt",
+            Userkey:"AOMqNX4LtYf2",
+            secret:"6n+89v9kut4fpnLIXAMS4P9XUrSuX9B2",
+            UID:UID
+        }),
         method: 'POST'
     }, function (err, res, body) {
         console.log(err);

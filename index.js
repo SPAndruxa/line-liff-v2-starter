@@ -33,6 +33,7 @@ app.post('/send-sync-corezoid', function(request, response) {
         try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;
+            console.log(res_cz.userProfile.guid);
             if (!res_cz.userProfile.guid) {
                 //Показываем кнопки входа и регистрации + контекст с просьбой зарегится или входа
                 res_cz.type = "nothing";

@@ -347,7 +347,7 @@ a.button22:before {
 /* start style main element */
 
 #regOrLogin{
-  height: 80%;
+  height: 50%;
   width: 60%;
   background: #eaeaea;
   border: 1px solid black;
@@ -364,7 +364,7 @@ div#regOrLogin > p{
 /* start style formRedirect element */
 
 #formRedirect{
-  height: 80%;
+  height: 50%;
   width: 60%;
   background: #eaeaea;
   border: 1px solid black;

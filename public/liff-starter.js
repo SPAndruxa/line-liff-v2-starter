@@ -44,6 +44,7 @@ function initializeLiff(myLiffId) {
             } else {
                 //document.getElementById("regOrLogin").hidden = false;                
                 liff.getProfile().then(profile => {
+                    userId = profile.userId;
                     fetch('/send-sync-corezoid', {
                         method:"POST",
                         headers: {
@@ -86,7 +87,21 @@ function showScreen(startScreen){
         
         e.chat_id_hax = urlParams.id;
         e.sup = urlParams.sup;
-        var url = 'https://core.dev.corezoidhubpmi.com/api/1/json/public/2167/a46180adc6a91f1a63aae34981a4057e870f8560';
+        e.userId = userId;///send-corezoid-webhook
+        fetch('/send-corezoid-webhook', {
+            method:"POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(e)
+        }).then(function(reqResponse) {
+            return reqResponse.json();
+        }).then(function(jsonResponse) {
+            console.log(jsonResponse)
+        }).catch(function(error) {
+            console.log(error)
+        });
+        /*var url = 'https://core.dev.corezoidhubpmi.com/api/1/json/public/2167/a46180adc6a91f1a63aae34981a4057e870f8560';
         fetch(url, {
           method: 'POST',
           headers: {
@@ -94,7 +109,7 @@ function showScreen(startScreen){
           },
           mode: 'no-cors',
           body: JSON.stringify(e)
-        });
+        });*/
     }
   });
 }
@@ -134,3 +149,5 @@ var urlParams = window.location.search.replace('?','').split('&').reduce(
     },
     {}
 );
+
+let userId = "";

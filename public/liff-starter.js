@@ -136,7 +136,7 @@ function showScreen(startScreen){
                             }).then(function(reqResponse) {
                                 return reqResponse.json();
                             }).then(function(jsonResponse) {
-                                
+                                alert(jsonResponse)
                             }).catch(function(error) {
                                 alert("error - ", error)
                             });

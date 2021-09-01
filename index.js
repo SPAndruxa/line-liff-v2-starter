@@ -10,6 +10,10 @@ let processId = process.env.processId;
 let havVerify = process.env.havVerify;
 let botLink = process.env.botLink;
 let corezoidWebhook = process.env.corezoidWebhook;
+let ApiKey = process.env.ApiKey;
+let Userkey = process.env.Userkey;
+let secret = process.env.secret;
+let urlGigya = process.env.urlGigya;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
 
@@ -131,23 +135,24 @@ function sendOnWebhook(data, callback) {
 
 function getUserProfile(UID, callback) {
     console.log("getUserProfile");
-    http_request({
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'accept-encoding': '*'
-        },
-        uri: "https://accounts.eu1.gigya.com/accounts.getAccountInfo",
-        body: JSON.stringify({
-            ApiKey:"3_ejiBpUKe3wdl5VAb7q-J1HSux9e5sgVsENViW6YLlBiJxs-XNuJt6YwpQAkvQTYt",
-            Userkey:"AOMqNX4LtYf2",
-            secret:"6n+89v9kut4fpnLIXAMS4P9XUrSuX9B2",
-            UID:UID
-        }),
-        method: 'POST'
-    }, function (err, res, body) {
-        console.log(err);
-        console.log(body);
-        return callback(body);
+    var options = {
+      'method': 'POST',
+      'url': urlGigya,
+      'headers': {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      form: {
+        'ApiKey': ApiKey,
+        'Userkey': Userkey,
+        'secret': secret,
+        'UID': UID
+      }
+    };
+    console.log(options);
+    http_request(options, function (error, response) {
+      if (error) throw new Error(error);
+      console.log(response.body);
+      return callback(response.body);
     });
 }
 

@@ -120,6 +120,7 @@ function showScreen(startScreen){
                 }).then(function(reqResponse) {
                     return reqResponse.json();
                 }).then(function(jsonResponse) {
+                    var hasHav = false;
                     if(jsonResponse.data.hasOwnProperty("hardAV")){
                         if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
                             fetch('/send-corezoid-webhook', {
@@ -133,29 +134,26 @@ function showScreen(startScreen){
                                     userId: userId,
                                     screen: "hav"
                                 })
-                            })/*.then(function(reqResponse) {
-                                return reqResponse.json();
-                            }).then(function(jsonResponse) {
-                            }).catch(function(error) {
-                                alert("error - ", error)
-                            });*/
+                            });
+                            hasHav = true;
                             redirectOnUrl(jsonResponse.botLink);
                         }
                     }
-                    document.getElementById("regOrLogin").hidden = true;
-                    document.getElementById("formRedirect").hidden = false;
-                    (function myLoop(i) {
-                        setTimeout(function () {
-                            console.log();
-                            document.getElementById("timer").innerHTML = i;
-                            if (--i >= 0) {
-                                myLoop(i);
-                            } else {
-                                redirectOnUrl(jsonResponse.havVerify);
-                            }      //  decrement i and call myLoop again if i > 0
-                        }, 1000);
-                    })(6 - 1);
-
+                    if(!hasHav){
+                        document.getElementById("regOrLogin").hidden = true;
+                        document.getElementById("formRedirect").hidden = false;
+                        (function myLoop(i) {
+                            setTimeout(function () {
+                                console.log();
+                                document.getElementById("timer").innerHTML = i;
+                                if (--i >= 0) {
+                                    myLoop(i);
+                                } else {
+                                    redirectOnUrl(jsonResponse.havVerify);
+                                }      //  decrement i and call myLoop again if i > 0
+                            }, 1000);
+                        })(6 - 1);
+                    }
                 }).catch(function(error) {
                     alert("error - ", error)
                 });
@@ -184,6 +182,7 @@ function checkTypeAndGoNextStep(data) {
         }).then(function(reqResponse) {
             return reqResponse.json();
         }).then(function(jsonResponse) {
+            var hasHav = false;
             if(jsonResponse.data.hasOwnProperty("hardAV")){
                 if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
                     fetch('/send-corezoid-webhook', {
@@ -197,30 +196,26 @@ function checkTypeAndGoNextStep(data) {
                             userId: userId,
                             screen: "hav"
                         })
-                    })/*.then(function(reqResponse) {
-                        return reqResponse.json();
-                    }).then(function(jsonResponse) {
-                        alert(jsonResponse)
-                    }).catch(function(error) {
-                        alert("error - ", error)
-                    });*/
+                    });
+                    hasHav = true;
                     redirectOnUrl(jsonResponse.botLink);
                 }
             }
-            document.getElementById("regOrLogin").hidden = true;
-            document.getElementById("formRedirect").hidden = false;
-            (function myLoop(i) {
-                setTimeout(function () {
-                    console.log();
-                    document.getElementById("timer").innerHTML = i;
-                    if (--i >= 0) {
-                        myLoop(i);
-                    } else {
-                        redirectOnUrl(jsonResponse.havVerify);
-                    }      //  decrement i and call myLoop again if i > 0
-                }, 1000);
-            })(6 - 1);
-
+            if(!hasHav){
+                document.getElementById("regOrLogin").hidden = true;
+                document.getElementById("formRedirect").hidden = false;
+                (function myLoop(i) {
+                    setTimeout(function () {
+                        console.log();
+                        document.getElementById("timer").innerHTML = i;
+                        if (--i >= 0) {
+                            myLoop(i);
+                        } else {
+                            redirectOnUrl(jsonResponse.havVerify);
+                        }      //  decrement i and call myLoop again if i > 0
+                    }, 1000);
+                })(6 - 1);
+            }
         }).catch(function(error) {
             alert("error - ", error)
         });

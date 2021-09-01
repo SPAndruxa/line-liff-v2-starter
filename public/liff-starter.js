@@ -112,8 +112,10 @@ function showScreen(startScreen){
                 }).then(function(reqResponse) {
                     return reqResponse.json();
                 }).then(function(jsonResponse) {
-                    
-                    console.log(jsonResponse)
+                    alert(jsonResponse);
+                    alert(typeof jsonResponse);
+                    document.getElementById("regOrLogin").hidden = true;
+
                 }).catch(function(error) {
                     console.log(error)
                 });

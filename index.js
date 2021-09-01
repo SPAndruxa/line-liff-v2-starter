@@ -29,7 +29,6 @@ app.get('/send-id', function(req, res) {
 });
 
 app.get('/health-test', function(req, res) {
-    console.log("health-test")
     res.json(process.env);
 });
 
@@ -40,7 +39,6 @@ app.post('/send-sync-corezoid', function(request, response) {
         try {
             res_cz = JSON.parse(res).ops[0].data;
             code_cz = 200;
-            console.log(res_cz.userProfile.guid);
             if (!res_cz.userProfile.guid) {
                 //Показываем кнопки входа и регистрации + контекст с просьбой зарегится или входа
                 res_cz.type = "nothing";
@@ -65,64 +63,11 @@ app.post('/send-sync-corezoid', function(request, response) {
                     res_cz.url = botLink;
                 }
             }
-            console.log(res_cz);
             
         } catch {}
         response.status(code_cz).send(res_cz);
     });
 });
-/*app.post('/send-sync-corezoid', function(request, response) {
-    let res_cz = { "error": "bad_answer" };
-    let code_cz = 500;
-    let email = "";
-    sendSyncRequestToCorezoid(request.body, corezoid_url, login, secret, processId, function (res) {
-        try {
-            res_cz = JSON.parse(res).ops[0].data;
-            if(res.apiStatus === "error") {
-                response.status(code_cz).send(res_cz);
-            }
-            console.log(res_cz.userProfile.guid);
-            console.log(res_cz);
-            getUserProfile(res_cz.userProfile.guid, function (res){
-                console.log(JSON.parse(res))
-            });
-        } catch {
-            response.status(code_cz).send(res_cz);
-        }
-    });
-    
-    
-    
-    if (!res_cz.userProfile.guid) {
-                //Показываем кнопки входа и регистрации + контекст с просьбой зарегится или входа
-                res_cz.type = "nothing";
-                res_cz.body = "";
-            } else {
-                console.log("st -  getUserProfile");
-                getUserProfile(res_cz.userProfile.guid, function (res){
-                    console.log(JSON.parse(res))
-                });
-                console.log("end -  getUserProfile")
-                var email = "anrii.chaban@corezoid.com";
-                if (!res_cz.userProfile.verified) {
-                    //Показываем кнопки входа и регистрации + Контекст с просьбой пройти верификацию на почте или войти или зарегистрироватся
-                    res_cz.type = "verified";
-                    res_cz.body = `Email ${email} registered but verification failed. Please complete the registration`;
-                } else if (!res_cz.userProfile.loggedin) {
-                    //Показываем кнопки входа и регистрации + Контекст что прошла успшная регистрация
-                    res_cz.type = "loggedin";
-                    res_cz.body = `Successful registration by Email ${email}`;
-                } else if (!res_cz.userProfile.hav) {
-                    //Показываем контент с информацией о том что будет редирект для прохождения HAV + таймер и редирект
-                    res_cz.type = "hav";
-                    res_cz.body = `to add to the official account, we ask you to confirm your age`;
-                    res_cz.url = havVerify;
-                } else {
-                    res_cz.type = "successful";
-                    res_cz.url = botLink;
-                }
-            }
-});*/
 
 app.post('/send-corezoid-webhook', function(request, response) {
     let res_cz = { "error": "bad_answer" };
@@ -131,7 +76,6 @@ app.post('/send-corezoid-webhook', function(request, response) {
         try {
             res_cz = res;
             code_cz = 200;
-            console.log(res_cz.userProfile.guid); 
         } catch (e) {
             console.log("e.message - ",e.message)
         }
@@ -149,9 +93,10 @@ app.post('/log', function(request, response) {
 app.post('/get-user-profile', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    console.log("UID - ",request.body.UID);
     getUserProfile(request.body.UID, function(res) {
         try {
+            console.log("botLink - ",botLink);
+            console.log("havVerify - ",havVerify);
             res_cz = res;
             res_cz.botLink = botLink;
             res_cz.havVerify = havVerify;
@@ -191,7 +136,6 @@ function sendSyncRequestToCorezoid(data, url, login, secret, processId, callback
 }
 
 function sendOnWebhook(data, callback) {
-    console.log("sendOnWebhook");
     http_request({
         headers: {
             'content-type': 'application/json; charset=utf8',
@@ -220,69 +164,9 @@ function getUserProfile(UID, callback) {
         'UID': UID
       }
     };
-    console.log(options);
     http_request(options, function (error, response) {
       if (error) throw new Error(error);
       console.log(response.body);
       return callback(response.body);
     });
 }
-
-/*
-function generateRequest(timeout = 60, conv_id = null, data = null) {
-    if (conv_id !== null && data !== null) {
-        let tmp_request = {
-            "timeout": timeout,
-            "ops": [{
-                "type": "create",
-                "obj": "task",
-                "ref": "line_" + data.userId,
-                "conv_id": conv_id,
-                "data": data
-            }]
-        };
-        console.log("tmp_request", tmp_request);
-        return tmp_request;
-    } else {
-        return {}
-    }
-}
-function getSignData(unix_time = null, secret = null, content = null) {
-    if (unix_time !== null && secret !== null && content !== null) {
-        let string = unix_time + secret + content + secret;
-        return hexSha1Lib.hex_sha1(string);
-    } else {
-        return '';
-    }
-}
-function generateUrl(base_url = null, login = null, unix_time = null, sign_data = null) {
-    if (base_url !== null && login !== null && unix_time !== null && sign_data !== null) {
-        let answer = base_url + `${login}/${unix_time}/${sign_data}`;
-        return answer;
-    } else {
-        return '';
-    }
-}
-function sendRequestToCorezoid(original_request = null, login, secret, conv_id, callback) {
-    if (original_request !== null) {
-        let or = original_request;
-        let unix_time = parseInt(new Date().getTime() / 1000);
-        let content = JSON.stringify(generateRequest(60, conv_id, or));
-        let signData = getSignData(unix_time, secret, content);
-        let url = generateUrl(corezoid_url, login, unix_time, signData);
-        http_request({
-            headers: {
-                'content-type': 'application/json; charset=utf8',
-                'accept-encoding': '*'
-            },
-            uri: url,
-            body: content,
-            method: 'POST'
-        }, function (err, res, body) {
-            return callback(body);
-        });
-    } else {
-        return { 'success': false, 'error': 'Incorrect incoming parameters' }
-    }
-}
-*/

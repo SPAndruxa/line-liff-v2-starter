@@ -129,7 +129,7 @@ app.post('/send-corezoid-webhook', function(request, response) {
     let code_cz = 500;
     sendOnWebhook(request.body, function(res) {
         try {
-            console.log("JSON.parse - ",JSON.parse(res))
+            console.log("JSON.parse - ",res);
             res_cz = JSON.parse(res)//.ops[0].data;
             code_cz = 200;
             console.log(res_cz.userProfile.guid); 

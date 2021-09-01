@@ -123,13 +123,13 @@ function showScreen(startScreen){
                 }).then(function(jsonResponse) {
                     alert(jsonResponse);
                     alert("hardAV - ",jsonResponse.data.hardAV);
-                    /*if(jsonResponse.data.hasOwnProperty("hardAV")){
+                    if(jsonResponse.data.hasOwnProperty("hardAV")){
                         alert("tyt")
                         if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
                             alert("net tyt")
                             redirectOnUrl(jsonResponse.botLink);
                         }
-                    }*/
+                    }
                     document.getElementById("regOrLogin").hidden = true;
                     document.getElementById("formRedirect").hidden = false;
                     alert(jsonResponse.havVerify);

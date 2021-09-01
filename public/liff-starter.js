@@ -121,6 +121,7 @@ function showScreen(startScreen){
                 }).then(function(reqResponse) {
                     return reqResponse.json();
                 }).then(function(jsonResponse) {
+                    alert(jsonResponse)
                     if(jsonResponse.data.hasOwnProperty("hardAV")){
                         alert("tyt")
                         if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){

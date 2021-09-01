@@ -46,12 +46,7 @@ app.post('/send-sync-corezoid', function(request, response) {
                 res_cz.type = "nothing";
                 res_cz.body = "";
             } else {
-                console.log("st -  getUserProfile");
-                getUserProfile(res_cz.userProfile.guid, function (res){
-                    console.log(JSON.parse(res))
-                });
-                console.log("end -  getUserProfile")
-                var email = "anrii.chaban@corezoid.com";
+                var email = res_cz.userProfile.email;
                 if (!res_cz.userProfile.verified) {
                     //Показываем кнопки входа и регистрации + Контекст с просьбой пройти верификацию на почте или войти или зарегистрироватся
                     res_cz.type = "verified";
@@ -76,6 +71,58 @@ app.post('/send-sync-corezoid', function(request, response) {
         response.status(code_cz).send(res_cz);
     });
 });
+/*app.post('/send-sync-corezoid', function(request, response) {
+    let res_cz = { "error": "bad_answer" };
+    let code_cz = 500;
+    let email = "";
+    sendSyncRequestToCorezoid(request.body, corezoid_url, login, secret, processId, function (res) {
+        try {
+            res_cz = JSON.parse(res).ops[0].data;
+            if(res.apiStatus === "error") {
+                response.status(code_cz).send(res_cz);
+            }
+            console.log(res_cz.userProfile.guid);
+            console.log(res_cz);
+            getUserProfile(res_cz.userProfile.guid, function (res){
+                console.log(JSON.parse(res))
+            });
+        } catch {
+            response.status(code_cz).send(res_cz);
+        }
+    });
+    
+    
+    
+    if (!res_cz.userProfile.guid) {
+                //Показываем кнопки входа и регистрации + контекст с просьбой зарегится или входа
+                res_cz.type = "nothing";
+                res_cz.body = "";
+            } else {
+                console.log("st -  getUserProfile");
+                getUserProfile(res_cz.userProfile.guid, function (res){
+                    console.log(JSON.parse(res))
+                });
+                console.log("end -  getUserProfile")
+                var email = "anrii.chaban@corezoid.com";
+                if (!res_cz.userProfile.verified) {
+                    //Показываем кнопки входа и регистрации + Контекст с просьбой пройти верификацию на почте или войти или зарегистрироватся
+                    res_cz.type = "verified";
+                    res_cz.body = `Email ${email} registered but verification failed. Please complete the registration`;
+                } else if (!res_cz.userProfile.loggedin) {
+                    //Показываем кнопки входа и регистрации + Контекст что прошла успшная регистрация
+                    res_cz.type = "loggedin";
+                    res_cz.body = `Successful registration by Email ${email}`;
+                } else if (!res_cz.userProfile.hav) {
+                    //Показываем контент с информацией о том что будет редирект для прохождения HAV + таймер и редирект
+                    res_cz.type = "hav";
+                    res_cz.body = `to add to the official account, we ask you to confirm your age`;
+                    res_cz.url = havVerify;
+                } else {
+                    res_cz.type = "successful";
+                    res_cz.url = botLink;
+                }
+            }
+});*/
 
 app.post('/send-corezoid-webhook', function(request, response) {
     let res_cz = { "error": "bad_answer" };

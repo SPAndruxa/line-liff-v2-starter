@@ -97,19 +97,16 @@ function showScreen(startScreen){
         }).then(function(reqResponse) {
             return reqResponse.json();
         }).then(function(jsonResponse) {
+            if(startScreen === "Registration_Web_LINE"){
+                document.getElementById("regOrLogin").hidden = false;
+                document.getElementById("resultStat").hidden = true;
+                console.log(e.response.user.email);
+                document.getElementById("resultStat").innerHTML = `An email has been sent to your mail ${e.response.user.email} to complete the registration. Please complete the registration.`;
+            }
             console.log(jsonResponse)
         }).catch(function(error) {
             console.log(error)
         });
-        /*var url = 'https://core.dev.corezoidhubpmi.com/api/1/json/public/2167/a46180adc6a91f1a63aae34981a4057e870f8560';
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          mode: 'no-cors',
-          body: JSON.stringify(e)
-        });*/
     }
   });
 }

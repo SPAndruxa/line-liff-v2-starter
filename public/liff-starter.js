@@ -95,11 +95,7 @@ function showScreen(startScreen){
             },
             body: JSON.stringify(e)
         }).then(function(reqResponse) {
-            let obj = reqResponse.json();
-            let resObj = Object.assign(obj, e)
-            alert(resObj.screen);
-            alert(resObj);
-            return resObj;
+            return reqResponse.json();
         }).then(function(jsonResponse) {
             alert(jsonResponse.screen);
             if(jsonResponse.screen === "Registration_Web_LINE"){

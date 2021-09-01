@@ -87,7 +87,7 @@ function showScreen(startScreen){
         
         e.chat_id_hax = urlParams.id;
         e.sup = urlParams.sup;
-        e.userId = userId;///send-corezoid-webhook
+        e.userId = userId;
         fetch('/send-corezoid-webhook', {
             method:"POST",
             headers: {
@@ -122,6 +122,24 @@ function showScreen(startScreen){
                 }).then(function(jsonResponse) {
                     if(jsonResponse.data.hasOwnProperty("hardAV")){
                         if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
+                            fetch('/send-corezoid-webhook', {
+                                method:"POST",
+                                headers: {
+                                  'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    chat_id_hax: urlParams.id,
+                                    sup: urlParams.sup,
+                                    userId: userId,
+                                    screen: "hav"
+                                })
+                            }).then(function(reqResponse) {
+                                return reqResponse.json();
+                            }).then(function(jsonResponse) {
+                                
+                            }).catch(function(error) {
+                                alert("error - ", error)
+                            });
                             redirectOnUrl(jsonResponse.botLink);
                         }
                     }

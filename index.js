@@ -130,7 +130,8 @@ app.post('/send-corezoid-webhook', function(request, response) {
     sendOnWebhook(request.body, function(res) {
         try {
             console.log("JSON.parse - ",res);
-            res_cz = JSON.parse(res)//.ops[0].data;
+            console.log("typeof res - ",typeof res);
+            res_cz = res;
             code_cz = 200;
             console.log(res_cz.userProfile.guid); 
         } catch (e) {
@@ -178,8 +179,7 @@ function sendOnWebhook(data, callback) {
         method: 'POST'
     }, function (err, res, body) {
         var objReturn = Object.assign(JSON.parse(body),data);
-        console.log(objReturn);
-        return callback({"test":"test"});
+        return callback(objReturn);
     });
 }
 

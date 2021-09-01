@@ -102,6 +102,15 @@ function showScreen(startScreen){
                 document.getElementById("resultStat").hidden = false;
                 document.getElementById("resultStat").innerHTML = `An email has been sent to your mail ${jsonResponse.response.user.email} to complete the registration. Please complete the registration.`;
             } else if (jsonResponse.screen === "Login_Web"){
+                ///////////////////
+                fetch('/log', {
+                    method:"POST",
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({res:jsonResponse.response.UID})
+                });
+                ////////////////////
                 alert(jsonResponse.response.UID);
                 fetch('/get-user-profile', {
                     method:"POST",
@@ -110,6 +119,7 @@ function showScreen(startScreen){
                     },
                     body: JSON.stringify({UID:jsonResponse.response.UID})
                 }).then(function(reqResponse) {
+                    alert("has obj");
                     return reqResponse.json();
                 }).then(function(jsonResponse) {
                     alert(jsonResponse);

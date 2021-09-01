@@ -97,6 +97,7 @@ app.post('/get-user-profile', function(request, response) {
         try {
             console.log("botLink - ",botLink);
             console.log("havVerify - ",havVerify);
+            console.log("typeof res - ",typeof res);
             res_cz = res;
             res_cz = Object.assign(res_cz, {
                 botLink: botLink,

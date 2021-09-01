@@ -12,7 +12,7 @@ let botLink = process.env.botLink;
 let corezoidWebhook = process.env.corezoidWebhook;
 let ApiKey = process.env.ApiKey;
 let Userkey = process.env.Userkey;
-let secret = process.env.secret;
+let secretGigya = process.env.secretGigya;
 let urlGigya = process.env.urlGigya;
 let http_request = require('request');
 let hexSha1Lib = require('./hex_sh1');
@@ -144,7 +144,7 @@ function getUserProfile(UID, callback) {
       form: {
         'ApiKey': ApiKey,
         'Userkey': Userkey,
-        'secret': secret,
+        'secret': secretGigya,
         'UID': UID
       }
     };

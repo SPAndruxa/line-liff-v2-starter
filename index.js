@@ -140,7 +140,7 @@ app.post('/send-corezoid-webhook', function(request, response) {
 });
 
 app.post('/log', function(request, response) {
-    console.log(request);
+    console.log("/log --- ",request);
     let res_cz = { "ok": "ok" };
     let code_cz = 200;
     response.status(code_cz).send(res_cz);

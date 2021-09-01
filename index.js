@@ -129,13 +129,28 @@ app.post('/send-corezoid-webhook', function(request, response) {
     let code_cz = 500;
     sendOnWebhook(request.body, function(res) {
         try {
-            console.log("JSON.parse - ",res);
-            console.log("typeof res - ",typeof res);
             res_cz = res;
             code_cz = 200;
             console.log(res_cz.userProfile.guid); 
         } catch (e) {
             console.log("e.message - ",e.message)
+        }
+        response.status(code_cz).send(res_cz);
+    });
+});
+
+app.post('/get-user-profile', function(request, response) {
+    let res_cz = { "error": "bad_answer" };
+    let code_cz = 500;
+    console.log("UID - ",request.body.UID);
+    getUserProfile(request.body.UID, function(res) {
+        try {
+            console.log("res - ",res);
+            console.log("typeog res - ", typeof res);
+            res_cz = res;
+            code_cz = 200;
+        } catch (e) {
+            console.log("e.message 2 - ",e.message)
         }
         response.status(code_cz).send(res_cz);
     });

@@ -102,16 +102,15 @@ function showScreen(startScreen){
                 document.getElementById("resultStat").hidden = false;
                 document.getElementById("resultStat").innerHTML = `An email has been sent to your mail ${jsonResponse.response.user.email} to complete the registration. Please complete the registration.`;
             } else if (jsonResponse.screen === "Login_Web"){
-                ///////////////////
-                fetch('/log', {
-                    method:"POST",
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({res:jsonResponse.response.UID})
-                });
-                ////////////////////
-                alert(jsonResponse.response.UID);
+    ///////////////////
+//     fetch('/log', {
+//         method:"POST",
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({res:jsonResponse.response.UID})
+//     });
+    ////////////////////
                 fetch('/get-user-profile', {
                     method:"POST",
                     headers: {
@@ -121,18 +120,13 @@ function showScreen(startScreen){
                 }).then(function(reqResponse) {
                     return reqResponse.json();
                 }).then(function(jsonResponse) {
-                    alert(jsonResponse);
-                    alert("hardAV - ",jsonResponse.data.hardAV);
                     if(jsonResponse.data.hasOwnProperty("hardAV")){
-                        alert("tyt")
                         if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
-                            alert("net tyt")
                             redirectOnUrl(jsonResponse.botLink);
                         }
                     }
                     document.getElementById("regOrLogin").hidden = true;
                     document.getElementById("formRedirect").hidden = false;
-                    alert(jsonResponse.havVerify);
                     (function myLoop(i) {
                         setTimeout(function () {
                             console.log();

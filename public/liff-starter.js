@@ -100,8 +100,8 @@ function showScreen(startScreen){
             alert(JSON.stringify(jsonResponse));
             alert(jsonResponse.screen);
             if(jsonResponse.screen === "Registration_Web_LINE"){
-                document.getElementById("regOrLogin").hidden = false;
-                document.getElementById("resultStat").hidden = true;
+                document.getElementById("regOrLogin").hidden = true;
+                document.getElementById("resultStat").hidden = false;
                 document.getElementById("resultStat").innerHTML = `An email has been sent to your mail ${jsonResponse.response.user.email} to complete the registration. Please complete the registration.`;
             }
             console.log(jsonResponse)

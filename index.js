@@ -175,8 +175,9 @@ function sendOnWebhook(data, callback) {
         body: JSON.stringify(data),
         method: 'POST'
     }, function (err, res, body) {
-        //var objReturn = Object.assign(JSON.parse(body),data);
-        return callback(Object.assign(JSON.parse(body),data));
+        var objReturn = Object.assign(JSON.parse(body),data);
+        console.log(objReturn);
+        return callback({"test":"test"});
     });
 }
 

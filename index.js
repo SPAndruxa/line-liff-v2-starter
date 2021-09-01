@@ -103,7 +103,7 @@ app.post('/get-user-profile', function(request, response) {
                 havVerify: havVerify
             });
             
-            console.log("res - ",res);
+            console.log("res - ",res_cz);
             code_cz = 200;
         } catch (e) {
             console.log("e.message 2 - ",e.message)

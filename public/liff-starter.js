@@ -175,6 +175,58 @@ function checkTypeAndGoNextStep(data) {
         document.getElementById("regOrLogin").hidden = false;
         document.getElementById("contentText").innerHTML = data.body;
     } else if (data.type === "hav") {
+        //////////////////////////////////////////
+        fetch('/get-user-profile', {
+            method:"POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({UID:data.userProfile.guid)})
+        }).then(function(reqResponse) {
+            return reqResponse.json();
+        }).then(function(jsonResponse) {
+            if(jsonResponse.data.hasOwnProperty("hardAV")){
+                if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
+                    fetch('/send-corezoid-webhook', {
+                        method:"POST",
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            chat_id_hax: urlParams.id,
+                            sup: urlParams.sup,
+                            userId: userId,
+                            screen: "hav"
+                        })
+                    }).then(function(reqResponse) {
+                        return reqResponse.json();
+                    }).then(function(jsonResponse) {
+                        alert(jsonResponse)
+                    }).catch(function(error) {
+                        alert("error - ", error)
+                    });
+                    redirectOnUrl(jsonResponse.botLink);
+                }
+            }
+            document.getElementById("regOrLogin").hidden = true;
+            document.getElementById("formRedirect").hidden = false;
+            (function myLoop(i) {
+                setTimeout(function () {
+                    console.log();
+                    document.getElementById("timer").innerHTML = i;
+                    if (--i >= 0) {
+                        myLoop(i);
+                    } else {
+                        redirectOnUrl(jsonResponse.havVerify);
+                    }      //  decrement i and call myLoop again if i > 0
+                }, 1000);
+            })(6 - 1);
+
+        }).catch(function(error) {
+            alert("error - ", error)
+        });
+        //////////////////////////////////////////
+        
         document.getElementById("wait").hidden = true;
         document.getElementById("formRedirect").hidden = false;
         (function myLoop(i) {

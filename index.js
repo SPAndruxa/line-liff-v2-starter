@@ -174,11 +174,9 @@ function sendOnWebhook(data, callback) {
         body: JSON.stringify(data),
         method: 'POST'
     }, function (err, res, body) {
-        console.log("err - ",err);
-        console.log("res - ",res);
-        console.log("data - ",data);
-        console.log("body - ",body);
-        return callback(body);
+        var objReturn = Object.assign(data,body);
+        console.log("objReturn - ", objReturn);
+        return callback(objReturn);
     });
 }
 

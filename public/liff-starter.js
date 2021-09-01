@@ -133,13 +133,12 @@ function showScreen(startScreen){
                                     userId: userId,
                                     screen: "hav"
                                 })
-                            }).then(function(reqResponse) {
+                            })/*.then(function(reqResponse) {
                                 return reqResponse.json();
                             }).then(function(jsonResponse) {
-                                alert(jsonResponse)
                             }).catch(function(error) {
                                 alert("error - ", error)
-                            });
+                            });*/
                             redirectOnUrl(jsonResponse.botLink);
                         }
                     }
@@ -198,13 +197,13 @@ function checkTypeAndGoNextStep(data) {
                             userId: userId,
                             screen: "hav"
                         })
-                    }).then(function(reqResponse) {
+                    })/*.then(function(reqResponse) {
                         return reqResponse.json();
                     }).then(function(jsonResponse) {
                         alert(jsonResponse)
                     }).catch(function(error) {
                         alert("error - ", error)
-                    });
+                    });*/
                     redirectOnUrl(jsonResponse.botLink);
                 }
             }

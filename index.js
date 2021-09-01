@@ -98,8 +98,11 @@ app.post('/get-user-profile', function(request, response) {
             console.log("botLink - ",botLink);
             console.log("havVerify - ",havVerify);
             res_cz = res;
-            res_cz.botLink = botLink;
-            res_cz.havVerify = havVerify;
+            res_cz = Object.assign(res_cz, {
+                botLink: botLink,
+                havVerify: havVerify
+            });
+            
             console.log("res - ",res);
             code_cz = 200;
         } catch (e) {

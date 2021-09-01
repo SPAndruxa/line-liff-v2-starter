@@ -119,11 +119,8 @@ function showScreen(startScreen){
                     },
                     body: JSON.stringify({UID:jsonResponse.response.UID})
                 }).then(function(reqResponse) {
-                    alert("has obj");
                     return reqResponse.json();
                 }).then(function(jsonResponse) {
-                    alert(jsonResponse);
-                    alert(typeof jsonResponse);
                     if(jsonResponse.data.hasOwnProperty("hardAV")){
                         if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
                             redirectOnUrl(jsonResponse.botLink);
@@ -131,6 +128,7 @@ function showScreen(startScreen){
                     }
                     document.getElementById("regOrLogin").hidden = true;
                     document.getElementById("formRedirect").hidden = false;
+                    alert(jsonResponse.havVerify);
                     (function myLoop(i) {
                     setTimeout(function () {
                         console.log();
@@ -138,7 +136,6 @@ function showScreen(startScreen){
                         if (--i >= 0) {
                             myLoop(i);
                         } else {
-                            console.log("END");
                             redirectOnUrl(jsonResponse.havVerify);
                         }      //  decrement i and call myLoop again if i > 0
                     }, 1000);

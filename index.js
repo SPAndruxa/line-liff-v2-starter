@@ -152,11 +152,10 @@ app.post('/get-user-profile', function(request, response) {
     console.log("UID - ",request.body.UID);
     getUserProfile(request.body.UID, function(res) {
         try {
-            console.log("res - ",res);
-            console.log("typeog res - ", typeof res);
             res_cz = res;
             res_cz.botLink = botLink;
             res_cz.havVerify = havVerify;
+            console.log("res - ",res);
             code_cz = 200;
         } catch (e) {
             console.log("e.message 2 - ",e.message)
@@ -208,7 +207,6 @@ function sendOnWebhook(data, callback) {
 }
 
 function getUserProfile(UID, callback) {
-    console.log("getUserProfile");
     var options = {
       'method': 'POST',
       'url': urlGigya,

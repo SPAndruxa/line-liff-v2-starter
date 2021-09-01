@@ -95,8 +95,8 @@ function showScreen(startScreen){
             },
             body: JSON.stringify(e)
         }).then(function(reqResponse) {
-            return reqResponse.json();
             alert(startScreen);
+            return reqResponse.json();
         }).then(function(jsonResponse) {
             if(startScreen === "Registration_Web_LINE"){
                 document.getElementById("regOrLogin").hidden = false;

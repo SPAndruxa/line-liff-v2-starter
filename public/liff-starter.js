@@ -221,20 +221,20 @@ function checkTypeAndGoNextStep(data) {
         });
         //////////////////////////////////////////
         
-        document.getElementById("wait").hidden = true;
-        document.getElementById("formRedirect").hidden = false;
-        (function myLoop(i) {
-            setTimeout(function () {
-                console.log();
-                document.getElementById("timer").innerHTML = i;
-                if (--i >= 0) {
-                    myLoop(i);
-                } else {
-                    console.log("END");
-                    redirectOnUrl(data.url);
-                }      //  decrement i and call myLoop again if i > 0
-            }, 1000);
-        })(6 - 1);
+//         document.getElementById("wait").hidden = true;
+//         document.getElementById("formRedirect").hidden = false;
+//         (function myLoop(i) {
+//             setTimeout(function () {
+//                 console.log();
+//                 document.getElementById("timer").innerHTML = i;
+//                 if (--i >= 0) {
+//                     myLoop(i);
+//                 } else {
+//                     console.log("END");
+//                     redirectOnUrl(data.url);
+//                 }      //  decrement i and call myLoop again if i > 0
+//             }, 1000);
+//         })(6 - 1);
     } else if (data.type === "successful") {
         redirectOnUrl(data.url);
     } else {

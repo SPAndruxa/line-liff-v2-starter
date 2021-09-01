@@ -95,14 +95,13 @@ function showScreen(startScreen){
             },
             body: JSON.stringify(e)
         }).then(function(reqResponse) {
-            alert(startScreen);
-            return reqResponse.json();
+            return Object.assign(reqResponse.json(), e);
         }).then(function(jsonResponse) {
-            if(startScreen === "Registration_Web_LINE"){
+            alert(jsonResponse.screen);
+            if(jsonResponse.screen === "Registration_Web_LINE"){
                 document.getElementById("regOrLogin").hidden = false;
                 document.getElementById("resultStat").hidden = true;
-                console.log(e.response.user.email);
-                document.getElementById("resultStat").innerHTML = `An email has been sent to your mail ${e.response.user.email} to complete the registration. Please complete the registration.`;
+                document.getElementById("resultStat").innerHTML = `An email has been sent to your mail ${jsonResponse.response.user.email} to complete the registration. Please complete the registration.`;
             }
             console.log(jsonResponse)
         }).catch(function(error) {

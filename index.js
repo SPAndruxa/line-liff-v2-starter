@@ -93,7 +93,7 @@ app.post('/log', function(request, response) {
 app.post('/get-user-profile', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    getUserProfile(request.body.UID, function(res) {
+    getUserProfile(/*request.body.UID*/"6665f1c4ad5445ce999aa4da405162d7", function(res) {
         try {
             res_cz = JSON.parse(res);
             res_cz = Object.assign(res_cz, {

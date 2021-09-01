@@ -95,6 +95,7 @@ app.post('/get-user-profile', function(request, response) {
     let code_cz = 500;
     getUserProfile(request.body.UID, function(res) {
         try {
+            console.log("request.body.UID - |",request.body.UID);
             res_cz = JSON.parse(res);
             res_cz = Object.assign(res_cz, {
                 botLink: botLink,

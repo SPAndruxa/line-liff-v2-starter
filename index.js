@@ -127,13 +127,15 @@ app.post('/send-sync-corezoid', function(request, response) {
 app.post('/send-corezoid-webhook', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
-    sendOnWebhook(request.body, function (res) {
+    sendOnWebhook(request.body, function(res) {
         try {
             console.log("JSON.parse - ",JSON.parse(res))
             res_cz = JSON.parse(res)//.ops[0].data;
             code_cz = 200;
             console.log(res_cz.userProfile.guid); 
-        } catch {}
+        } catch (e) {
+            console.log("e.message - ",e.message)
+        }
         response.status(code_cz).send(res_cz);
     });
 });

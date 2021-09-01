@@ -181,7 +181,7 @@ function checkTypeAndGoNextStep(data) {
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({UID:data.userProfile.guid)})
+            body: JSON.stringify({UID:data.userProfile.guid})
         }).then(function(reqResponse) {
             return reqResponse.json();
         }).then(function(jsonResponse) {

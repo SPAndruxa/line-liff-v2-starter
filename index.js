@@ -176,7 +176,7 @@ function sendOnWebhook(data, callback) {
     }, function (err, res, body) {
         console.log("data - ",data);
         console.log("typeof data",typeof data);
-        var objReturn = Object.assign(JSON.parse(data),body);
+        var objReturn = Object.assign(JSON.parse(body),data);
         console.log("objReturn - ", objReturn);
         return callback(objReturn);
     });

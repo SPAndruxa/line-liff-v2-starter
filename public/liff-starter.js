@@ -122,7 +122,9 @@ function showScreen(startScreen){
                     return reqResponse.json();
                 }).then(function(jsonResponse) {
                     if(jsonResponse.data.hasOwnProperty("hardAV")){
+                        alert("tyt")
                         if(jsonResponse.data.hardAV.some(hav => hav.status_refcode === "VERIFIED")){
+                            alert("net tyt")
                             redirectOnUrl(jsonResponse.botLink);
                         }
                     }
@@ -130,19 +132,27 @@ function showScreen(startScreen){
                     document.getElementById("formRedirect").hidden = false;
                     alert(jsonResponse.havVerify);
                     (function myLoop(i) {
-                    setTimeout(function () {
-                        console.log();
-                        document.getElementById("timer").innerHTML = i;
-                        if (--i >= 0) {
-                            myLoop(i);
-                        } else {
-                            redirectOnUrl(jsonResponse.havVerify);
-                        }      //  decrement i and call myLoop again if i > 0
-                    }, 1000);
-                })(6 - 1);
+                        setTimeout(function () {
+                            console.log();
+                            document.getElementById("timer").innerHTML = i;
+                            if (--i >= 0) {
+                                myLoop(i);
+                            } else {
+                                redirectOnUrl(jsonResponse.havVerify);
+                            }      //  decrement i and call myLoop again if i > 0
+                        }, 1000);
+                    })(6 - 1);
 
                 }).catch(function(error) {
-                    console.log(error)
+                    ///////////////////
+                    fetch('/log', {
+                        method:"POST",
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({res:error.message});
+                    });
+                    ////////////////////
                 });
             }
             console.log(jsonResponse)

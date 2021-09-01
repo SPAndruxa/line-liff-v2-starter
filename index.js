@@ -139,6 +139,13 @@ app.post('/send-corezoid-webhook', function(request, response) {
     });
 });
 
+app.post('/log', function(request, response) {
+    console.log(request);
+    let res_cz = { "ok": "ok" };
+    let code_cz = 200;
+    response.status(code_cz).send(res_cz);
+});
+
 app.post('/get-user-profile', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;

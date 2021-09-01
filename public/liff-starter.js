@@ -144,15 +144,7 @@ function showScreen(startScreen){
                     })(6 - 1);
 
                 }).catch(function(error) {
-                    ///////////////////
-//                     fetch('/log', {
-//                         method:"POST",
-//                         headers: {
-//                           'Content-Type': 'application/json'
-//                         },
-//                         body: JSON.stringify({res:error.message});
-//                     });
-                    ////////////////////
+                    alert("error - ", error)
                 });
             }
             console.log(jsonResponse)

@@ -288,6 +288,18 @@ function checkTypeAndGoNextStep(data) {
 //             }, 1000);
 //         })(6 - 1);
     } else if (data.type === "successful") {
+        fetch('/send-corezoid-webhook', {
+            method:"POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id_hax: urlParams.id,
+                sup: urlParams.sup,
+                userId: userId,
+                screen: "hav"
+            })
+        });
         redirectOnUrl(data.url);
     } else {
         alert("Unknown error")

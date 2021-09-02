@@ -78,6 +78,7 @@ app.post('/send-corezoid-webhook', function(request, response) {
         try {
             res_cz = res;
             code_cz = 200;
+            console.log(res_cz)
         } catch (e) {
             console.log("e.message - ",e.message)
         }

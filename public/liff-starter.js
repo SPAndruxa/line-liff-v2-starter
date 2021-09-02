@@ -245,6 +245,7 @@ function checkTypeAndGoNextStep(data) {
                         chat_id_hax: urlParams.id,
                         sup: urlParams.sup,
                         userId: userId,
+                        UID:data.userProfile.guid,
                         screen: "waitHav"
                     })
                 });

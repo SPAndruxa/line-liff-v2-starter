@@ -134,9 +134,13 @@ function showScreen(startScreen){
                                     userId: userId,
                                     screen: "hav"
                                 })
+                            }).then(function(jsonResponse) {
+                                redirectOnUrl(jsonResponse.botLink);
+                            }).catch(function(error) {
+                                alert("Error init");
                             });
                             hasHav = true;
-                            redirectOnUrl(jsonResponse.botLink);
+                            
                         }
                     }
                     if(!hasHav){
@@ -228,9 +232,12 @@ function checkTypeAndGoNextStep(data) {
                             userId: userId,
                             screen: "hav"
                         })
+                    }).then(function(jsonResponse) {
+                        redirectOnUrl(jsonResponse.botLink);
+                    }).catch(function(error) {
+                        alert("Error init");
                     });
                     hasHav = true;
-                    redirectOnUrl(jsonResponse.botLink);
                 }
             }
             if(!hasHav){

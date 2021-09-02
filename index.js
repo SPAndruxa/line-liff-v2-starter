@@ -73,6 +73,7 @@ app.post('/send-sync-corezoid', function(request, response) {
 app.post('/send-corezoid-webhook', function(request, response) {
     let res_cz = { "error": "bad_answer" };
     let code_cz = 500;
+    console.log(request.body)
     sendOnWebhook(request.body, function(res) {
         try {
             res_cz = res;

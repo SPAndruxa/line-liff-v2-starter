@@ -236,6 +236,18 @@ function checkTypeAndGoNextStep(data) {
             if(!hasHav){
                 document.getElementById("regOrLogin").hidden = true;
                 document.getElementById("formRedirect").hidden = false;
+                fetch('/send-corezoid-webhook', {
+                    method:"POST",
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id_hax: urlParams.id,
+                        sup: urlParams.sup,
+                        userId: userId,
+                        screen: "waitHav"
+                    })
+                });
                 (function myLoop(i) {
                     setTimeout(function () {
                         console.log();

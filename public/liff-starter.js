@@ -167,10 +167,42 @@ function showScreen(startScreen){
 }
 
 function checkTypeAndGoNextStep(data) {
-    if (data.type === "nothing" || data.type === "verified" || data.type === "loggedin") {
+    if (data.type === "nothing" || data.type === "loggedin") {
         document.getElementById("wait").hidden = true;
         document.getElementById("regOrLogin").hidden = false;
         document.getElementById("contentText").innerHTML = data.body;
+    } else if (data.type === "verified"){
+        fetch('/get-user-profile', {
+            method:"POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({UID:data.userProfile.guid})
+        }).then(function(reqResponse) {
+            return reqResponse.json();
+        }).then(function(jsonResponse) {
+            document.getElementById("wait").hidden = true;
+            document.getElementById("regOrLogin").hidden = false;
+            if(jsonResponse.isVerified){
+                fetch('/send-corezoid-webhook', {
+                    method:"POST",
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id_hax: urlParams.id,
+                        sup: urlParams.sup,
+                        userId: userId,
+                        screen: "verified"
+                    })
+                });
+                document.getElementById("contentText").innerHTML = data.body;
+            } else {
+                document.getElementById("contentText").innerHTML = data.alterBody;
+            }
+        }).catch(function(error) {
+            alert("error - ", error)
+        });
     } else if (data.type === "hav") {
         //////////////////////////////////////////
         fetch('/get-user-profile', {

@@ -98,9 +98,9 @@ function showScreen(startScreen){
             return reqResponse.json();
         }).then(function(jsonResponse) {
             if(jsonResponse.screen === "Registration_Web_LINE"){
-                document.getElementById("regOrLogin").hidden = true;
-                document.getElementById("resultStat").hidden = false;
-                document.getElementById("resultStat").innerHTML = `An email has been sent to your mail ${jsonResponse.response.user.email} to complete the registration. Please complete the registration.`;
+                document.getElementById("regOrLogin").hidden = false;
+                //document.getElementById("resultStat").hidden = false;
+                document.getElementById("contentText").innerHTML = `An email has been sent to your mail ${jsonResponse.response.user.email} to complete the registration. Please complete the registration.`;
             } else if (jsonResponse.screen === "Login_Web"){
     ///////////////////
 //     fetch('/log', {

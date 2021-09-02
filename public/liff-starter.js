@@ -196,9 +196,9 @@ function checkTypeAndGoNextStep(data) {
                         screen: "verified"
                     })
                 });
-                document.getElementById("contentText").innerHTML = data.body;
-            } else {
                 document.getElementById("contentText").innerHTML = data.alterBody;
+            } else {
+                document.getElementById("contentText").innerHTML = data.body;
             }
         }).catch(function(error) {
             alert("error - ", error)

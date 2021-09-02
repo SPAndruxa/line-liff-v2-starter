@@ -49,6 +49,7 @@ app.post('/send-sync-corezoid', function(request, response) {
                     //Показываем кнопки входа и регистрации + Контекст с просьбой пройти верификацию на почте или войти или зарегистрироватся
                     res_cz.type = "verified";
                     res_cz.body = `Email ${email} registered but verification failed. Please complete the registration`;
+                    res_cz.alterBody = `${email} mail verified successfully`;
                 } else if (!res_cz.userProfile.loggedin) {
                     //Показываем кнопки входа и регистрации + Контекст что прошла успшная регистрация
                     res_cz.type = "loggedin";

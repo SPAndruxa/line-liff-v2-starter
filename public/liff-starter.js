@@ -39,16 +39,16 @@ function initializeLiff(myLiffId) {
             liff.login();
         } else {
             console.log(urlParams)
-            if(urlParams.hasOwnProperty("botType")){
-                document.getElementById("wait").hidden = true;
-                if(urlParams.botType === "logion"){
-                    showScreen("Login_web_step1_no_registration");
+            liff.getProfile().then(profile => {
+                userId = profile.userId;
+                if(urlParams.hasOwnProperty("botType")){
+                    document.getElementById("wait").hidden = true;
+                    if(urlParams.botType === "logion"){
+                        showScreen("Login_web_step1_no_registration");
+                    } else {
+                        showScreen("Registration_Web_LINE");
+                    }
                 } else {
-                    showScreen("Registration_Web_LINE");
-                }
-            } else {
-                liff.getProfile().then(profile => {
-                    userId = profile.userId;
                     fetch('/send-sync-corezoid', {
                         method:"POST",
                         headers: {
@@ -62,10 +62,10 @@ function initializeLiff(myLiffId) {
                     }).catch(function(error) {
                         console.log(error)
                     });
-                }).catch((err) => {
-                    console.log('error', err);
-                });
-            }
+                }
+            }).catch((err) => {
+                console.log('error', err);
+            });
         }
     }).catch((err) => {
         alert("Error initializeApp")

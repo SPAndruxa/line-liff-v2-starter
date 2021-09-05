@@ -38,7 +38,7 @@ function initializeLiff(myLiffId) {
         if (!liff.isLoggedIn()) {
             liff.login();
         } else {
-            console.log(urlParams.botType)
+            console.log(urlParams)
             if(urlParams.hasOwnProperty("botType")){
                 document.getElementById("wait").hidden = true;
                 if(urlParams.botType === "logion"){

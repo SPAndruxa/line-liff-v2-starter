@@ -43,7 +43,7 @@ function initializeLiff(myLiffId) {
                 userId = profile.userId;
                 if(urlParams.hasOwnProperty("botType")){
                     document.getElementById("wait").hidden = true;
-                    if(urlParams.botType === "logion"){
+                    if(urlParams.botType === "login"){
                         showScreen("Login_web_step1_no_registration");
                     } else {
                         showScreen("Registration_Web_LINE");

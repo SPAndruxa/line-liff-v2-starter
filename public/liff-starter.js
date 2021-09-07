@@ -45,6 +45,8 @@ function initializeLiff(myLiffId) {
                     document.getElementById("wait").hidden = true;
                     if(urlParams.botType === "login"){
                         showScreen("Login_web_step1_no_registration");
+                    } else if(urlParams.botType === "hav"){
+                        redirectOnUrl("https://www.dev.iqos.com/tw/zh/verify.html");
                     } else {
                         showScreen("Registration_Web_LINE");
                     }

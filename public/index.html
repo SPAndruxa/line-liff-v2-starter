@@ -13,29 +13,12 @@
         <title>Gigya login test</title>
 
         <!--link rel="stylesheet" href="./css/centralpage.css"/-->
-       <!-- <link rel="stylesheet" href="css/style.css">-->
+       <link rel="stylesheet" href="css/style.css">
 
         <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=3_ejiBpUKe3wdl5VAb7q-J1HSux9e5sgVsENViW6YLlBiJxs-XNuJt6YwpQAkvQTYt"></script>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <script src="liff-starter.js"></script>
-        <style>
-            #regOrLogin (max-device-width: 600px){ 
-              height: 200px;
-              position: relative;
-              border: 3px solid green; 
-            }
-
-            .center {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 200px;
-              border: 3px solid green;
-            }
-            .p {
-              margin-left: 30px;
-            }
-        </style>
+        
 
     </head>
 
@@ -50,13 +33,16 @@
             <a href="#" class="button22" onclick="showScreen('Registration_Web_LINE');">Registration</a>
             <a href="#" class="button22" onclick="showScreen('Login_web_step1_no_registration');">Login</a>
         </div>-->
-        <h2>Vertical Center</h2>
-        <p>In this example, we use positioning and the transform property to vertically center a button inside a container element:</p>
+        
 
         <div id="regOrLogin" hidden>
+          <h2>Vertical Center</h2>
+          <p>In this example, we use positioning and the transform property to vertically center a button inside a container element:</p>
           <div class="center">
-            <button class="p" onclick="showScreen('Registration_Web_LINE');">REGISTER</button>
-            <button class="p" onclick="showScreen('Login_web_step1_no_registration');">LOGIN</button>
+            <!--<button class="p" onclick="showScreen('Registration_Web_LINE');">REGISTER</button>
+            <button class="p" onclick="showScreen('Login_web_step1_no_registration');">LOGIN</button>-->
+              <a href="#" class="button22" onclick="showScreen('Registration_Web_LINE');">Registration</a>
+            <a href="#" class="button22" onclick="showScreen('Login_web_step1_no_registration');">Login</a>
           </div>
         </div>
 

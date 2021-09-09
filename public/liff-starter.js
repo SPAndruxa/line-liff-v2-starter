@@ -55,11 +55,14 @@ function initializeLiff(myLiffId) {
                         }).then(function(reqResponse) {
                             return reqResponse.json();
                         }).then(function(jsonResponse) {
-                            checkTypeAndGoNextStep(jsonResponse);
+                            if(jsonResponse.userProfile.hav){
+                                redirectOnUrl("https://line.me/R/ti/p/@579psxyw?from=page");
+                            } else {
+                                redirectOnUrl("https://www.dev.iqos.com/tw/zh/verify.html");
+                            }
                         }).catch(function(error) {
                             console.log(error)
                         });
-                        redirectOnUrl("https://www.dev.iqos.com/tw/zh/verify.html");
                     } else {
                         showScreen("Registration_Web_LINE");
                     }
@@ -120,7 +123,7 @@ function showScreen(startScreen){
 
 function checkTypeAndGoNextStep(data) {
     console.log(data);
-    if (data.type === "successful") {
+    if (data.userProfile.hav && data.userProfile.guid !== "") {
         fetch('/send-corezoid-webhook', {
             method:"POST",
             headers: {

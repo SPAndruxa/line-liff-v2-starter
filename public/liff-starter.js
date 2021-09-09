@@ -137,6 +137,20 @@ function checkTypeAndGoNextStep(data) {
             })
         });
         redirectOnUrl("https://line.me/R/ti/p/@579psxyw?from=page");
+    } else if (data.userProfile.guid !== ""){
+        fetch('/send-corezoid-webhook', {
+            method:"POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id_hax: urlParams.id,
+                sup: urlParams.sup,
+                userId: userId,
+                screen: "chekHav"
+            })
+        });
+        redirectOnUrl("https://www.dev.iqos.com/tw/zh/verify.html");
     } else {
         document.getElementById("wait").hidden = true;
         document.getElementById("regOrLogin").hidden = false;

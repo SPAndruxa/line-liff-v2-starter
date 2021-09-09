@@ -46,6 +46,19 @@ function initializeLiff(myLiffId) {
                     if(urlParams.botType === "login"){
                         showScreen("Login_web_step1_no_registration");
                     } else if(urlParams.botType === "hav"){
+                        fetch('/send-sync-corezoid', {
+                            method:"POST",
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(profile)
+                        }).then(function(reqResponse) {
+                            return reqResponse.json();
+                        }).then(function(jsonResponse) {
+                            checkTypeAndGoNextStep(jsonResponse);
+                        }).catch(function(error) {
+                            console.log(error)
+                        });
                         redirectOnUrl("https://www.dev.iqos.com/tw/zh/verify.html");
                     } else {
                         showScreen("Registration_Web_LINE");
@@ -106,6 +119,7 @@ function showScreen(startScreen){
 }
 
 function checkTypeAndGoNextStep(data) {
+    console.log(data);
     if (data.type === "successful") {
         fetch('/send-corezoid-webhook', {
             method:"POST",

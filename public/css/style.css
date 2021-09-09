@@ -346,7 +346,7 @@ a.button22:before {
 
 /* start style main element */
 
-#regOrLogin{
+/*#regOrLogin{
   height: 50%;
   width: 60%;
   background: #eaeaea;
@@ -357,13 +357,13 @@ a.button22:before {
 }
 div#regOrLogin > p{
   text-align: center;
-}
+}*/
 
 /* end style main element */
 
 /* start style formRedirect element */
 
-#formRedirect{
+/*#formRedirect{
   height: 50%;
   width: 60%;
   background: #eaeaea;
@@ -374,6 +374,24 @@ div#regOrLogin > p{
 }
 div#formRedirect > p{
   text-align: center;
-}
+}*/
 
 /* end style formRedirect element */
+
+            #regOrLogin (max-device-width: 600px){ 
+              height: 200px;
+              position: relative;
+              border: 3px solid green; 
+            }
+
+            .center {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 200px;
+              border: 3px solid green;
+            }
+            .p {
+              margin-left: 30px;
+            }
+        

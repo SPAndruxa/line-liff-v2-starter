@@ -149,6 +149,7 @@ function showScreen(startScreen){
                 console.log("forEach - ", error.message);
             }
         }
+        console.log("regOrLogin");
         console.log(document.getElementByID("regOrLogin"));
         
         /*document.getElementByID("data.socmed_accounts.account_ID").value = userId;

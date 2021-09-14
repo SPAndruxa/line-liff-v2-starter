@@ -96,16 +96,6 @@ function redirectOnUrl(url){
     });
 }
 
-function setElementValue(id, value){
-    try {
-      document.getElementByID(id).value = value;
-      console.log(id, " - ", value, " - Ok");
-    } catch (error) {
-      console.log(id, " - ", value, " - Error");
-      console.log(error.message);
-    }
-    
-}
 
 function showScreen(startScreen){
   gigya.accounts.showScreenSet({
@@ -117,49 +107,9 @@ function showScreen(startScreen){
           document.getElementByID("data.socmed_accounts.account_ID").value = userId;
           console.log("data.socmed_accounts.account_ID - ok");
         } catch (error) {
-          console.log("data.socmed_accounts.account_ID - Error");
-          console.log(error.message);
+          console.log("data.socmed_accounts.account_ID - Error - ", error.message);
         }
         
-        var needChange = [
-            {
-                "id":"data.socmed_accounts.account_ID",
-                "value":userId
-            },
-            {
-                "id":"data.socmed_accounts.social_channel_refcode",
-                "value":"LINE"
-            },
-            {
-                "id":"data.registration.registration_channel_refcode",
-                "value":"APPINAPP"
-            },
-            {
-                "id":"data.registration.registration_app_id",
-                "value":"LINE_APP"
-            },
-            {
-                "id":"data.registration.registration_campaign_id",
-                "value":urlParams.registration_campaign_id
-            },
-            {
-                "id":"gigya-socmedID",
-                "value":userId
-            },
-            {
-                "id":"gigya-registration-campaignID",
-                "value":urlParams.registration_campaign_id
-            }
-        ];
-        if(startScreen === "Registration_Web_LINE"){
-            try {
-                needChange.forEach(obj => setElementValue(obj.id, obj.value));
-            } catch (error) {
-                console.log("forEach - ", error.message);
-            }
-        }
-        console.log("regOrLogin");
-        document.getElementByID("regOrLogin").hidden = true;
         
         /*document.getElementByID("data.socmed_accounts.account_ID").value = userId;
         document.getElementByID("data.socmed_accounts.social_channel_refcode").value = "LINE";

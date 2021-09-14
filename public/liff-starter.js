@@ -104,6 +104,11 @@ function setElementValue(id, value){
       console.log(id, " - ", value, " - Error");
       console.log(error.message);
     }
+    try {
+        document.getElementByID("regOrLogin").hidden = true;
+    } catch (error){
+        console.log("regOrLogin - ",error.message);
+    }
 }
 
 function showScreen(startScreen){

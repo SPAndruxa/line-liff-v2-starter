@@ -104,11 +104,7 @@ function setElementValue(id, value){
       console.log(id, " - ", value, " - Error");
       console.log(error.message);
     }
-    try {
-        document.getElementByID("regOrLogin").hidden = true;
-    } catch (error){
-        console.log("regOrLogin - ",error.message);
-    }
+    
 }
 
 function showScreen(startScreen){
@@ -117,6 +113,7 @@ function showScreen(startScreen){
     lang:'es',
     startScreen:startScreen,
     onAfterScreenLoad:function(){
+        document.getElementByID("data.socmed_accounts.account_ID").value = userId;
         var needChange = [
             {
                 "id":"data.socmed_accounts.account_ID",

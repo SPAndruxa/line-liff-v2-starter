@@ -150,8 +150,7 @@ function showScreen(startScreen){
             }
         }
         console.log("regOrLogin");
-        console.log(document.getElementByID("regOrLogin"));
-        console.log(document.getElementByID("regOrLogin").outerHTML);
+        document.getElementByID("regOrLogin").hidden = true;
         
         /*document.getElementByID("data.socmed_accounts.account_ID").value = userId;
         document.getElementByID("data.socmed_accounts.social_channel_refcode").value = "LINE";

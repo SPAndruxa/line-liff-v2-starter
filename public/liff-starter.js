@@ -93,10 +93,9 @@ function redirectOnUrl(url){
 function setElementValue(id, value){
   try {
     document.getElementById(id).value = value;
-    console.log(id, " - ", value, " - Ok");
+    console.log("id = ", id, ", value = ", value, " - Ok");
   } catch (error) {
-    console.log(id, " - ", value, " - Error");
-    console.log(error.message);
+    console.log("id = ", id, ", value = ", value, ", Error - ", error.message);
   }
 
 }

@@ -113,7 +113,14 @@ function showScreen(startScreen){
     lang:'es',
     startScreen:startScreen,
     onAfterScreenLoad:function(){
-        document.getElementByID("data.socmed_accounts.account_ID").value = userId;
+         try {
+          document.getElementByID("data.socmed_accounts.account_ID").value = userId;
+          console.log("data.socmed_accounts.account_ID - ok");
+        } catch (error) {
+          console.log("data.socmed_accounts.account_ID - Error");
+          console.log(error.message);
+        }
+        
         var needChange = [
             {
                 "id":"data.socmed_accounts.account_ID",

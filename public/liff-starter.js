@@ -92,7 +92,7 @@ function redirectOnUrl(url){
 }
 function setElementValue(id, value){
   try {
-    document.getElementById(id).value = value;
+    document.getElementById(id).value = value ? value : "";
     console.log("id = ", id, ", value = ", value, " - Ok");
   } catch (error) {
     console.log("id = ", id, ", value = ", value, ", Error - ", error.message);
@@ -108,11 +108,11 @@ gigya.accounts.showScreenSet({
   onAfterScreenLoad:function(){
       var needChange = [
           {
-              "id":"data.socmed_accounts.account_ID",
+              "id":"gigya-socmedID",
               "value":userId
           },
           {
-              "id":"data.socmed_accounts.social_channel_refcode",
+              "id":"gigya-socmed-channel-refcode",
               "value":"LINE"
           },
           {
@@ -122,14 +122,6 @@ gigya.accounts.showScreenSet({
           {
               "id":"data.registration.registration_app_id",
               "value":"LINE_APP"
-          },
-          {
-              "id":"data.registration.registration_campaign_id",
-              "value":urlParams.registration_campaign_id
-          },
-          {
-              "id":"gigya-socmedID",
-              "value":userId
           },
           {
               "id":"gigya-registration-campaignID",

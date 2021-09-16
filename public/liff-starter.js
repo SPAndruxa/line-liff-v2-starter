@@ -193,7 +193,7 @@ function checkTypeAndGoNextStep(data) {
               screen: "chekHav"
           })
       });
-      redirectOnUrl("https://www.dev.iqos.com/tw/zh/verify.html");
+      redirectOnUrl("https://line.me/R/ti/p/@579psxyw?from=page");
   } else {
       document.getElementById("wait").hidden = true;
       document.getElementById("regOrLogin").hidden = false;

@@ -34,13 +34,6 @@ function initializeLiff(myLiffId) {
       if (!liff.isLoggedIn()) {
           liff.login();
       } else {
-        const idToken = liff.getIDToken();
-        console.log("idToken");
-        console.log(idToken);
-        console.log("idToken2");
-        const idToken2 = liff.getDecodedIDToken();
-        console.log(idToken2);
-         console.log("other");
           console.log(urlParams)
           liff.getProfile().then(profile => {
               userId = profile.userId;
@@ -113,6 +106,8 @@ gigya.accounts.showScreenSet({
   lang:'es',
   startScreen:startScreen,
   onAfterScreenLoad:function(){
+      var dataToken = liff.getDecodedIDToken();
+      console.log(dataToken);
       var needChange = [
           {
               "id":"gigya-socmedID",
@@ -133,6 +128,10 @@ gigya.accounts.showScreenSet({
           {
               "id":"gigya-registration-campaignID",
               "value":urlParams.registration_campaign_id
+          },
+          {
+              "id":"gigya-input-email",
+              "value":dataToken.email
           }
       ];
       if(startScreen === "Registration_Web_LINE"){
@@ -142,15 +141,6 @@ gigya.accounts.showScreenSet({
               console.log("forEach - ", error.message);
           }
       }
-      
-      /*document.getElementByID("data.socmed_accounts.account_ID").value = userId;
-      document.getElementByID("data.socmed_accounts.social_channel_refcode").value = "LINE";
-      document.getElementByID("data.registration.registration_channel_refcode").value = "APPINAPP";
-      document.getElementByID("data.registration.registration_app_id").value = "LINE_APP";
-      document.getElementByID("data.registration.registration_campaign_id").value = urlParams.registration_campaign_id;
-      
-      document.getElementByID("gigya-socmedID").value = userId;
-      document.getElementByID("gigya-registration-campaignID").value = urlParams.registration_campaign_id;*/
   },
   onAfterSubmit:function(e){
       delete e.response.requestParams.customLang;

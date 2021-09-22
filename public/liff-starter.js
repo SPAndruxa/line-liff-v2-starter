@@ -34,6 +34,13 @@ function initializeLiff(myLiffId) {
       if (!liff.isLoggedIn()) {
           liff.login();
       } else {
+        const idToken = liff.getIDToken();
+        console.log("idToken");
+        console.log(idToken);
+        console.log("idToken2");
+        const idToken2 = liff.getDecodedIDToken();
+        console.log(idToken2);
+         console.log("other");
           console.log(urlParams)
           liff.getProfile().then(profile => {
               userId = profile.userId;
